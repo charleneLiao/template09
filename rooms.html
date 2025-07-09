@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TESTO HOTEL</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/flatpickr.min.css" />
+    <link rel="stylesheet" href="css/material_blue.css" />
+    <link rel="stylesheet" href="css/slick.css" />
+    <link rel="stylesheet" href="fonts/fontawesome/css/all.css" />
+    <link rel="stylesheet" href="css/material-symbols-outlined.css" />
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/aos.css" />
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+
+    <!-- 第三方 JS（不建議用 defer）-->
+    <script src="js/include.js" defer></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/flatpickr.js"></script>
+    <script src="js/zh.js"></script>
+    <script src="js/include.js" defer></script>
+    <script src="js/tools/goTop.js" defer></script>
+    <script src="js/aos.js"></script>
+    <script src="js/modules/headerComponent.js" defer></script>
+    <script src="js/modules/pageHeader.js" defer></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (typeof loadHeader === "function") loadHeader();
+        if (typeof loadpageHeader === "function") loadpageHeader();
+      });
+    </script>
+</head>
+
+<body>
+
+  <div id="headerComponent"><header class="gn-header"><div class="navWrap">
+  <div class="logo">
+    <a href="index.html">
+      <img src="images/ft_logo.svg" alt="LOGO" height="30">
+    </a>
+  </div>
+  <button class="menu-toggle d-lg-none">
+    <div id="nav-icon3">
+      <span></span><span></span><span></span><span></span>
+    </div></button><nav><ul class="menu"><li class="has-submenu"><a href="news.html">最新消息 <i class="fa-solid fa-chevron-down"></i></a><ul class="sub-menu"><li><a href="news.html?category=住宿優惠">住宿優惠</a></li><li><a href="news.html?category=餐飲優惠">餐飲優惠</a></li><li><a href="news.html?category=活動訊息">活動訊息</a></li><li><a href="news.html?category=藝文活動">藝文活動</a></li></ul></li><li class="has-submenu"><a href="rooms.html">房型介紹 <i class="fa-solid fa-chevron-down"></i></a><ul class="sub-menu"><li><a href="rooms.html?category=尊爵VIP">尊爵VIP</a></li><li><a href="rooms.html?category=豪華房">豪華房</a></li><li><a href="rooms.html?category=經典房">經典房</a></li><li><a href="rooms.html?category=商務房">商務房</a></li></ul></li><li><a href="about.html">飯店介紹</a></li><li><a href="facility.html">設施介紹</a></li><li><a href="step1.html">線上訂房</a></li><li><a href="location.html">聯絡我們</a></li></ul></nav><div class="nav-right">
+    <div class="lang-selector">
+      <div id="google_translate_element"></div>
+    </div>
+    <!-- ✅ 桌機版登入按鈕 -->
+   <a id="openMemberModalBtn" href="#" class="d-none d-lg-inline-block" title="加入會員">
+  <i class="fa-regular fa-circle-user"></i>
+</a>
+<a id="openMemberModalBtnMobile" href="#" class="d-lg-none" title="加入會員">
+  <i class="fa-regular fa-circle-user"></i>
+</a>
+
+  </div>
+</div></header></div>
+  <div id="pageHeader">
+    <section>
+      <div class="hd title text-center" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
+           <div class="titleBox">
+        <p>KAOHSIUNG</p>
+        <h1>STAY</h1>
+        </div>
+        <img src="images/banner/banner1.jpg" alt="" height="23">
+      </div>
+      <div class="text">
+       <a href="javascript:void(0);" class="goBack" aria-label="回上一頁">
+          <i class="fa-solid fa-arrow-left-long"></i>
+          回上一頁
+        </a>
+        我們的每間客房和套房均融合了優雅風格和迷人的現代風格，擁有自己獨特的特色。
+      </div>
+    </section>
+  </div>
+
+  <main class="roomsPage">
+    <div class="container mt-3">
+      <div class="content">
+        <div class="carousel-nav justify-content-center gap-3 mb-10">
+           <a href="#" class="active" data-category="全部房型">全部房型</a>
+          <a href="#" data-category="尊爵VIP">尊爵VIP</a>
+          <a href="#" data-category="豪華房">豪華房</a>
+          <a href="#" data-category="經典房">經典房</a>
+          <a href="#" data-category="商務房">商務房</a>
+        </div>
+        <div id="categoryContainer" class="">
+          <div class="category-group" data-category="全部房型" style="display: block;">
+    <div class="card-row">
+      
+                    <div class="card-box">
+            <a href="rooms-vip.html" class="cardRoom d-block card-fade-in">
+                </a><div class="card"><a href="rooms-vip.html" class="cardRoom d-block card-fade-in">
+                <img src="images/room/room-vip.jpg" alt="尊爵VIP｜極致尊寵之選">
+                <div class="text">
+                    <h5>尊爵VIP｜極致尊寵之選</h5>
+                    <p>獨立景觀陽台、專屬mini bar與奢華備品，為您打造極致尊榮的住宿體驗，推薦給追求高規格旅程的您。</p>
+                </div>
+                <div class="features">
+                    <div class="hd">房型特色：</div>
+                    <div>
+                    <ul>
+                        <li><i class="fa-solid fa-umbrella-beach"></i> 帶座椅的陽台</li>
+                        <li><i class="fa-solid fa-couch me-1"></i> 客廳</li>
+                        <li><i class="fa-solid fa-utensils me-1"></i> 用餐區</li>
+                        <li><i class="fa-solid fa-bath me-1"></i> 浴缸和雨林淋浴</li>
+                    </ul>
+                    </div>
+                </div>
+                </a><div class="btnBox"><a href="rooms-vip.html" class="cardRoom d-block card-fade-in">
+                    </a><a href="rooms_detail.html" class="btn btn-primary-border">詳細介紹</a>
+                    <a class="btn btn-booking">預定房間</a>
+                    </div>
+                </div>
+            
+            </div>
+      
+                    <div class="card-box">
+            <a href="rooms-elegant.html" class="cardRoom d-block card-fade-in">
+                </a><div class="card"><a href="rooms-elegant.html" class="cardRoom d-block card-fade-in">
+                <img src="images/room/room-elegant.jpg" alt="豪華房｜寬敞舒適好品味">
+                <div class="text">
+                    <h5>豪華房｜寬敞舒適好品味</h5>
+                    <p>現代質感設計與大片窗景，打造明亮舒適的住宿氛圍，最適合放鬆渡假與浪漫旅程的選擇。</p>
+                </div>
+                <div class="features">
+                    <div class="hd">房型特色：</div>
+                    <div>
+                    <ul>
+                        <li><i class="fa-solid fa-umbrella-beach"></i> 帶座椅的陽台</li>
+                        <li><i class="fa-solid fa-couch me-1"></i> 客廳</li>
+                        <li><i class="fa-solid fa-utensils me-1"></i> 用餐區</li>
+                        <li><i class="fa-solid fa-bath me-1"></i> 浴缸和雨林淋浴</li>
+                    </ul>
+                    </div>
+                </div>
+                </a><div class="btnBox"><a href="rooms-elegant.html" class="cardRoom d-block card-fade-in">
+                    </a><a href="rooms_detail.html" class="btn btn-primary-border">詳細介紹</a>
+                    <a class="btn btn-booking">預定房間</a>
+                    </div>
+                </div>
+            
+            </div>
+      
+                    <div class="card-box">
+            <a href="rooms-business.html" class="cardRoom d-block card-fade-in">
+                </a><div class="card"><a href="rooms-business.html" class="cardRoom d-block card-fade-in">
+                <img src="images/room/room-business.jpg" alt="商務房｜效率與舒適兼具">
+                <div class="text">
+                    <h5>商務房｜效率與舒適兼具</h5>
+                    <p>設有書桌與高速網路，提供安靜的工作空間與貼心備品，讓您的出差也能輕鬆如家。</p>
+                </div>
+                <div class="features">
+                    <div class="hd">房型特色：</div>
+                    <div>
+                    <ul>
+                        <li><i class="fa-solid fa-umbrella-beach"></i> 帶座椅的陽台</li>
+                        <li><i class="fa-solid fa-couch me-1"></i> 客廳</li>
+                        <li><i class="fa-solid fa-utensils me-1"></i> 用餐區</li>
+                        <li><i class="fa-solid fa-bath me-1"></i> 浴缸和雨林淋浴</li>
+                    </ul>
+                    </div>
+                </div>
+                </a><div class="btnBox"><a href="rooms-business.html" class="cardRoom d-block card-fade-in">
+                    </a><a href="rooms_detail.html" class="btn btn-primary-border">詳細介紹</a>
+                    <a class="btn btn-booking">預定房間</a>
+                    </div>
+                </div>
+            
+            </div>
+      
+                    <div class="card-box">
+            <a href="rooms-elegant.html" class="cardRoom d-block card-fade-in">
+                </a><div class="card"><a href="rooms-elegant.html" class="cardRoom d-block card-fade-in">
+                <img src="images/room/room-elegant.jpg" alt="豪華房｜寬敞舒適好品味">
+                <div class="text">
+                    <h5>豪華房｜寬敞舒適好品味</h5>
+                    <p>現代質感設計與大片窗景，打造明亮舒適的住宿氛圍，最適合放鬆渡假與浪漫旅程的選擇。</p>
+                </div>
+                <div class="features">
+                    <div class="hd">房型特色：</div>
+                    <div>
+                    <ul>
+                        <li><i class="fa-solid fa-umbrella-beach"></i> 帶座椅的陽台</li>
+                        <li><i class="fa-solid fa-couch me-1"></i> 客廳</li>
+                        <li><i class="fa-solid fa-utensils me-1"></i> 用餐區</li>
+                        <li><i class="fa-solid fa-bath me-1"></i> 浴缸和雨林淋浴</li>
+                    </ul>
+                    </div>
+                </div>
+                </a><div class="btnBox"><a href="rooms-elegant.html" class="cardRoom d-block card-fade-in">
+                    </a><a href="rooms_detail.html" class="btn btn-primary-border">詳細介紹</a>
+                    <a class="btn btn-booking">預定房間</a>
+                    </div>
+                </div>
+            
+            </div>
+      
+                    <div class="card-box">
+            <a href="rooms-business.html" class="cardRoom d-block card-fade-in">
+                </a><div class="card"><a href="rooms-business.html" class="cardRoom d-block card-fade-in">
+                <img src="images/room/room-business.jpg" alt="商務房｜效率與舒適兼具">
+                <div class="text">
+                    <h5>商務房｜效率與舒適兼具</h5>
+                    <p>設有書桌與高速網路，提供安靜的工作空間與貼心備品，讓您的出差也能輕鬆如家。</p>
+                </div>
+                <div class="features">
+                    <div class="hd">房型特色：</div>
+                    <div>
+                    <ul>
+                        <li><i class="fa-solid fa-umbrella-beach"></i> 帶座椅的陽台</li>
+                        <li><i class="fa-solid fa-couch me-1"></i> 客廳</li>
+                        <li><i class="fa-solid fa-utensils me-1"></i> 用餐區</li>
+                        <li><i class="fa-solid fa-bath me-1"></i> 浴缸和雨林淋浴</li>
+                    </ul>
+                    </div>
+                </div>
+                </a><div class="btnBox"><a href="rooms-business.html" class="cardRoom d-block card-fade-in">
+                    </a><a href="rooms_detail.html" class="btn btn-primary-border">詳細介紹</a>
+                    <a class="btn btn-booking">預定房間</a>
+                    </div>
+                </div>
+            
+            </div>
+      
+                    <div class="card-box">
+            <a href="rooms-vip.html" class="cardRoom d-block card-fade-in">
+                </a><div class="card"><a href="rooms-vip.html" class="cardRoom d-block card-fade-in">
+                <img src="images/room/room-vip.jpg" alt="尊爵VIP｜極致尊寵之選">
+                <div class="text">
+                    <h5>尊爵VIP｜極致尊寵之選</h5>
+                    <p>獨立景觀陽台、專屬mini bar與奢華備品，為您打造極致尊榮的住宿體驗，推薦給追求高規格旅程的您。</p>
+                </div>
+                <div class="features">
+                    <div class="hd">房型特色：</div>
+                    <div>
+                    <ul>
+                        <li><i class="fa-solid fa-umbrella-beach"></i> 帶座椅的陽台</li>
+                        <li><i class="fa-solid fa-couch me-1"></i> 客廳</li>
+                        <li><i class="fa-solid fa-utensils me-1"></i> 用餐區</li>
+                        <li><i class="fa-solid fa-bath me-1"></i> 浴缸和雨林淋浴</li>
+                    </ul>
+                    </div>
+                </div>
+                </a><div class="btnBox"><a href="rooms-vip.html" class="cardRoom d-block card-fade-in">
+                    </a><a href="rooms_detail.html" class="btn btn-primary-border">詳細介紹</a>
+                    <a class="btn btn-booking">預定房間</a>
+                    </div>
+                </div>
+            
+            </div>
+      
+                    <div class="card-box">
+            <a href="rooms-classic.html" class="cardRoom d-block card-fade-in">
+                </a><div class="card"><a href="rooms-classic.html" class="cardRoom d-block card-fade-in">
+                <img src="images/room/room-classic.jpg" alt="經典房｜簡約中的精緻細節">
+                <div class="text">
+                    <h5>經典房｜簡約中的精緻細節</h5>
+                    <p>兼具實用與設計感，採光良好、配備齊全，適合商務差旅或輕旅行的完美起點。</p>
+                </div>
+                <div class="features">
+                    <div class="hd">房型特色：</div>
+                    <div>
+                    <ul>
+                        <li><i class="fa-solid fa-umbrella-beach"></i> 帶座椅的陽台</li>
+                        <li><i class="fa-solid fa-couch me-1"></i> 客廳</li>
+                        <li><i class="fa-solid fa-utensils me-1"></i> 用餐區</li>
+                        <li><i class="fa-solid fa-bath me-1"></i> 浴缸和雨林淋浴</li>
+                    </ul>
+                    </div>
+                </div>
+                </a><div class="btnBox"><a href="rooms-classic.html" class="cardRoom d-block card-fade-in">
+                    </a><a href="rooms_detail.html" class="btn btn-primary-border">詳細介紹</a>
+                    <a class="btn btn-booking">預定房間</a>
+                    </div>
+                </div>
+            
+            </div>
+      
+                    <div class="card-box">
+            <a href="rooms-vip.html" class="cardRoom d-block card-fade-in">
+                </a><div class="card"><a href="rooms-vip.html" class="cardRoom d-block card-fade-in">
+                <img src="images/room/room-vip.jpg" alt="尊爵VIP｜極致尊寵之選">
+                <div class="text">
+                    <h5>尊爵VIP｜極致尊寵之選</h5>
+                    <p>獨立景觀陽台、專屬mini bar與奢華備品，為您打造極致尊榮的住宿體驗，推薦給追求高規格旅程的您。</p>
+                </div>
+                <div class="features">
+                    <div class="hd">房型特色：</div>
+                    <div>
+                    <ul>
+                        <li><i class="fa-solid fa-umbrella-beach"></i> 帶座椅的陽台</li>
+                        <li><i class="fa-solid fa-couch me-1"></i> 客廳</li>
+                        <li><i class="fa-solid fa-utensils me-1"></i> 用餐區</li>
+                        <li><i class="fa-solid fa-bath me-1"></i> 浴缸和雨林淋浴</li>
+                    </ul>
+                    </div>
+                </div>
+                </a><div class="btnBox"><a href="rooms-vip.html" class="cardRoom d-block card-fade-in">
+                    </a><a href="rooms_detail.html" class="btn btn-primary-border">詳細介紹</a>
+                    <a class="btn btn-booking">預定房間</a>
+                    </div>
+                </div>
+            
+            </div>
+      
+                    <div class="card-box">
+            <a href="rooms-elegant.html" class="cardRoom d-block card-fade-in">
+                </a><div class="card"><a href="rooms-elegant.html" class="cardRoom d-block card-fade-in">
+                <img src="images/room/room-elegant.jpg" alt="豪華房｜寬敞舒適好品味">
+                <div class="text">
+                    <h5>豪華房｜寬敞舒適好品味</h5>
+                    <p>現代質感設計與大片窗景，打造明亮舒適的住宿氛圍，最適合放鬆渡假與浪漫旅程的選擇。</p>
+                </div>
+                <div class="features">
+                    <div class="hd">房型特色：</div>
+                    <div>
+                    <ul>
+                        <li><i class="fa-solid fa-umbrella-beach"></i> 帶座椅的陽台</li>
+                        <li><i class="fa-solid fa-couch me-1"></i> 客廳</li>
+                        <li><i class="fa-solid fa-utensils me-1"></i> 用餐區</li>
+                        <li><i class="fa-solid fa-bath me-1"></i> 浴缸和雨林淋浴</li>
+                    </ul>
+                    </div>
+                </div>
+                </a><div class="btnBox"><a href="rooms-elegant.html" class="cardRoom d-block card-fade-in">
+                    </a><a href="rooms_detail.html" class="btn btn-primary-border">詳細介紹</a>
+                    <a class="btn btn-booking">預定房間</a>
+                    </div>
+                </div>
+            
+            </div>
+      
+                    <div class="card-box">
+            <a href="rooms-business.html" class="cardRoom d-block card-fade-in">
+                </a><div class="card"><a href="rooms-business.html" class="cardRoom d-block card-fade-in">
+                <img src="images/room/room-business.jpg" alt="商務房｜效率與舒適兼具">
+                <div class="text">
+                    <h5>商務房｜效率與舒適兼具</h5>
+                    <p>設有書桌與高速網路，提供安靜的工作空間與貼心備品，讓您的出差也能輕鬆如家。</p>
+                </div>
+                <div class="features">
+                    <div class="hd">房型特色：</div>
+                    <div>
+                    <ul>
+                        <li><i class="fa-solid fa-umbrella-beach"></i> 帶座椅的陽台</li>
+                        <li><i class="fa-solid fa-couch me-1"></i> 客廳</li>
+                        <li><i class="fa-solid fa-utensils me-1"></i> 用餐區</li>
+                        <li><i class="fa-solid fa-bath me-1"></i> 浴缸和雨林淋浴</li>
+                    </ul>
+                    </div>
+                </div>
+                </a><div class="btnBox"><a href="rooms-business.html" class="cardRoom d-block card-fade-in">
+                    </a><a href="rooms_detail.html" class="btn btn-primary-border">詳細介紹</a>
+                    <a class="btn btn-booking">預定房間</a>
+                    </div>
+                </div>
+            
+            </div>
+      
+                    <div class="card-box">
+            <a href="rooms-classic.html" class="cardRoom d-block card-fade-in">
+                </a><div class="card"><a href="rooms-classic.html" class="cardRoom d-block card-fade-in">
+                <img src="images/room/room-classic.jpg" alt="經典房｜簡約中的精緻細節">
+                <div class="text">
+                    <h5>經典房｜簡約中的精緻細節</h5>
+                    <p>兼具實用與設計感，採光良好、配備齊全，適合商務差旅或輕旅行的完美起點。</p>
+                </div>
+                <div class="features">
+                    <div class="hd">房型特色：</div>
+                    <div>
+                    <ul>
+                        <li><i class="fa-solid fa-umbrella-beach"></i> 帶座椅的陽台</li>
+                        <li><i class="fa-solid fa-couch me-1"></i> 客廳</li>
+                        <li><i class="fa-solid fa-utensils me-1"></i> 用餐區</li>
+                        <li><i class="fa-solid fa-bath me-1"></i> 浴缸和雨林淋浴</li>
+                    </ul>
+                    </div>
+                </div>
+                </a><div class="btnBox"><a href="rooms-classic.html" class="cardRoom d-block card-fade-in">
+                    </a><a href="rooms_detail.html" class="btn btn-primary-border">詳細介紹</a>
+                    <a class="btn btn-booking">預定房間</a>
+                    </div>
+                </div>
+            
+            </div>
+      
+                    <div class="card-box">
+            <a href="rooms-classic.html" class="cardRoom d-block card-fade-in">
+                </a><div class="card"><a href="rooms-classic.html" class="cardRoom d-block card-fade-in">
+                <img src="images/room/room-classic.jpg" alt="經典房｜簡約中的精緻細節">
+                <div class="text">
+                    <h5>經典房｜簡約中的精緻細節</h5>
+                    <p>兼具實用與設計感，採光良好、配備齊全，適合商務差旅或輕旅行的完美起點。</p>
+                </div>
+                <div class="features">
+                    <div class="hd">房型特色：</div>
+                    <div>
+                    <ul>
+                        <li><i class="fa-solid fa-umbrella-beach"></i> 帶座椅的陽台</li>
+                        <li><i class="fa-solid fa-couch me-1"></i> 客廳</li>
+                        <li><i class="fa-solid fa-utensils me-1"></i> 用餐區</li>
+                        <li><i class="fa-solid fa-bath me-1"></i> 浴缸和雨林淋浴</li>
+                    </ul>
+                    </div>
+                </div>
+                </a><div class="btnBox"><a href="rooms-classic.html" class="cardRoom d-block card-fade-in">
+                    </a><a href="rooms_detail.html" class="btn btn-primary-border">詳細介紹</a>
+                    <a class="btn btn-booking">預定房間</a>
+                    </div>
+                </div>
+            
+            </div>
+      
+    </div>
+  </div>
+          <div class="category-group" data-category="尊爵VIP" style="display: none;">
+    <div class="card-row">
+      
+                    <div class="card-box">
+            <a href="rooms-vip.html" class="cardRoom d-block card-fade-in">
+                </a><div class="card"><a href="rooms-vip.html" class="cardRoom d-block card-fade-in">
+                <img src="images/room/room-vip.jpg" alt="尊爵VIP｜極致尊寵之選">
+                <div class="text">
+                    <h5>尊爵VIP｜極致尊寵之選</h5>
+                    <p>獨立景觀陽台、專屬mini bar與奢華備品，為您打造極致尊榮的住宿體驗，推薦給追求高規格旅程的您。</p>
+                </div>
+                <div class="features">
+                    <div class="hd">房型特色：</div>
+                    <div>
+                    <ul>
+                        <li><i class="fa-solid fa-umbrella-beach"></i> 帶座椅的陽台</li>
+                        <li><i class="fa-solid fa-couch me-1"></i> 客廳</li>
+                        <li><i class="fa-solid fa-utensils me-1"></i> 用餐區</li>
+                        <li><i class="fa-solid fa-bath me-1"></i> 浴缸和雨林淋浴</li>
+                    </ul>
+                    </div>
+                </div>
+                </a><div class="btnBox"><a href="rooms-vip.html" class="cardRoom d-block card-fade-in">
+                    </a><a href="rooms_detail.html" class="btn btn-primary-border">詳細介紹</a>
+                    <a class="btn btn-booking">預定房間</a>
+                    </div>
+                </div>
+            
+            </div>
+      
+                    <div class="card-box">
+            <a href="rooms-vip.html" class="cardRoom d-block card-fade-in">
+                </a><div class="card"><a href="rooms-vip.html" class="cardRoom d-block card-fade-in">
+                <img src="images/room/room-vip.jpg" alt="尊爵VIP｜極致尊寵之選">
+                <div class="text">
+                    <h5>尊爵VIP｜極致尊寵之選</h5>
+                    <p>獨立景觀陽台、專屬mini bar與奢華備品，為您打造極致尊榮的住宿體驗，推薦給追求高規格旅程的您。</p>
+                </div>
+                <div class="features">
+                    <div class="hd">房型特色：</div>
+                    <div>
+                    <ul>
+                        <li><i class="fa-solid fa-umbrella-beach"></i> 帶座椅的陽台</li>
+                        <li><i class="fa-solid fa-couch me-1"></i> 客廳</li>
+                        <li><i class="fa-solid fa-utensils me-1"></i> 用餐區</li>
+                        <li><i class="fa-solid fa-bath me-1"></i> 浴缸和雨林淋浴</li>
+                    </ul>
+                    </div>
+                </div>
+                </a><div class="btnBox"><a href="rooms-vip.html" class="cardRoom d-block card-fade-in">
+                    </a><a href="rooms_detail.html" class="btn btn-primary-border">詳細介紹</a>
+                    <a class="btn btn-booking">預定房間</a>
+                    </div>
+                </div>
+            
+            </div>
+      
+                    <div class="card-box">
+            <a href="rooms-vip.html" class="cardRoom d-block card-fade-in">
+                </a><div class="card"><a href="rooms-vip.html" class="cardRoom d-block card-fade-in">
+                <img src="images/room/room-vip.jpg" alt="尊爵VIP｜極致尊寵之選">
+                <div class="text">
+                    <h5>尊爵VIP｜極致尊寵之選</h5>
+                    <p>獨立景觀陽台、專屬mini bar與奢華備品，為您打造極致尊榮的住宿體驗，推薦給追求高規格旅程的您。</p>
+                </div>
+                <div class="features">
+                    <div class="hd">房型特色：</div>
+                    <div>
+                    <ul>
+                        <li><i class="fa-solid fa-umbrella-beach"></i> 帶座椅的陽台</li>
+                        <li><i class="fa-solid fa-couch me-1"></i> 客廳</li>
+                        <li><i class="fa-solid fa-utensils me-1"></i> 用餐區</li>
+                        <li><i class="fa-solid fa-bath me-1"></i> 浴缸和雨林淋浴</li>
+                    </ul>
+                    </div>
+                </div>
+                </a><div class="btnBox"><a href="rooms-vip.html" class="cardRoom d-block card-fade-in">
+                    </a><a href="rooms_detail.html" class="btn btn-primary-border">詳細介紹</a>
+                    <a class="btn btn-booking">預定房間</a>
+                    </div>
+                </div>
+            
+            </div>
+      
+    </div>
+  </div>
+          <div class="category-group" data-category="豪華房" style="display: none;">
+    <div class="card-row">
+      
+                    <div class="card-box">
+            <a href="rooms-elegant.html" class="cardRoom d-block card-fade-in">
+                </a><div class="card"><a href="rooms-elegant.html" class="cardRoom d-block card-fade-in">
+                <img src="images/room/room-elegant.jpg" alt="豪華房｜寬敞舒適好品味">
+                <div class="text">
+                    <h5>豪華房｜寬敞舒適好品味</h5>
+                    <p>現代質感設計與大片窗景，打造明亮舒適的住宿氛圍，最適合放鬆渡假與浪漫旅程的選擇。</p>
+                </div>
+                <div class="features">
+                    <div class="hd">房型特色：</div>
+                    <div>
+                    <ul>
+                        <li><i class="fa-solid fa-umbrella-beach"></i> 帶座椅的陽台</li>
+                        <li><i class="fa-solid fa-couch me-1"></i> 客廳</li>
+                        <li><i class="fa-solid fa-utensils me-1"></i> 用餐區</li>
+                        <li><i class="fa-solid fa-bath me-1"></i> 浴缸和雨林淋浴</li>
+                    </ul>
+                    </div>
+                </div>
+                </a><div class="btnBox"><a href="rooms-elegant.html" class="cardRoom d-block card-fade-in">
+                    </a><a href="rooms_detail.html" class="btn btn-primary-border">詳細介紹</a>
+                    <a class="btn btn-booking">預定房間</a>
+                    </div>
+                </div>
+            
+            </div>
+      
+                    <div class="card-box">
+            <a href="rooms-elegant.html" class="cardRoom d-block card-fade-in">
+                </a><div class="card"><a href="rooms-elegant.html" class="cardRoom d-block card-fade-in">
+                <img src="images/room/room-elegant.jpg" alt="豪華房｜寬敞舒適好品味">
+                <div class="text">
+                    <h5>豪華房｜寬敞舒適好品味</h5>
+                    <p>現代質感設計與大片窗景，打造明亮舒適的住宿氛圍，最適合放鬆渡假與浪漫旅程的選擇。</p>
+                </div>
+                <div class="features">
+                    <div class="hd">房型特色：</div>
+                    <div>
+                    <ul>
+                        <li><i class="fa-solid fa-umbrella-beach"></i> 帶座椅的陽台</li>
+                        <li><i class="fa-solid fa-couch me-1"></i> 客廳</li>
+                        <li><i class="fa-solid fa-utensils me-1"></i> 用餐區</li>
+                        <li><i class="fa-solid fa-bath me-1"></i> 浴缸和雨林淋浴</li>
+                    </ul>
+                    </div>
+                </div>
+                </a><div class="btnBox"><a href="rooms-elegant.html" class="cardRoom d-block card-fade-in">
+                    </a><a href="rooms_detail.html" class="btn btn-primary-border">詳細介紹</a>
+                    <a class="btn btn-booking">預定房間</a>
+                    </div>
+                </div>
+            
+            </div>
+      
+                    <div class="card-box">
+            <a href="rooms-elegant.html" class="cardRoom d-block card-fade-in">
+                </a><div class="card"><a href="rooms-elegant.html" class="cardRoom d-block card-fade-in">
+                <img src="images/room/room-elegant.jpg" alt="豪華房｜寬敞舒適好品味">
+                <div class="text">
+                    <h5>豪華房｜寬敞舒適好品味</h5>
+                    <p>現代質感設計與大片窗景，打造明亮舒適的住宿氛圍，最適合放鬆渡假與浪漫旅程的選擇。</p>
+                </div>
+                <div class="features">
+                    <div class="hd">房型特色：</div>
+                    <div>
+                    <ul>
+                        <li><i class="fa-solid fa-umbrella-beach"></i> 帶座椅的陽台</li>
+                        <li><i class="fa-solid fa-couch me-1"></i> 客廳</li>
+                        <li><i class="fa-solid fa-utensils me-1"></i> 用餐區</li>
+                        <li><i class="fa-solid fa-bath me-1"></i> 浴缸和雨林淋浴</li>
+                    </ul>
+                    </div>
+                </div>
+                </a><div class="btnBox"><a href="rooms-elegant.html" class="cardRoom d-block card-fade-in">
+                    </a><a href="rooms_detail.html" class="btn btn-primary-border">詳細介紹</a>
+                    <a class="btn btn-booking">預定房間</a>
+                    </div>
+                </div>
+            
+            </div>
+      
+    </div>
+  </div>
+          <div class="category-group" data-category="經典房" style="display: none;">
+    <div class="card-row">
+      
+                    <div class="card-box">
+            <a href="rooms-classic.html" class="cardRoom d-block card-fade-in">
+                </a><div class="card"><a href="rooms-classic.html" class="cardRoom d-block card-fade-in">
+                <img src="images/room/room-classic.jpg" alt="經典房｜簡約中的精緻細節">
+                <div class="text">
+                    <h5>經典房｜簡約中的精緻細節</h5>
+                    <p>兼具實用與設計感，採光良好、配備齊全，適合商務差旅或輕旅行的完美起點。</p>
+                </div>
+                <div class="features">
+                    <div class="hd">房型特色：</div>
+                    <div>
+                    <ul>
+                        <li><i class="fa-solid fa-umbrella-beach"></i> 帶座椅的陽台</li>
+                        <li><i class="fa-solid fa-couch me-1"></i> 客廳</li>
+                        <li><i class="fa-solid fa-utensils me-1"></i> 用餐區</li>
+                        <li><i class="fa-solid fa-bath me-1"></i> 浴缸和雨林淋浴</li>
+                    </ul>
+                    </div>
+                </div>
+                </a><div class="btnBox"><a href="rooms-classic.html" class="cardRoom d-block card-fade-in">
+                    </a><a href="rooms_detail.html" class="btn btn-primary-border">詳細介紹</a>
+                    <a class="btn btn-booking">預定房間</a>
+                    </div>
+                </div>
+            
+            </div>
+      
+                    <div class="card-box">
+            <a href="rooms-classic.html" class="cardRoom d-block card-fade-in">
+                </a><div class="card"><a href="rooms-classic.html" class="cardRoom d-block card-fade-in">
+                <img src="images/room/room-classic.jpg" alt="經典房｜簡約中的精緻細節">
+                <div class="text">
+                    <h5>經典房｜簡約中的精緻細節</h5>
+                    <p>兼具實用與設計感，採光良好、配備齊全，適合商務差旅或輕旅行的完美起點。</p>
+                </div>
+                <div class="features">
+                    <div class="hd">房型特色：</div>
+                    <div>
+                    <ul>
+                        <li><i class="fa-solid fa-umbrella-beach"></i> 帶座椅的陽台</li>
+                        <li><i class="fa-solid fa-couch me-1"></i> 客廳</li>
+                        <li><i class="fa-solid fa-utensils me-1"></i> 用餐區</li>
+                        <li><i class="fa-solid fa-bath me-1"></i> 浴缸和雨林淋浴</li>
+                    </ul>
+                    </div>
+                </div>
+                </a><div class="btnBox"><a href="rooms-classic.html" class="cardRoom d-block card-fade-in">
+                    </a><a href="rooms_detail.html" class="btn btn-primary-border">詳細介紹</a>
+                    <a class="btn btn-booking">預定房間</a>
+                    </div>
+                </div>
+            
+            </div>
+      
+                    <div class="card-box">
+            <a href="rooms-classic.html" class="cardRoom d-block card-fade-in">
+                </a><div class="card"><a href="rooms-classic.html" class="cardRoom d-block card-fade-in">
+                <img src="images/room/room-classic.jpg" alt="經典房｜簡約中的精緻細節">
+                <div class="text">
+                    <h5>經典房｜簡約中的精緻細節</h5>
+                    <p>兼具實用與設計感，採光良好、配備齊全，適合商務差旅或輕旅行的完美起點。</p>
+                </div>
+                <div class="features">
+                    <div class="hd">房型特色：</div>
+                    <div>
+                    <ul>
+                        <li><i class="fa-solid fa-umbrella-beach"></i> 帶座椅的陽台</li>
+                        <li><i class="fa-solid fa-couch me-1"></i> 客廳</li>
+                        <li><i class="fa-solid fa-utensils me-1"></i> 用餐區</li>
+                        <li><i class="fa-solid fa-bath me-1"></i> 浴缸和雨林淋浴</li>
+                    </ul>
+                    </div>
+                </div>
+                </a><div class="btnBox"><a href="rooms-classic.html" class="cardRoom d-block card-fade-in">
+                    </a><a href="rooms_detail.html" class="btn btn-primary-border">詳細介紹</a>
+                    <a class="btn btn-booking">預定房間</a>
+                    </div>
+                </div>
+            
+            </div>
+      
+    </div>
+  </div>
+          <div class="category-group" data-category="商務房" style="display: none;">
+    <div class="card-row">
+      
+                    <div class="card-box">
+            <a href="rooms-business.html" class="cardRoom d-block card-fade-in">
+                </a><div class="card"><a href="rooms-business.html" class="cardRoom d-block card-fade-in">
+                <img src="images/room/room-business.jpg" alt="商務房｜效率與舒適兼具">
+                <div class="text">
+                    <h5>商務房｜效率與舒適兼具</h5>
+                    <p>設有書桌與高速網路，提供安靜的工作空間與貼心備品，讓您的出差也能輕鬆如家。</p>
+                </div>
+                <div class="features">
+                    <div class="hd">房型特色：</div>
+                    <div>
+                    <ul>
+                        <li><i class="fa-solid fa-umbrella-beach"></i> 帶座椅的陽台</li>
+                        <li><i class="fa-solid fa-couch me-1"></i> 客廳</li>
+                        <li><i class="fa-solid fa-utensils me-1"></i> 用餐區</li>
+                        <li><i class="fa-solid fa-bath me-1"></i> 浴缸和雨林淋浴</li>
+                    </ul>
+                    </div>
+                </div>
+                </a><div class="btnBox"><a href="rooms-business.html" class="cardRoom d-block card-fade-in">
+                    </a><a href="rooms_detail.html" class="btn btn-primary-border">詳細介紹</a>
+                    <a class="btn btn-booking">預定房間</a>
+                    </div>
+                </div>
+            
+            </div>
+      
+                    <div class="card-box">
+            <a href="rooms-business.html" class="cardRoom d-block card-fade-in">
+                </a><div class="card"><a href="rooms-business.html" class="cardRoom d-block card-fade-in">
+                <img src="images/room/room-business.jpg" alt="商務房｜效率與舒適兼具">
+                <div class="text">
+                    <h5>商務房｜效率與舒適兼具</h5>
+                    <p>設有書桌與高速網路，提供安靜的工作空間與貼心備品，讓您的出差也能輕鬆如家。</p>
+                </div>
+                <div class="features">
+                    <div class="hd">房型特色：</div>
+                    <div>
+                    <ul>
+                        <li><i class="fa-solid fa-umbrella-beach"></i> 帶座椅的陽台</li>
+                        <li><i class="fa-solid fa-couch me-1"></i> 客廳</li>
+                        <li><i class="fa-solid fa-utensils me-1"></i> 用餐區</li>
+                        <li><i class="fa-solid fa-bath me-1"></i> 浴缸和雨林淋浴</li>
+                    </ul>
+                    </div>
+                </div>
+                </a><div class="btnBox"><a href="rooms-business.html" class="cardRoom d-block card-fade-in">
+                    </a><a href="rooms_detail.html" class="btn btn-primary-border">詳細介紹</a>
+                    <a class="btn btn-booking">預定房間</a>
+                    </div>
+                </div>
+            
+            </div>
+      
+                    <div class="card-box">
+            <a href="rooms-business.html" class="cardRoom d-block card-fade-in">
+                </a><div class="card"><a href="rooms-business.html" class="cardRoom d-block card-fade-in">
+                <img src="images/room/room-business.jpg" alt="商務房｜效率與舒適兼具">
+                <div class="text">
+                    <h5>商務房｜效率與舒適兼具</h5>
+                    <p>設有書桌與高速網路，提供安靜的工作空間與貼心備品，讓您的出差也能輕鬆如家。</p>
+                </div>
+                <div class="features">
+                    <div class="hd">房型特色：</div>
+                    <div>
+                    <ul>
+                        <li><i class="fa-solid fa-umbrella-beach"></i> 帶座椅的陽台</li>
+                        <li><i class="fa-solid fa-couch me-1"></i> 客廳</li>
+                        <li><i class="fa-solid fa-utensils me-1"></i> 用餐區</li>
+                        <li><i class="fa-solid fa-bath me-1"></i> 浴缸和雨林淋浴</li>
+                    </ul>
+                    </div>
+                </div>
+                </a><div class="btnBox"><a href="rooms-business.html" class="cardRoom d-block card-fade-in">
+                    </a><a href="rooms_detail.html" class="btn btn-primary-border">詳細介紹</a>
+                    <a class="btn btn-booking">預定房間</a>
+                    </div>
+                </div>
+            
+            </div>
+      
+    </div>
+  </div>
+        </div>
+        <!-- 內容 -->
+         
+      </div>
+    </div>
+  </main>
+
+  <div id="footerComponent"></div>
+  <script src="js/data/roomData.js"></script>
+  <!-- Owl Carousel JS -->
+  <script src="js/tools/owl.carousel.min.js"></script>
+  <script src="js/tools/carouselTabs.js"></script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const params = new URLSearchParams(window.location.search);
+  const category = params.get("category");
+  if (category) {
+    const target = document.querySelector(`[data-category="${category}"]`);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }
+});
+</script>
+
+
+
+<button id="scrollToTopBtn" title="回到頂部"><i class="fa-solid fa-arrow-up-long"></i></button></body>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const params = new URLSearchParams(window.location.search);
+  const category = params.get("category");
+  if (category) {
+    const target = document.querySelector(`[data-category="${category}"]`);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }
+});
+</script>
+
+</html>
+

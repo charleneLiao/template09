@@ -1,0 +1,131 @@
+@use './variables' as *;
+@use './breakpoints' as *;
+@use './mixins' as *;
+@use './animations' as *;
+
+// 掛件圓點
+.slick-dots {
+    position: absolute;
+    bottom: 2em;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    display: flex !important;
+    justify-content: center;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+        button {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: transparent;
+            border: 2px solid #fff; // ✅ 明亮白色邊框
+            opacity: 0.7;
+            transition: all 0.3s ease;
+            font-size: 0;
+            line-height: 0;
+        }
+
+        &.slick-active button {
+            background: #fff;
+            border-color: #fff; // ✅ 選中時也維持白色
+            opacity: 1;
+        }
+    }
+}
+
+.slider-controls {
+    z-index: 10;
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    background-color: $transparent;
+    border: 1px solid $white;
+    color: $white;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: rgba($secondary, 0.2); // 滑入時略微變暗
+    }
+
+    button {
+        width: 32px;
+        height: 32px;
+        border: none;
+        background: transparent;
+        color: $white;
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: transform 0.2s ease, color 0.2s ease;
+
+        &:hover {
+            color: $secondary;
+            transform: scale(1.5); // 滑入放大一點點
+        }
+
+        &:active {
+            transform: scale(0.95); // 按下稍微縮小
+            opacity: 0.8;
+        }
+    }
+}
+
+// 最新消息
+#specialOffersComponent {
+    .promo-sliderBox {
+        height: 619px;
+        .promo-slider {
+            .slick-arrow {
+                background-color: $transparent;
+                border: 1px solid $secondary;
+                color: $secondary;
+                position: absolute;
+                padding: 0.5em 1.5em;
+                z-index: 1;
+                margin-top: 10px;
+                font-size: 1.2rem;
+                transition: all 0.3s ease; // ✅ 平滑動畫
+
+                // Hover 效果
+                &:hover {
+                    background-color: $secondary;
+                    color: white;
+                    transform: translateY(-2px); // 微微上移
+                    box-shadow: 0 0.3em 0.8em rgba(0, 0, 0, 0.15);
+                }
+
+                // 點擊時稍微縮小
+                &:active {
+                    transform: scale(0.95);
+                }
+
+                &.slick-prev {
+                    bottom: -3.3em;
+                    right: 101px;
+                }
+
+                &.slick-next {
+                    bottom: -3.3em;
+                    right: 30px;
+                }
+            }
+
+        }
+    }
+    .slider-page-indicator{
+        color: $secondary;
+    }
+}

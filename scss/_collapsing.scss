@@ -1,0 +1,58 @@
+@use "./variables" as *;
+@use "./breakpoints" as *;
+@use "./animations";
+@use "./mixins" as *;
+
+#precautions{
+    margin-top: 2em;
+}
+.elem {
+  position: relative;
+  border: 1px solid $secondary;
+}
+
+.panel-title {
+  border: 1px solid $secondary;
+  width: 100%;
+  padding: 10px 20px;
+  font-size: 1em;
+  background: $secondary;
+  text-align: left;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+
+  .plus {
+    position: absolute;
+    // top: 18px;
+    right: 10px;
+    transform: translateY(-50%);
+    transition: transform 0.4s ease;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: $white;
+  }
+}
+
+.panel-content {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+  font-size: 0.95em;
+  padding: 0 20px;
+}
+
+.panel:checked ~ .panel-content {
+  padding: 14px;
+//   max-height: 500px; // 避免 layout shift（可以視情況調整）
+  opacity: 1;
+}
+
+.panel:checked ~ .plus {
+  transform: rotate(45deg);
+}
+
+.panel {
+  display: none;
+}

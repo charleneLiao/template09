@@ -1,0 +1,169 @@
+@use "./variables" as *;
+@use "./breakpoints" as *;
+@use "./animations";
+@use "./mixins" as *;
+nav {
+  justify-self: center;
+  ul.menu {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    > li {
+      position: static; // 取消 relative，讓 submenu 參考 navWrap
+
+      > a {
+        display: block;
+        padding: 0.2em 2em;
+        line-height: 45px;
+        text-decoration: none;
+        color: $white;
+        white-space: nowrap;
+        @include respond-max(1024){
+          padding: 0.2em 1.4em;
+        }
+
+        &:hover {
+          background-color: $secondary;
+          color: $text-color;
+        }
+      }
+
+      &.has-submenu {
+        .sub-menu {
+          display: none;
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 100%;
+          width: 100%;
+          // background-color: $secondary;
+          text-align: center;
+          white-space: nowrap;
+          z-index: 10;
+          background-color: rgba($secondary, 0.6);
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+          animation: slideDown 0.4s ease;
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
+
+          li {
+            display: inline-block;
+            @include respond-max(md) {
+              width: 50%;
+            }
+            a {
+              display: block;
+              padding: 0.5rem 3em;
+              text-decoration: none;
+              color: $black;
+              @include respond-max(md) {
+                color: $text-gray01;
+              }
+
+              &:hover {
+                background-color: rgba($secondary, 0.9);
+                color: $black;
+              }
+            }
+          }
+          @include respond-max(md) {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            > li {
+              width: 100%; // 預設手機版 1 個一列
+              padding: 0.5rem;
+
+              @media (min-width: 768px) {
+                width: 50%; // md 以上兩欄
+              }
+
+              a {
+                display: block;
+                padding: 0.5rem 1rem;
+                background: #fff;
+                border-radius: 4px;
+                text-align: center;
+              }
+            }
+          }
+        }
+
+        &.open .sub-menu,
+        &:hover .sub-menu {
+          display: block;
+        }
+      }
+    }
+  }
+}
+// 📱 手機/平板選單展開樣式
+
+@include respond-max(md) {
+  nav.menu-open {
+    ul.menu {
+      flex-direction: column;
+
+      > li {
+        width: 100%;
+        a {
+          color: $text-gray01;
+          text-shadow: none !important;
+        }
+
+        &.has-submenu {
+          .sub-menu {
+            display: none;
+            flex-direction: column;
+            padding: 0.5rem 1rem;
+            background-color: rgba($white, 0.5);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: none;
+
+            > li {
+              width: 100%; // ✅ 垂直排列
+              a {
+                display: block;
+                padding: 0.5rem 1rem;
+                background: $white;
+                text-align: left;
+                color: $text-gray01;
+              }
+            }
+          }
+
+          &.open .sub-menu {
+            display: flex;
+            position: initial;
+          }
+        }
+      }
+    }
+  }
+  // ✅ 僅點擊展開：禁止 hover 展開 submenu
+  .menu li.has-submenu:hover > .sub-menu {
+    display: none !important;
+  }
+
+  // ✅ 僅點擊旋轉：禁止 hover 旋轉箭頭
+  .menu li.has-submenu:hover > a i.fa-chevron-down {
+    transform: none !important;
+  }
+
+  // ✅ 點擊後才旋轉箭頭
+  .menu li.has-submenu.open > a i.fa-chevron-down {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+  }
+
+  // ✅ open 狀態下才顯示 submenu
+  .menu li.has-submenu.open > .sub-menu {
+    display: flex !important;
+  }
+}

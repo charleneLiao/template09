@@ -1,0 +1,110 @@
+@use "./variables" as *;
+@use "./breakpoints" as *;
+@use "./mixins" as *;
+
+a {
+  color: $text-color;
+  &:hover{
+    text-decoration: none;
+  }
+}
+
+.row {
+  gap: 0;
+  --bs-gutter-x: 0;
+}
+
+.container-fluid {
+  padding: 0;
+}
+.container {
+  @include respond-max(md) {
+    padding: 0 1em;
+  }
+}
+.spinner-color {
+  background-color: $secondary;
+}
+
+.hd-title {
+  // padding: 0.5em 0 0.8em 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: left;
+  color: $text-color;
+  letter-spacing: 0.1em;
+  position: relative;
+  width: 100%;
+  font-family: "system-ui", serif;
+  font-size: 2rem;
+  font-weight: normal;
+  margin-bottom: 1em;
+}
+
+#specialOffersComponent {
+}
+
+section {
+  padding: 2em 0;
+}
+#parallaxImageComponent {
+  height: 80vh;
+  position: relative;
+  z-index: 1;
+  .parallax-wrapper {
+    position: relative;
+    height: 100%;
+    overflow: hidden; // 可控制不要超出
+  }
+
+  .parallax-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120%; // 給 Rellax 移動空間
+    background-image: url("../images/banner/banner04.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+  }
+}
+
+
+
+#scrollToTopBtn {
+  border: 1px solid $secondary02;
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 999;
+  width: 2.3em;
+  height: 2.3em;
+  background: transparent;
+  color: $secondary02;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  i {
+    position: relative;
+    &::before {
+      top: -41px;
+      position: absolute;
+      right: -8px;
+    }
+  }
+  &:hover {
+    background: rgba($secondary02, 0.2);
+  }
+  @include respond-max(sm){
+    bottom: 8rem;
+  }
+}
+
+#scrollToTopBtn.show {
+  opacity: 1;
+  visibility: visible;
+}

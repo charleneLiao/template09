@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TESTO HOTEL</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/flatpickr.min.css" />
+    <link rel="stylesheet" href="css/material_blue.css" />
+    <link rel="stylesheet" href="css/slick.css" />
+    <link rel="stylesheet" href="fonts/fontawesome/css/all.css" />
+    <link rel="stylesheet" href="css/material-symbols-outlined.css" />
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/aos.css" />
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+
+    <!-- 第三方 JS（不建議用 defer）-->
+    <script src="js/include.js" defer></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/flatpickr.js"></script>
+    <script src="js/zh.js"></script>
+    <script src="js/include.js" defer></script>
+    <script src="js/tools/goTop.js" defer></script>
+    <script src="js/aos.js"></script>
+    <script src="js/modules/headerComponent.js" defer></script>
+    <script src="js/modules/pageHeader.js" defer></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (typeof loadHeader === "function") loadHeader();
+        if (typeof loadpageHeader === "function") loadpageHeader();
+      });
+    </script>
+  </head>
+
+  <body data-page="news">
+    <div id="headerComponent">
+      <header class="gn-header">
+        <div class="navWrap">
+          <div class="logo">
+            <a href="index.html">
+              <img src="images/ft_logo.svg" alt="LOGO" height="30" />
+            </a>
+          </div>
+          <button class="menu-toggle d-lg-none">
+            <div id="nav-icon3">
+              <span></span><span></span><span></span><span></span>
+            </div>
+          </button>
+          <nav>
+            <ul class="menu">
+              <li class="has-submenu">
+                <a href="news.html"
+                  >最新消息 <i class="fa-solid fa-chevron-down"></i
+                ></a>
+                <ul class="sub-menu">
+                  <li><a href="news.html?category=住宿優惠">住宿優惠</a></li>
+                  <li><a href="news.html?category=餐飲優惠">餐飲優惠</a></li>
+                  <li><a href="news.html?category=活動訊息">活動訊息</a></li>
+                  <li><a href="news.html?category=藝文活動">藝文活動</a></li>
+                </ul>
+              </li>
+              <li class="has-submenu">
+                <a href="rooms.html"
+                  >房型介紹 <i class="fa-solid fa-chevron-down"></i
+                ></a>
+                <ul class="sub-menu">
+                  <li><a href="rooms.html?category=尊爵VIP">尊爵VIP</a></li>
+                  <li><a href="rooms.html?category=豪華房">豪華房</a></li>
+                  <li><a href="rooms.html?category=經典房">經典房</a></li>
+                  <li><a href="rooms.html?category=商務房">商務房</a></li>
+                </ul>
+              </li>
+              <li><a href="about.html">飯店介紹</a></li>
+              <li><a href="facility.html">設施介紹</a></li>
+              <li><a href="step1.html">線上訂房</a></li>
+              <li><a href="location.html">聯絡我們</a></li>
+            </ul>
+          </nav>
+          <div class="nav-right">
+            <div class="lang-selector">
+              <div id="google_translate_element"></div>
+            </div>
+            <!-- ✅ 桌機版登入按鈕 -->
+            <a
+              id="openMemberModalBtn"
+              href="#"
+              class="d-none d-lg-inline-block"
+              title="加入會員"
+            >
+              <i class="fa-regular fa-circle-user"></i>
+            </a>
+            <a
+              id="openMemberModalBtnMobile"
+              href="#"
+              class="d-lg-none"
+              title="加入會員"
+            >
+              <i class="fa-regular fa-circle-user"></i>
+            </a>
+          </div>
+        </div>
+      </header>
+    </div>
+    <div id="pageHeader">
+      <section>
+        <div
+          class="hd title text-center"
+          data-aos="fade-right"
+          data-aos-offset="300"
+          data-aos-easing="ease-in-sine"
+        >
+          <div class="titleBox">
+            <p>KAOHSIUNG</p>
+            <h1>NEWS</h1>
+          </div>
+          <img src="images/banner/BannerPhoto01.jpg" alt="" height="23" />
+        </div>
+        <div class="text">
+          <a href="javascript:void(0);" class="goBack" aria-label="回上一頁">
+            <i class="fa-solid fa-arrow-left-long"></i>
+            回上一頁
+          </a>
+          掌握最新活動與優惠，讓您的住宿體驗更加豐富。
+        </div>
+      </section>
+    </div>
+
+    <main>
+      <div class="container mt-3">
+        <div class="content">
+          <div class="carousel-nav d-flex justify-content-center gap-3 mb-10">
+            <a href="#" class="active" data-category="住宿優惠">住宿優惠</a>
+            <a href="#" data-category="餐飲優惠">餐飲優惠</a>
+            <a href="#" data-category="活動訊息">活動訊息</a>
+            <a href="#" data-category="藝文活動">藝文活動</a>
+          </div>
+          <div id="categoryContainer" class="">
+            <div
+              class="category-group"
+              data-category="住宿優惠"
+              style="display: block"
+            >
+              <div class="row g-5">
+                <a
+                  href="news_detail.html"
+                  class="cardAnime col-12 col-md-12 col-lg-6 card-fade-in"
+                >
+                  <div class="card">
+                    <div class="imgBox">
+                      <img
+                        src="images/news/news-bar.jpg"
+                        alt="入住即享觀景酒吧9折券"
+                      />
+                    </div>
+                    <div class="card-body">
+                      <div class="date-mark">
+                        <span class="date">4.2</span>
+                        <span class="circle"
+                          ><span class="weekday">三</span></span
+                        >
+                      </div>
+
+                      <h5 class="card-title">入住即享觀景酒吧9折券</h5>
+                      <p class="card-text">
+                        凡入住即贈觀景酒吧9折優惠券，夜晚小酌同時飽覽城市夜景，享受不一樣的放鬆時刻。
+                      </p>
+                    </div>
+                  </div>
+                </a>
+
+                <a
+                  href="news_detail.html"
+                  class="cardAnime col-12 col-md-12 col-lg-6 card-fade-in"
+                >
+                  <div class="card">
+                    <div class="imgBox">
+                      <img
+                        src="https://www.taiwan.net.tw/userfiles/image/2018photo/heighway.jpg"
+                        alt="入住即贈台灣高鐵折價券"
+                      />
+                    </div>
+                    <div class="card-body">
+                      <div class="date-mark">
+                        <span class="date">4.1</span>
+                        <span class="circle"
+                          ><span class="weekday">二</span></span
+                        >
+                      </div>
+
+                      <h5 class="card-title">入住即贈台灣高鐵折價券</h5>
+                      <p class="card-text">
+                        旅行從抵達就開始有驚喜！凡預訂本飯店任一房型，即可獲得高鐵NT$100折價券，輕鬆節省交通費，旅程更愉快。
+                      </p>
+                    </div>
+                  </div>
+                </a>
+
+                <a
+                  href="news_detail.html"
+                  class="cardAnime col-12 col-md-12 col-lg-6 card-fade-in"
+                >
+                  <div class="card">
+                    <div class="imgBox">
+                      <img
+                        src="images/news/news-hotel.jpg"
+                        alt="連住兩晚享第2晚半價"
+                      />
+                    </div>
+                    <div class="card-body">
+                      <div class="date-mark">
+                        <span class="date">3.30</span>
+                        <span class="circle"
+                          ><span class="weekday">一</span></span
+                        >
+                      </div>
+
+                      <h5 class="card-title">連住兩晚享第2晚半價</h5>
+                      <p class="card-text">
+                        連續入住兩晚即可享有第2晚五折優惠，讓你省更多、玩更久，輕鬆延長假期的美好時光！
+                      </p>
+                    </div>
+                  </div>
+                </a>
+
+                <a
+                  href="news_detail.html"
+                  class="cardAnime col-12 col-md-12 col-lg-6 card-fade-in"
+                >
+                  <div class="card">
+                    <div class="imgBox">
+                      <img
+                        src="images/news/news-flower.jpg"
+                        alt="情侶入住送紅酒與花束"
+                      />
+                    </div>
+                    <div class="card-body">
+                      <div class="date-mark">
+                        <span class="date">3.29</span>
+                        <span class="circle"
+                          ><span class="weekday">日</span></span
+                        >
+                      </div>
+
+                      <h5 class="card-title">情侶入住送紅酒與花束</h5>
+                      <p class="card-text">
+                        即日起至七夕，預訂雙人房即贈進口紅酒與精緻花束，為你的浪漫時光增添濃情蜜意。
+                      </p>
+                    </div>
+                  </div>
+                </a>
+
+                <a
+                  href="news_detail.html"
+                  class="cardAnime col-12 col-md-12 col-lg-6 card-fade-in"
+                >
+                  <div class="card">
+                    <div class="imgBox">
+                      <img
+                        src="images/news/news-rent.jpg"
+                        alt="免費腳踏車租借服務"
+                      />
+                    </div>
+                    <div class="card-body">
+                      <div class="date-mark">
+                        <span class="date">3.28</span>
+                        <span class="circle"
+                          ><span class="weekday">六</span></span
+                        >
+                      </div>
+
+                      <h5 class="card-title">免費腳踏車租借服務</h5>
+                      <p class="card-text">
+                        入住期間免費提供腳踏車租借服務，騎乘漫遊在地巷弄，體驗最地道的城市風景。
+                      </p>
+                    </div>
+                  </div>
+                </a>
+
+                <a
+                  href="news_detail.html"
+                  class="cardAnime col-12 col-md-12 col-lg-6 card-fade-in"
+                >
+                  <div class="card">
+                    <div class="imgBox">
+                      <img
+                        src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb"
+                        alt="夏季雙人入住優惠，享免費早餐"
+                      />
+                    </div>
+                    <div class="card-body">
+                      <div class="date-mark">
+                        <span class="date">3.27</span>
+                        <span class="circle"
+                          ><span class="weekday">五</span></span
+                        >
+                      </div>
+
+                      <h5 class="card-title">夏季雙人入住優惠，享免費早餐</h5>
+                      <p class="card-text">
+                        陽光灑落的清晨，用豐盛的自助早餐展開旅程！即日起至8月31日，凡預訂雙人房，皆享免費早餐與延遲退房，讓假期慢慢過。
+                      </p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div
+              class="category-group"
+              data-category="餐飲優惠"
+              style="display: none"
+            >
+              <div class="row g-5">
+                <a
+                  href="news_detail.html"
+                  class="cardAnime col-12 col-md-12 col-lg-6"
+                >
+                  <div class="card">
+                    <div class="imgBox">
+                      <img
+                        src="https://plus.unsplash.com/premium_photo-1695635984829-2e5bf1f7af60?q=80&amp;w=2070"
+                        alt="週年慶住房送晚餐套餐"
+                      />
+                    </div>
+                    <div class="card-body">
+                      <div class="date-mark">
+                        <span class="date">4.2</span>
+                        <span class="circle"
+                          ><span class="weekday">三</span></span
+                        >
+                      </div>
+
+                      <h5 class="card-title">週年慶住房送晚餐套餐</h5>
+                      <p class="card-text">
+                        舌尖上的假期盛宴！慶祝週年，凡平日入住即贈雙人晚餐套餐，美味饗宴為您的旅程添上圓滿句點。
+                      </p>
+                    </div>
+                  </div>
+                </a>
+
+                <a
+                  href="news_detail.html"
+                  class="cardAnime col-12 col-md-12 col-lg-6"
+                >
+                  <div class="card">
+                    <div class="imgBox">
+                      <img
+                        src="images/news/news-welcome.jpg"
+                        alt="入住即享迎賓飲品"
+                      />
+                    </div>
+                    <div class="card-body">
+                      <div class="date-mark">
+                        <span class="date">4.1</span>
+                        <span class="circle"
+                          ><span class="weekday">二</span></span
+                        >
+                      </div>
+
+                      <h5 class="card-title">入住即享迎賓飲品</h5>
+                      <p class="card-text">
+                        熱情迎接每位旅人，凡入住即可享受精選迎賓飲品一杯，啟動美好假期的第一站。
+                      </p>
+                    </div>
+                  </div>
+                </a>
+
+                <a
+                  href="news_detail.html"
+                  class="cardAnime col-12 col-md-12 col-lg-6"
+                >
+                  <div class="card">
+                    <div class="imgBox">
+                      <img
+                        src="images/news/news-tea.jpg"
+                        alt="夏日午後茶免費招待"
+                      />
+                    </div>
+                    <div class="card-body">
+                      <div class="date-mark">
+                        <span class="date">3.30</span>
+                        <span class="circle"
+                          ><span class="weekday">一</span></span
+                        >
+                      </div>
+
+                      <h5 class="card-title">夏日午後茶免費招待</h5>
+                      <p class="card-text">
+                        沁涼午後時光，凡週末入住即享雙人精緻下午茶組合，甜點與茶香交織的幸福午後等您來體驗。
+                      </p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div
+              class="category-group"
+              data-category="活動訊息"
+              style="display: none"
+            >
+              <div class="row g-5">
+                <a
+                  href="news_detail.html"
+                  class="cardAnime col-12 col-md-12 col-lg-6"
+                >
+                  <div class="card">
+                    <div class="imgBox">
+                      <img
+                        src="https://plus.unsplash.com/premium_photo-1683120849747-589e599acd61?q=80&amp;w=2070"
+                        alt="三天兩夜旅遊行程推薦"
+                      />
+                    </div>
+                    <div class="card-body">
+                      <div class="date-mark">
+                        <span class="date">4.2</span>
+                        <span class="circle"
+                          ><span class="weekday">三</span></span
+                        >
+                      </div>
+
+                      <h5 class="card-title">三天兩夜旅遊行程推薦</h5>
+                      <p class="card-text">
+                        高雄必玩景點一次包辦！入住本飯店可搭配港灣導覽行程，帶你走訪駁二、旗津與蓮池潭，拍出滿滿旅遊回憶。
+                      </p>
+                    </div>
+                  </div>
+                </a>
+
+                <a
+                  href="news_detail.html"
+                  class="cardAnime col-12 col-md-12 col-lg-6"
+                >
+                  <div class="card">
+                    <div class="imgBox">
+                      <img
+                        src="images/news/news-happykid.jpg"
+                        alt="親子友善！兒童免費入住專案"
+                      />
+                    </div>
+                    <div class="card-body">
+                      <div class="date-mark">
+                        <span class="date">4.1</span>
+                        <span class="circle"
+                          ><span class="weekday">二</span></span
+                        >
+                      </div>
+
+                      <h5 class="card-title">親子友善！兒童免費入住專案</h5>
+                      <p class="card-text">
+                        孩子的笑容，是旅程最美的風景！12歲以下兒童免費加床，再送遊戲禮包，全家出遊超值又開心。
+                      </p>
+                    </div>
+                  </div>
+                </a>
+
+                <a
+                  href="news_detail.html"
+                  class="cardAnime col-12 col-md-12 col-lg-6"
+                >
+                  <div class="card">
+                    <div class="imgBox">
+                      <img
+                        src="images/news/news-balloon.jpg"
+                        alt="親子同樂！周末氣球魔術秀"
+                      />
+                    </div>
+                    <div class="card-body">
+                      <div class="date-mark">
+                        <span class="date">3.30</span>
+                        <span class="circle"
+                          ><span class="weekday">一</span></span
+                        >
+                      </div>
+
+                      <h5 class="card-title">親子同樂！周末氣球魔術秀</h5>
+                      <p class="card-text">
+                        每週六下午限定演出，魔術師與可愛氣球造型陪伴孩子歡樂時光，適合全家一同參與！
+                      </p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div
+              class="category-group"
+              data-category="藝文活動"
+              style="display: none"
+            >
+              <div class="row g-5">
+                <a
+                  href="news_detail.html"
+                  class="cardAnime col-12 col-md-12 col-lg-6"
+                >
+                  <div class="card">
+                    <div class="imgBox">
+                      <img
+                        src="images/news/news-candle.jpg"
+                        alt="在地香氛蠟燭手作體驗"
+                      />
+                    </div>
+                    <div class="card-body">
+                      <div class="date-mark">
+                        <span class="date">4.2</span>
+                        <span class="circle"
+                          ><span class="weekday">三</span></span
+                        >
+                      </div>
+
+                      <h5 class="card-title">在地香氛蠟燭手作體驗</h5>
+                      <p class="card-text">
+                        親手製作專屬香氛蠟燭，帶回旅行的美好記憶。每週日下午開課，名額有限，敬請提前報名。
+                      </p>
+                    </div>
+                  </div>
+                </a>
+
+                <a
+                  href="news_detail.html"
+                  class="cardAnime col-12 col-md-12 col-lg-6"
+                >
+                  <div class="card">
+                    <div class="imgBox">
+                      <img
+                        src="images/news/news-music.jpg"
+                        alt="週末現場音樂會之夜"
+                      />
+                    </div>
+                    <div class="card-body">
+                      <div class="date-mark">
+                        <span class="date">4.1</span>
+                        <span class="circle"
+                          ><span class="weekday">二</span></span
+                        >
+                      </div>
+
+                      <h5 class="card-title">週末現場音樂會之夜</h5>
+                      <p class="card-text">
+                        沉浸在音樂的魅力中！每週五晚間於戶外花園舉辦現場音樂會，邀您共度悠揚夜晚。
+                      </p>
+                    </div>
+                  </div>
+                </a>
+
+                <a
+                  href="news_detail.html"
+                  class="cardAnime col-12 col-md-12 col-lg-6"
+                >
+                  <div class="card">
+                    <div class="imgBox">
+                      <img
+                        src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620"
+                        alt="在地藝文展覽體驗"
+                      />
+                    </div>
+                    <div class="card-body">
+                      <div class="date-mark">
+                        <span class="date">3.30</span>
+                        <span class="circle"
+                          ><span class="weekday">一</span></span
+                        >
+                      </div>
+
+                      <h5 class="card-title">在地藝文展覽體驗</h5>
+                      <p class="card-text">
+                        欣賞在地藝術展覽，感受文化氛圍！飯店周邊藝文空間合作展出，住客憑房卡即可免費入場。
+                      </p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div id="footerComponent">
+      <footer class="footerComponent py-2">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 mb-5">
+              <a href="index.html"
+                ><img
+                  src="images/ft_logo.svg"
+                  alt="logo"
+                  class="logo img-fluid mb-3"
+              /></a>
+            </div>
+            <div class="col-md-4 mb-4 mb-md-0">
+              <ul class="ftLink">
+                <li><a href="news.html">最新消息</a></li>
+                <li><a href="rooms.html">房型介紹</a></li>
+                <li><a href="about.html">飯店介紹</a></li>
+                <li><a href="facility.html">設施介紹</a></li>
+                <li><a href="location.html">聯絡我們</a></li>
+              </ul>
+            </div>
+
+            <div class="col-md-4 mb-4 mb-md-0">
+              <div class="row">
+                <div class="section-label">相關飯店</div>
+
+                <div class="col-6 mb-2">
+                  <strong>特斯德酒店</strong>
+                  <ul class="list-unstyled small">
+                    <li><a href="#">新竹特斯德酒店</a></li>
+
+                    <li><a href="#">知本特斯德酒店</a></li>
+
+                    <li><a href="#">礁溪特斯德酒店</a></li>
+
+                    <li><a href="#">台北特斯德酒店</a></li>
+
+                    <li><a href="#">北投特斯德酒店</a></li>
+                  </ul>
+                </div>
+
+                <div class="col-6 mb-2">
+                  <strong>特斯德酒店</strong>
+                  <ul class="list-unstyled small">
+                    <li><a href="#">宜蘭傳藝特斯德酒店</a></li>
+
+                    <li><a href="#">特斯德大飯店</a></li>
+                  </ul>
+                </div>
+
+                <div class="col-6 mb-2">
+                  <strong>特斯德會館</strong>
+                  <ul class="list-unstyled small">
+                    <li><a href="#">特斯德會館台北南西</a></li>
+
+                    <li><a href="#">特斯德會館台北林森</a></li>
+                  </ul>
+                </div>
+
+                <div class="col-6 mb-2">
+                  <strong>海外酒店</strong>
+                  <ul class="list-unstyled small">
+                    <li><a href="#">模里西斯帝王酒店</a></li>
+
+                    <li><a href="#">尼加拉瓜馬拿瓜皇冠廣場飯店</a></li>
+
+                    <li><a href="#">帛琉特斯德酒店</a></li>
+
+                    <li><a href="#">西貢特斯德酒店</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 text-md-end text-center">
+              <div class="section-label d-flex justify-content-end">
+                我們的位置
+              </div>
+              <ul class="list-unstyled small">
+                <li class="fw-bold fs-6 mb-1">高雄特斯德酒店</li>
+                <li class="mb-1">高雄市新光路38號24F-6</li>
+                <li class="mb-1">訂房專線：+886-7-968-2715</li>
+                <li>傳真號碼：+886-7-952-2221</li>
+              </ul>
+              <h6 class="fw-bold mb-3">Follow Us</h6>
+              <div class="socialBox mb-3">
+                <a
+                  target="_blank"
+                  href="https://www.facebook.com/85SkyTowerHotel"
+                  class="text-dark fs-5 me-3"
+                  aria-label="Facebook"
+                >
+                  <i class="fa-brands fa-facebook"></i>
+                </a>
+
+                <a
+                  target="_blank"
+                  href="http://www.weibo.com/1854503391/profile?topnav=1&amp;wvr=3.6"
+                  class="text-dark fs-5 me-3"
+                  aria-label="YouTube"
+                >
+                  <i class="fa-brands fa-youtube"></i>
+                </a>
+
+                <a
+                  target="_blank"
+                  href="https://plus.google.com/u/0/b/110324599943771007016"
+                  class="text-dark fs-5 me-3"
+                  aria-label="Google+"
+                >
+                  <i class="fa-brands fa-google"></i>
+                </a>
+              </div>
+              <div class="btnWrap">
+                <button class="btn">攝影諮詢</button
+                ><button class="btn">預定房間</button>
+              </div>
+            </div>
+          </div>
+          <div class="ft-des text-center small mt-5">
+            <p class="mb-1">
+              <a href="#" class="me-3">關於特斯德酒店</a
+              ><a href="#" class="me-3">隱私權政策</a
+              ><a href="#" class="me-3">連絡我們</a>
+              <span>Copyright Easytravel</span>
+            </p>
+            <p class="mb-0">
+              網頁中使用之飯店照片皆由四方通行拍攝，如有任何的拍攝服務需求，請與我們聯絡
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="js/data/newsData.js"></script>
+    <script src="js/tools/owl.carousel.min.js"></script>
+    <script src="js/tools/carouselTabs.js"></script>
+    <script>
+      if ("WebSocket" in window) {
+        (function () {
+          function refreshCSS() {
+            var sheets = [].slice.call(document.getElementsByTagName("link"));
+            var head = document.getElementsByTagName("head")[0];
+            for (var i = 0; i < sheets.length; ++i) {
+              var elem = sheets[i];
+              var parent = elem.parentElement || head;
+              parent.removeChild(elem);
+              var rel = elem.rel;
+              if (
+                (elem.href && typeof rel != "string") ||
+                rel.length == 0 ||
+                rel.toLowerCase() == "stylesheet"
+              ) {
+                var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, "");
+                elem.href =
+                  url +
+                  (url.indexOf("?") >= 0 ? "&" : "?") +
+                  "_cacheOverride=" +
+                  new Date().valueOf();
+              }
+              parent.appendChild(elem);
+            }
+          }
+          var protocol =
+            window.location.protocol === "http:" ? "ws://" : "wss://";
+          var address =
+            protocol + window.location.host + window.location.pathname + "/ws";
+          var socket = new WebSocket(address);
+          socket.onmessage = function (msg) {
+            if (msg.data == "reload") window.location.reload();
+            else if (msg.data == "refreshcss") refreshCSS();
+          };
+          if (
+            sessionStorage &&
+            !sessionStorage.getItem("IsThisFirstTime_Log_From_LiveServer")
+          ) {
+            console.log("Live reload enabled.");
+            sessionStorage.setItem("IsThisFirstTime_Log_From_LiveServer", true);
+          }
+        })();
+      } else {
+        console.error(
+          "Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading."
+        );
+      }
+      // ]]>
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const params = new URLSearchParams(window.location.search);
+        const category = params.get("category");
+        if (category) {
+          const target = document.querySelector(
+            `[data-category="${category}"]`
+          );
+          if (target) {
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        }
+      });
+    </script>
+
+    <button id="scrollToTopBtn" title="回到頂部" class="">
+      <i class="fa-solid fa-arrow-up-long"></i>
+    </button>
+  </body>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const params = new URLSearchParams(window.location.search);
+      const category = params.get("category");
+      if (category) {
+        const target = document.querySelector(`[data-category="${category}"]`);
+        if (target) {
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }
+    });
+  </script>
+</html>

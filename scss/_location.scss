@@ -1,0 +1,21 @@
+@use "./variables" as *;
+@use "./breakpoints" as *;
+@use "./animations";
+@use "./mixins" as *;
+
+#location {
+  .ratio::before{
+    display: initial;
+  }
+  .row {
+    --bs-gutter-x: 0;
+  }
+  .map {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2em;
+  }
+}

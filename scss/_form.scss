@@ -1,0 +1,130 @@
+@use "./variables" as *;
+@use "./breakpoints" as *;
+@use "./animations";
+@use "./mixins" as *;
+
+// 改Bootstrap原生
+.form-control:disabled,
+.form-control[readonly] {
+  background-color: #e9e6da;
+}
+
+.form-control {
+  font-size: 1.25em;
+  letter-spacing: 1px;
+  border-radius: 2em;
+}
+#loginForm,
+#registerForm {
+  input,
+  select {
+    border-radius: 2em;
+    border-color: $secondary;
+    &:focus {
+      border-color: $secondary !important;
+      box-shadow: 0 0 0 0.25rem rgba($primary, 0.25) !important;
+    }
+  }
+}
+
+// 時機選取器-主題色
+span.flatpickr-weekday {
+  color: $secondary !important;
+  font-weight: normal !important;
+}
+.flatpickr-months .flatpickr-month,
+.flatpickr-current-month .flatpickr-monthDropdown-months,
+span.flatpickr-weekday,
+.flatpickr-weekdays,
+.flatpickr-day.selected {
+  background-color: $primary !important;
+}
+.flatpickr-day.endRange.nextMonthDay,
+.flatpickr-day.endRange {
+  background-color: $primary !important;
+  border-color: $primary !important;
+}
+.flatpickr-day.inRange {
+  background-color: $secondary !important;
+  border-color: $secondary !important;
+  box-shadow: -5px 0 0 $secondary, 5px 0 0 $secondary !important;
+}
+.flatpickr-day.endRange.nextMonthDay {
+  background-color: $secondary !important;
+  border-color: $secondary !important;
+}
+.flatpickr-day.selected.startRange + .endRange:not(:nth-child(7n + 1)),
+.flatpickr-day.startRange.startRange + .endRange:not(:nth-child(7n + 1)),
+.flatpickr-day.endRange.startRange + .endRange:not(:nth-child(7n + 1)) {
+  -webkit-box-shadow: -10px 0 0 $secondary !important;
+  box-shadow: -10px 0 0 $secondary !important;
+}
+
+.flatpickr-day.selected {
+  border-color: $primary !important;
+}
+
+.flatpickr-calendar.arrowTop:after {
+  border-bottom-color: $primary !important;
+}
+
+.specialOffersComponent
+  .container
+  .promo-slider
+  .slick-dots
+  li.slick-active
+  button {
+  background-color: #e9c228;
+}
+
+// 會員登入
+.modal-header {
+  .btn-close {
+    padding: 0;
+    margin: 0;
+  }
+}
+.loginForm {
+    .btn{
+        width: 50%;
+        margin: 0 auto;
+        border-radius: 2em;
+    }
+  input,
+  select {
+    font-size: 1em;
+  }
+
+  h5 {
+    border-bottom: 1px solid $primary;
+    padding: 0 6px 4px 0;
+    width: 85%;
+    margin: 0 auto;
+  }
+
+  .tab-switch {
+    border-radius: 2em 2em 0 0;
+    font-size: 0.7em;
+    font-weight: normal;
+    padding: 0.5em 2em;
+  }
+  .text-primary,
+  .text-warning {
+    color: $secondary01 !important;
+  }
+  // 選定tab
+  .text-danger {
+    color: $white !important;
+    background-color: rgba($secondary02, 1);
+  }
+
+  .btn-outline-secondary {
+    background-color: $white;
+    color: $secondary02;
+    border: 1px solid $secondary02;
+  }
+
+  .btn-change {
+    background-color: rgba($primary, 0.3);
+  }
+}

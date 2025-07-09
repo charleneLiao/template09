@@ -1,0 +1,62 @@
+@use "./variables" as *;
+@use "./breakpoints" as *;
+@use "./animations";
+@use "./mixins" as *;
+
+#ourStoryComponent {
+  color: $black;
+
+  section {
+    padding: 0;
+    h5,
+    h2,
+    p {
+      font-weight: normal;
+    }
+    h5,
+    h2 {
+      text-align: left;
+    }
+  }
+  .imgBox {
+    margin-right: 2.5em;
+    border-radius: 50%;
+    display: block;
+    height: 20em;
+    overflow: hidden;
+    object-fit: cover;
+    object-position: center;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+  }
+
+  .bg-fluidSecondary {
+    background-color: $secondary;
+    padding: 6em 0em 5em 0;
+    font-weight: normal;
+    .c-richText {
+      box-sizing: border-box;
+      width: 100%;
+    }
+
+    .flex-wrap {
+      width: 80%;
+      margin: 0 auto;
+    }
+  }
+
+  @include respond-max(md) {
+    .bg-fluidSecondary {
+      padding: 2em;
+      .flex-wrap {
+        width: 90vw;
+      }
+    }
+  }
+}

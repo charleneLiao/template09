@@ -1,0 +1,164 @@
+@use "./variables" as *;
+@use "./base" as *;
+@use "./breakpoints" as *;
+@use "./mixins" as *;
+@use "./button" as *;
+@use "./animations" as *;
+
+footer {
+  background-color: $dark;
+  color: $white;
+  padding: 4em;
+  bottom: 0;
+  width: 100svw;
+  @include respond-max(sm){
+    padding: 2em 3em 2em 1em;
+  }
+
+  a {
+    color: $white;
+    text-decoration: none;
+    &:hover {
+      color: $primary;
+      text-decoration: underline;
+    }
+  }
+  .hd {
+    padding: 1em 0 1em 0;
+    margin-bottom: 1em;
+    font-weight: bold;
+    color: $primary;
+  }
+  .ct {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+    .col-lg-1, .col-1{
+      writing-mode: vertical-rl;
+      @include respond-max(md){
+
+      }
+    }
+    ul {
+      list-style: none;
+      padding-left: 2em;
+      display: flex;
+      @include respond-max(sm){
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: flex-start;
+      }
+      li {
+        width: 90px;
+        margin-right: 2svw;
+        @include respond-max(sm){
+          // width: 60px;
+        }
+        a {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          text-align: center;
+        }
+        p {
+          font-size: 0.9em;
+        }
+      }
+    }
+    .otherIcon {
+      background-color: $white;
+      color: $primary;
+      border-radius: 1.1em;
+      padding: 0.6em 0;
+      font-size: 2em;
+      margin-bottom: 9px;
+    }
+  }
+  .ft {
+    .socialBox {
+      margin-bottom: 2em;
+      a {
+        border-radius: 1em;
+        background: rgba($white, 0.8);
+        color: $primary;
+        text-align: center;
+        width: 3em;
+        height: 3em;
+        display: inline-flex; // ✅ 用 flexbox 排版
+        align-items: center; // ✅ 垂直置中
+        justify-content: center;
+        margin-right: 0.5em;
+        i {
+        }
+        &:hover{
+          text-decoration: none;
+          background: rgba($white, 1);
+        }
+      }
+    }
+    .btnWrap {
+      display: flex;
+      gap: 1em;
+      .btn {
+        @include auto-button($primary);
+        background: transparent;
+        border: 1px solid $primary;
+        color: $primary;
+        border-radius: 1em;
+      }
+    }
+  }
+  .ft_link {
+    .ct {
+      ul {
+        padding: 0;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        li {
+          width: 43%; // 每行顯示兩個
+          box-sizing: border-box;
+          color: $primary;
+          font-weight: bold;
+          position: relative;
+          a {
+            color: $white;
+            font-weight: initial;
+            text-align: left;
+
+            &:hover {
+              padding-left: 1em;
+              text-decoration: none;
+              &::before {
+                content: "．";
+                color: $primary;
+                position: absolute;
+                padding-right: -11em;
+                left: -12px;
+                top: -21px;
+                font-size: 2.5em;
+                transform: translateX(-10px); // 初始狀態
+                animation: dotSlideIn 0.3s ease-out forwards; // ✅ 執行動畫
+              }
+            }
+          }
+        }
+        .title {
+          margin: 0 0 0.5em 0;
+          display: block;
+        }
+        ul {
+          padding: 0;
+          margin-bottom: 1em;
+          li {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  .ft-des{
+    color: $gray-secondary;
+  }
+}

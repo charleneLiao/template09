@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TESTO HOTEL</title>
+        <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/flatpickr.min.css" />
+    <link rel="stylesheet" href="css/material_blue.css" />
+    <link rel="stylesheet" href="css/slick.css" />
+    <link rel="stylesheet" href="fonts/fontawesome/css/all.css" />
+    <link rel="stylesheet" href="css/material-symbols-outlined.css" />
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/aos.css"/>
+    <link rel="stylesheet" href="css/owl.carousel.min.css"/>
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <!-- 外掛 JS -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/flatpickr.js"></script>
+    <script src="js/zh.js"></script>
+
+    <!-- 自訂功能 -->
+    <script src="js/include.js" defer></script>
+    <script src="js/tools/goTop.js" defer></script>
+    <script src="js/tools/toggle.js" defer></script>
+    <script src="js/modules/headerComponent.js" defer></script>
+    <script src="js/modules/pageheaderComponent.js" defer></script>
+    <script src="js/modules/footerComponent.js" defer></script>
+    <script src="js/data/precautions.js" defer></script>
+    <script src="js/tools/goBack.js"></script>
+    
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        if (typeof loadHeader === "function") loadHeader();
+            if (typeof loadpageHeader === "function") loadpageHeader();
+            if (typeof loadFooter === "function") loadFooter();
+            if (typeof loadprecautions === "function") loadprecautions();
+        });
+    </script>
+
+</head>
+
+<body data-page="facility">
+  <div id="headerComponent"><header class="gn-header"><div class="navWrap">
+  <div class="logo">
+    <a href="index.html">
+      <img src="images/ft_logo.svg" alt="LOGO" height="30">
+    </a>
+  </div>
+  <button class="menu-toggle d-lg-none">
+    <div id="nav-icon3">
+      <span></span><span></span><span></span><span></span>
+    </div></button><nav><ul class="menu"><li class="has-submenu"><a href="news.html">最新消息 <i class="fa-solid fa-chevron-down"></i></a><ul class="sub-menu"><li><a href="news.html?category=住宿優惠">住宿優惠</a></li><li><a href="news.html?category=餐飲優惠">餐飲優惠</a></li><li><a href="news.html?category=活動訊息">活動訊息</a></li><li><a href="news.html?category=藝文活動">藝文活動</a></li></ul></li><li class="has-submenu"><a href="rooms.html">房型介紹 <i class="fa-solid fa-chevron-down"></i></a><ul class="sub-menu"><li><a href="rooms.html?category=尊爵VIP">尊爵VIP</a></li><li><a href="rooms.html?category=豪華房">豪華房</a></li><li><a href="rooms.html?category=經典房">經典房</a></li><li><a href="rooms.html?category=商務房">商務房</a></li></ul></li><li><a href="about.html">飯店介紹</a></li><li><a href="facility.html">設施介紹</a></li><li><a href="step1.html">線上訂房</a></li><li><a href="location.html">聯絡我們</a></li></ul></nav><div class="nav-right">
+    <div class="lang-selector">
+      <div id="google_translate_element"></div>
+    </div>
+    <!-- ✅ 桌機版登入按鈕 -->
+   <a id="openMemberModalBtn" href="#" class="d-none d-lg-inline-block" title="加入會員">
+  <i class="fa-regular fa-circle-user"></i>
+</a>
+<a id="openMemberModalBtnMobile" href="#" class="d-lg-none" title="加入會員">
+  <i class="fa-regular fa-circle-user"></i>
+</a>
+
+  </div>
+</div></header></div>
+  <div id="pageHeader"></div>
+
+    <main>
+        <div id="rooms">
+            <div class="container-fluid">
+                <div class="in">
+                    <div id="detail" class="clearfix">
+                        <section class="section slider-section">
+                            <div class="container-fluid slider-column">
+                                <div class="swiper swiper-slider swiper-initialized swiper-horizontal swiper-backface-hidden">
+                                    <div class="swiper-wrapper" id="swiper-wrapper-754b46a755e39122" aria-live="off" style="cursor: grab; transition-duration: 1000ms; transform: translate3d(-2014.8px, 0px, 0px);">
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                    <img class="swiper-slide" src="images/room/room-bath.jpg" alt="Swiper" role="group" aria-label="1 / 6" style="width: 680.8px; margin-right: 20px;" data-swiper-slide-index="0"><img class="swiper-slide" src="images/room/room-vip.jpg" alt="Swiper" role="group" aria-label="2 / 6" data-swiper-slide-index="1" style="width: 680.8px; margin-right: 20px;"><img class="swiper-slide swiper-slide-prev" src="images/room/room-vip05.jpg" alt="Swiper" role="group" aria-label="3 / 6" data-swiper-slide-index="2" style="width: 680.8px; margin-right: 20px;"><img class="swiper-slide swiper-slide-active" src="images/room/room-bath.jpg" alt="Swiper" role="group" aria-label="4 / 6" data-swiper-slide-index="3" style="width: 680.8px; margin-right: 20px;"><img class="swiper-slide swiper-slide-next" src="images/room/room-vip.jpg" alt="Swiper" role="group" aria-label="5 / 6" style="width: 680.8px; margin-right: 20px;" data-swiper-slide-index="4"><img class="swiper-slide" src="images/room/room-vip05.jpg" alt="Swiper" role="group" aria-label="6 / 6" style="width: 680.8px; margin-right: 20px;" data-swiper-slide-index="5"></div>
+                                    <span class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal"><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 1"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 2"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 3"></span><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 4" aria-current="true"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 5"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 6"></span></span>
+                                    <span class="swiper-button-prev" tabindex="0" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-754b46a755e39122"></span>
+                                    <span class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide" aria-controls="swiper-wrapper-754b46a755e39122"></span>
+                                <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+                            </div>
+                        </section>
+                        <!-- 標題 -->
+                          <div class="container mt-3">
+                            <div class="hd title text-center mb-4">
+                                <div class="titleBox">
+                                    <a href="javascript:void(0);" class="goBack" aria-label="回上一頁">
+                                    <i class="fa-solid fa-arrow-left-long"></i>
+                                    回上一頁
+                                    </a>
+                                <h1>豪華房 寬敞舒適好品味</h1>
+                                </div>
+                                <p>寬敞的客房配有沙發和休息區，可供客人放鬆身心，提供木地板和自然風格的地毯以及具有豪華風格的家具，讓您在度假村風格的氛圍中享受獨特的體驗，並欣賞河流和城市的美景。</p>
+                            </div>
+                           <section class="booking">
+                            <div class="container">
+                               <div class="booking-row">
+                                <div class="booking-col">
+                                    <label for="bedTypes">床型選擇</label>
+                                    <select id="bedTypes" name="bedType">
+                                    <option value="RO3K">一大床</option>
+                                    <option value="RO3T">雙人床</option>
+                                    </select>
+                                </div>
+                                <div class="booking-col">
+                                    <label class="invisible-label">預定</label>
+                                    <button class="booking-activator">預定房間</button>
+                                </div>
+                                </div>
+                            </div>
+                            </section>
+                            </div>
+                        <!-- 下方內容 -->
+                        <div class="container-fluid detailArea">
+                            <div class="container">
+                            <div class="row">
+                                <!-- 左側 9 欄：基本介紹 + 飯店基本資料 -->
+                                <div class="col-md-12 col-lg-12">
+                                    <section>
+                                        <div class="fancy-title">詳細介紹</div>
+                                        <p class="mb-4">
+                                            這些 43 平方米的客房位於河景，每間均配有寬大沙發，可供您放鬆身心，欣賞河景和泳池美景。客房裝飾靈感河畔的日常生活，鋪設木地板，並融入經典元素，例如柚木家具和精美的絲綢面料。牆上則裝飾著酒店豐富的藝術收藏中的精選版畫。客房提供加大雙人床和雙人床兩種選擇。
+                                        </p>
+                                            <div class="" id="cardContainer">
+        <div class="">
+          <div class="card">
+            <div class="icon-circle">
+              <i class="fa-solid fa-store"></i>
+            </div>
+            <h6 class="mb-1">商店</h6>
+          </div>
+        </div>
+      
+        <div class="">
+          <div class="card">
+            <div class="icon-circle">
+              <i class="fa-solid fa-utensils"></i>
+            </div>
+            <h6 class="mb-1">餐廳</h6>
+          </div>
+        </div>
+      
+        <div class="">
+          <div class="card">
+            <div class="icon-circle">
+              <i class="fa-solid fa-mug-saucer"></i>
+            </div>
+            <h6 class="mb-1">咖啡廳</h6>
+          </div>
+        </div>
+      
+        <div class="">
+          <div class="card">
+            <div class="icon-circle">
+              <i class="fa-solid fa-dumbbell"></i>
+            </div>
+            <h6 class="mb-1">健身房</h6>
+          </div>
+        </div>
+      
+        <div class="">
+          <div class="card">
+            <div class="icon-circle">
+              <i class="fa-solid fa-spa"></i>
+            </div>
+            <h6 class="mb-1">SPA</h6>
+          </div>
+        </div>
+      
+        <div class="">
+          <div class="card">
+            <div class="icon-circle">
+              <i class="fa-solid fa-swimmer"></i>
+            </div>
+            <h6 class="mb-1">游泳池</h6>
+          </div>
+        </div>
+      
+        <div class="">
+          <div class="card">
+            <div class="icon-circle">
+              <i class="fa-solid fa-wifi"></i>
+            </div>
+            <h6 class="mb-1">免費WIFI</h6>
+          </div>
+        </div>
+      
+        <div class="">
+          <div class="card">
+            <div class="icon-circle">
+              <i class="fa-solid fa-user-tie"></i>
+            </div>
+            <h6 class="mb-1">24小時櫃台服務</h6>
+          </div>
+        </div>
+      
+        <div class="">
+          <div class="card">
+            <div class="icon-circle">
+              <i class="fa-solid fa-square-parking"></i>
+            </div>
+            <h6 class="mb-1">停車場</h6>
+          </div>
+        </div>
+      
+        <div class="">
+          <div class="card">
+            <div class="icon-circle">
+              <i class="fa-solid fa-bath"></i>
+            </div>
+            <h6 class="mb-1">三溫暖</h6>
+          </div>
+        </div>
+      
+        <div class="">
+          <div class="card">
+            <div class="icon-circle">
+              <i class="fa-solid fa-children"></i>
+            </div>
+            <h6 class="mb-1">適合兒童</h6>
+          </div>
+        </div>
+      </div>
+                                    </section>
+                                    <div class="" id="precautions">
+    
+    <div class="elem">
+      <button class="panel-title">
+        入住與退房
+        <span class="plus">＋</span>
+      </button>
+      <div class="panel-content policy-box">
+        <ul class="policy-list">
+          <li>入住時間:15:00 後</li><li>退房時間:12:00 前</li><li>彈性保留:17:00</li>
+        </ul>
+      </div>
+    </div>
+  
+    <div class="elem">
+      <button class="panel-title">
+        行政俱樂部服務
+        <span class="plus" style="transform: rotate(0deg);">＋</span>
+      </button>
+      <div class="panel-content policy-box" style="opacity: 0;">
+        <ul class="policy-list">
+          <li>行政俱樂部開放時間：06:30-22:00（限行政樓層房客使用）</li><li>行政俱樂部早餐：06:30-10:00（週六06:30-10:30）</li><li>雞尾酒會：17:00-19:00</li>
+        </ul>
+      </div>
+    </div>
+  
+    <div class="elem">
+      <button class="panel-title">
+        付款與加人政策
+        <span class="plus">＋</span>
+      </button>
+      <div class="panel-content policy-box">
+        <ul class="policy-list">
+          <li>訂金為房價之 50%</li><li>謝絕訪客，無加床服務，加人酌收 1,000 元清潔費。</li><li>請務必依照民宿人數入住，若自行增加人數，民宿有權加倍收費。</li>
+        </ul>
+      </div>
+    </div>
+  
+    <div class="elem">
+      <button class="panel-title">
+        日期定義
+        <span class="plus">＋</span>
+      </button>
+      <div class="panel-content policy-box">
+        <ul class="policy-list">
+          <li>假日定義：週六；平日定義：週日至週五。</li><li>旺季：6 月～9 月、農曆新年及連續假日；淡季：10 月～5 月。</li>
+        </ul>
+      </div>
+    </div>
+  
+    <div class="elem">
+      <button class="panel-title">
+        安全與規範
+        <span class="plus">＋</span>
+      </button>
+      <div class="panel-content policy-box">
+        <ul class="policy-list">
+          <li>貴重物品請隨身攜帶妥善保管，如有遺失恕不負責。</li><li>為維護住宿安全，本民宿範圍內室內外皆禁菸、禁帶寵物、禁烤肉。</li><li>如私自攜帶寵物入住，恕不退費並強制退房。</li><li>嚴禁酗酒轟趴、嗑藥及違法行為，發現將立即報警處理。</li>
+        </ul>
+      </div>
+    </div>
+  
+  </div>
+                                </div>
+                                <!-- 右側 3 欄：價格與圖片 -->
+                                <div class="col-md-12 col-lg-12 mb-5">
+                                    <div class="fancy-title">房內設備</div>
+                                    <div class="list-stuff">
+                                        <ul>
+                                            <li>Nespresso咖啡機</li>
+                                            <li>迎賓飲料&amp;甜點</li>
+                                            <li>電熱水壺</li>
+                                            <li>餐具（茶杯等）</li>
+                                            <li>開瓶器</li>
+                                            <li>冰箱</li>
+                                            <li>吹風機</li>
+                                            <li>洗面奶和洗手液</li>
+                                            <li>保險箱</li>
+                                            <li>空氣清淨機</li>
+                                            <li>免費Wi-Fi</li>
+                                            <li>報紙</li>
+                                            <li>薄型電視</li>
+                                            <li>除臭噴霧</li>
+                                            <li>鞋拔</li>
+                                            <li>衣架</li>
+                                            <li>衣刷</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+    </div></div></main>
+    
+    
+    
+    
+    
+
+    <div id="footerComponent">
+<footer class="footerComponent py-2">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 mb-5">
+        <a href="index.html"><img src="images/ft_logo.svg" alt="logo" class="logo img-fluid mb-3"></a>
+      </div>
+      <div class="col-md-4 mb-4 mb-md-0">
+       <ul class="ftLink">
+        <li><a href="news.html">最新消息</a></li>
+        <li><a href="rooms.html">房型介紹</a></li>
+        <li><a href="about.html">飯店介紹</a></li>
+        <li><a href="facility.html">設施介紹</a></li>
+        <li><a href="location.html">聯絡我們</a></li>
+       </ul>
+      </div>
+
+      <div class="col-md-4 mb-4 mb-md-0">
+        <div class="row">
+        <div class="section-label">相關飯店</div>
+          
+          <div class="col-6 mb-2">
+            <strong>特斯德酒店</strong>
+            <ul class="list-unstyled small">
+              
+              <li><a href="#">新竹特斯德酒店</a></li>
+              
+              <li><a href="#">知本特斯德酒店</a></li>
+              
+              <li><a href="#">礁溪特斯德酒店</a></li>
+              
+              <li><a href="#">台北特斯德酒店</a></li>
+              
+              <li><a href="#">北投特斯德酒店</a></li>
+              
+            </ul>
+          </div>
+          
+          <div class="col-6 mb-2">
+            <strong>特斯德酒店</strong>
+            <ul class="list-unstyled small">
+              
+              <li><a href="#">宜蘭傳藝特斯德酒店</a></li>
+              
+              <li><a href="#">特斯德大飯店</a></li>
+              
+            </ul>
+          </div>
+          
+          <div class="col-6 mb-2">
+            <strong>特斯德會館</strong>
+            <ul class="list-unstyled small">
+              
+              <li><a href="#">特斯德會館台北南西</a></li>
+              
+              <li><a href="#">特斯德會館台北林森</a></li>
+              
+            </ul>
+          </div>
+          
+          <div class="col-6 mb-2">
+            <strong>海外酒店</strong>
+            <ul class="list-unstyled small">
+              
+              <li><a href="#">模里西斯帝王酒店</a></li>
+              
+              <li><a href="#">尼加拉瓜馬拿瓜皇冠廣場飯店</a></li>
+              
+              <li><a href="#">帛琉特斯德酒店</a></li>
+              
+              <li><a href="#">西貢特斯德酒店</a></li>
+              
+            </ul>
+          </div>
+          
+        </div>
+      </div>
+
+      <div class="col-md-4 text-md-end text-center">
+      <div class="section-label d-flex justify-content-end">我們的位置</div>
+        <ul class="list-unstyled small">
+          <li class="fw-bold fs-6 mb-1">高雄特斯德酒店</li>
+          <li class="mb-1">高雄市新光路38號24F-6</li>
+          <li class="mb-1">訂房專線：+886-7-968-2715</li>
+          <li>傳真號碼：+886-7-952-2221</li>
+        </ul>
+        <h6 class="fw-bold mb-3">Follow Us</h6>
+        <div class="socialBox mb-3">
+          
+          <a target="_blank" href="https://www.facebook.com/85SkyTowerHotel" class="text-dark fs-5 me-3" aria-label="Facebook">
+            <i class="fa-brands fa-facebook"></i>
+          </a>
+          
+          <a target="_blank" href="http://www.weibo.com/1854503391/profile?topnav=1&amp;wvr=3.6" class="text-dark fs-5 me-3" aria-label="YouTube">
+            <i class="fa-brands fa-youtube"></i>
+          </a>
+          
+          <a target="_blank" href="https://plus.google.com/u/0/b/110324599943771007016" class="text-dark fs-5 me-3" aria-label="Google+">
+            <i class="fa-brands fa-google"></i>
+          </a>
+          
+        </div>
+        <div class="btnWrap">
+        <button class="btn">攝影諮詢</button><button class="btn">預定房間</button>
+        </div>
+       
+
+      </div>
+    </div>
+    <div class="ft-des text-center small mt-5">
+      <p class="mb-1">
+        <a href="#" class="me-3">關於特斯德酒店</a><a href="#" class="me-3">隱私權政策</a><a href="#" class="me-3">連絡我們</a>
+        <span>Copyright Easytravel</span>
+      </p>
+      <p class="mb-0">網頁中使用之飯店照片皆由四方通行拍攝，如有任何的拍攝服務需求，請與我們聯絡</p>
+    </div>
+  </div>
+</footer>
+
+</div>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script src="js/swiper.js"></script>
+<script>
+    const items = [
+        { icon: 'fa-store', label: '商店' },
+        { icon: 'fa-utensils', label: '餐廳' },
+        { icon: 'fa-mug-saucer', label: '咖啡廳' },
+        { icon: 'fa-dumbbell', label: '健身房' },
+        { icon: 'fa-spa', label: 'SPA' },
+        { icon: 'fa-swimmer', label: '游泳池' },
+        { icon: 'fa-wifi', label: '免費WIFI' },
+        { icon: 'fa-user-tie', label: '24小時櫃台服務' },
+        { icon: 'fa-square-parking', label: '停車場' },
+        { icon: 'fa-bath', label: '三溫暖' },
+        { icon: 'fa-children', label: '適合兒童' },
+    ];
+
+    const container = document.getElementById('cardContainer');
+
+    items.forEach((item, index) => {
+        container.innerHTML += `
+        <div class="">
+          <div class="card">
+            <div class="icon-circle">
+              <i class="fa-solid ${item.icon}"></i>
+            </div>
+            <h6 class="mb-1">${item.label}</h6>
+          </div>
+        </div>
+      `;
+    });
+</script>
+
+
+<button id="scrollToTopBtn" title="回到頂部" class=""><i class="fa-solid fa-arrow-up-long"></i></button></body>
+<script src='js/swiper-bundle.min.js'></script>
+<script src="js/swiper.js"></script>
+<script>
+    const items = [
+        { icon: 'fa-store', label: '商店' },
+        { icon: 'fa-utensils', label: '餐廳' },
+        { icon: 'fa-mug-saucer', label: '咖啡廳' },
+        { icon: 'fa-dumbbell', label: '健身房' },
+        { icon: 'fa-spa', label: 'SPA' },
+        { icon: 'fa-swimmer', label: '游泳池' },
+        { icon: 'fa-wifi', label: '免費WIFI' },
+        { icon: 'fa-user-tie', label: '24小時櫃台服務' },
+        { icon: 'fa-square-parking', label: '停車場' },
+        { icon: 'fa-bath', label: '三溫暖' },
+        { icon: 'fa-children', label: '適合兒童' },
+    ];
+
+    const container = document.getElementById('cardContainer');
+
+    items.forEach((item, index) => {
+        container.innerHTML += `
+        <div class="">
+          <div class="card">
+            <div class="icon-circle">
+              <i class="fa-solid ${item.icon}"></i>
+            </div>
+            <h6 class="mb-1">${item.label}</h6>
+          </div>
+        </div>
+      `;
+    });
+</script>
+
+
+</html>

@@ -1,0 +1,128 @@
+@use "./variables" as *;
+@use "./breakpoints" as *;
+@use "./animations";
+@use "./mixins" as *;
+
+// 內頁
+#pageHeader {
+  section {
+    padding: 0;
+    .text {
+      background-color: $white;
+      color: $text-gray;
+      width: 80%;
+      height: 14vh;
+      padding: 1em;
+      font-size: 1.5em;
+      margin-bottom: 1em;
+      align-items: center;
+      display: flex;
+      justify-content: flex-start;
+      justify-self: center;
+      flex-direction: row;
+      gap: 2em;
+      border-top-left-radius: 3em;
+      border-top-right-radius: 3em;
+      margin-top: -63px;
+      z-index: 11;
+      position: relative;
+      @include respond-max(md) {
+        width: 100%;
+      }
+      @include respond-max(sm) {
+        height: 19vh;
+      }
+      .goBack {
+        width: 182px;
+        font-size: 0.6em;
+        text-align: right;
+        color: $text-gray;
+        i {
+          border-radius: 2em;
+          border: 1px solid $text-gray;
+          color: $text-gray;
+          font-size: 1em;
+          padding: 5px;
+        }
+        &:hover {
+          color: $text-gray;
+        }
+      }
+    }
+  }
+  .hd {
+    width: 100%;
+    height: 60vh;
+    overflow: hidden;
+    position: relative;
+    @include respond-max(md) {
+      height: 46vh;
+    }
+    .titleBox {
+      border-radius: 14em;
+      background: rgba($secondary, 0.5);
+      position: absolute;
+      left: 21px;
+      z-index: 10;
+      bottom: 20px;
+      width: 330px;
+      height: 330px;
+      text-align: center;
+      display: flex;
+      align-content: center;
+      justify-content: center;
+      align-items: center;
+      top: 67px;
+      @include respond-max(sm) {
+        h1 {
+          bottom: 1.5em;
+        }
+        p {
+          bottom: 10.7em;
+        }
+      }
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; // ⭐ 保持比例填滿，不變形
+      object-position: center; // ⭐ 水平垂直置中
+      display: block;
+      z-index: 0;
+      border-radius: 17em;
+    }
+    h1,
+    p {
+      z-index: 1;
+      position: absolute;
+      bottom: 1em;
+      color: $white;
+      font-weight: normal;
+    }
+    h1 {
+      font-size: 4em;
+      bottom: 0.5em;
+    }
+    p {
+      font-size: 1em;
+      bottom: 5.7em;
+      letter-spacing: 20px;
+    }
+  }
+  @include respond-max(sm) {
+    .hd {
+      h1,
+      p {
+        display: inline-block;
+        text-align: left;
+      }
+      p {
+        left: 2em;
+      }
+      h1 {
+        left: 0.4em;
+      }
+    }
+  }
+}

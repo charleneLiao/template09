@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon"/>
+<meta name="KeyWords" content="四方通行">
+<meta name="Description" content="四方通行">
+<title>飯店官網_填寫訂房資料與付款方式</title>
+
+<!-- CSS -->
+<!-- <link rel="stylesheet" href="../fonts/fontawesome/css/all.min.css"> -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/hwebsite.css"/>
+<link rel="stylesheet" type="text/css" href="css/hwebsite_rwd.css"/>
+<link rel="stylesheet" type="text/css" href="css/HPlant_v01.css"/>
+<link rel="stylesheet" type="text/css" href="css/lightbox.css"/>
+<link href="css/slick.css" rel="stylesheet">
+<link href="css/slick-theme.css" rel="stylesheet">
+
+
+</head>
+<!-- 註冊/登入box -->
+<div class="modal fade" id="join_member" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document" >
+    <div class="modal-content">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+         <i class="fa fa-times"></i>
+        </button>
+        <div class="panel panel-login">
+<div class="panel-heading">
+<a href="#" class="active" id="login-form-link" title="登入Login">登入Login</a>│
+<a href="#" id="register-form-link" title="註冊Register">註冊Register</a>
+<hr>
+</div>
+	
+<div class="panel-body">
+<!-- 登入-->
+<form id="login-form"  method="post" role="form" style="display: block;">
+<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="使用者帳號" value="">
+<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="密碼">
+<div class="col_2"><input type="text" class="form-control" id="inputPassword" placeholder="驗證碼" ></div>
+<div class="col_2"><div class="mt2 left">
+<iframe id="captchaFrame" width="60" height="26" frameborder="0" scrolling="no"></iframe>
+</div><span><a href="#"  class="replace" title="在換一個">在換一個 <i class="fa fa-undo"></i></a></span></div>
+<a href="fp.html"  class="forgot-password" title="忘記密碼?">忘記密碼?</a>
+<input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="登入">
+<div class="divider1 clearfix">
+  <span class="mm-or1">或使用其他系統登入</span>
+  <ul class="other_link">
+  <li><a href="javascript:void(0)" onclick="fbLogin();" class="btstyle loginbtn02"><span><i class="fa fa-facebook " aria-hidden="true"></i></span>登入</a></li>
+  <li><a href="javascript:void(0)" onclick="googleLogin();" class="btstyle loginbtn03"><span><i class="fa fa-google " aria-hidden="true"></i></span>登入</a></li>
+  <li><a href="javascript:void(0)" onclick="Auth();" class="btstyle loginbtn04"><span class="line"><img src="images/payPic/line.png" ></span>登入</a></li>   
+  </ul>
+  </div>
+</form>
+<!--註冊 -->
+<form id="register-form"  method="post" role="form" style="display: none;">
+<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="暱稱" value="">
+<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email" value="">
+<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="密碼">
+<input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="確認密碼">
+<select name=question id=question  class="form-control">
+<option value=''>請選擇自設問題...</option><option value='就讀的國小是？'>就讀的國小是？</option>
+<option value='最喜歡的偶像是？'>最喜歡的偶像是？</option><option value='最敬重的老師是？'>最敬重的老師是？</option>
+<option value='第一台車的車牌號碼為？'>第一台車的車牌號碼為？</option>
+<option value='第一隻寵物名字？'>第一隻寵物名字？</option>
+<option value='最喜歡吃的食物？'>最喜歡吃的食物？</option>
+<option value='other'>自行輸入</option>
+</select>
+<input type="text" class="form-control" name=answer id=answer value="自設問題回答" onfocus=this.value=''; placeholder='自設問題回答' title="自設問題回答" onBlur=ckalldata(7); autocorrect='off' autocapitalize='off' autocomplete='off' aria-required='true'  />
+<div class="container " >
+<div class="row">
+<div class="col-md-1 col-3 p-0 mt2">生日</div>
+<div class="col-md-5 col-9 p-0"><select name="YY" id="YY" data="birthday-drop-down"  class="form-control">
+                        <option value="" selected>年</option>
+                        <option value=1911>1911（民國0年）</option><option value=1912>1912（民國1年）</option><option value=1913>1913（民國2年）</option><option value=1914>1914（民國3年）</option><option value=1915>1915（民國4年）</option><option value=1916>1916（民國5年）</option><option value=1917>1917（民國6年）</option><option value=1918>1918（民國7年）</option><option value=1919>1919（民國8年）</option><option value=1920>1920（民國9年）</option><option value=1921>1921（民國10年）</option><option value=1922>1922（民國11年）</option><option value=1923>1923（民國12年）</option><option value=1924>1924（民國13年）</option><option value=1925>1925（民國14年）</option><option value=1926>1926（民國15年）</option><option value=1927>1927（民國16年）</option><option value=1928>1928（民國17年）</option><option value=1929>1929（民國18年）</option><option value=1930>1930（民國19年）</option><option value=1931>1931（民國20年）</option><option value=1932>1932（民國21年）</option><option value=1933>1933（民國22年）</option><option value=1934>1934（民國23年）</option><option value=1935>1935（民國24年）</option><option value=1936>1936（民國25年）</option><option value=1937>1937（民國26年）</option><option value=1938>1938（民國27年）</option><option value=1939>1939（民國28年）</option><option value=1940>1940（民國29年）</option><option value=1941>1941（民國30年）</option><option value=1942>1942（民國31年）</option><option value=1943>1943（民國32年）</option><option value=1944>1944（民國33年）</option><option value=1945>1945（民國34年）</option><option value=1946>1946（民國35年）</option><option value=1947>1947（民國36年）</option><option value=1948>1948（民國37年）</option><option value=1949>1949（民國38年）</option><option value=1950>1950（民國39年）</option><option value=1951>1951（民國40年）</option><option value=1952>1952（民國41年）</option><option value=1953>1953（民國42年）</option><option value=1954>1954（民國43年）</option><option value=1955>1955（民國44年）</option><option value=1956>1956（民國45年）</option><option value=1957>1957（民國46年）</option><option value=1958>1958（民國47年）</option><option value=1959>1959（民國48年）</option><option value=1960>1960（民國49年）</option><option value=1961>1961（民國50年）</option><option value=1962>1962（民國51年）</option><option value=1963>1963（民國52年）</option><option value=1964>1964（民國53年）</option><option value=1965>1965（民國54年）</option><option value=1966>1966（民國55年）</option><option value=1967>1967（民國56年）</option><option value=1968>1968（民國57年）</option><option value=1969>1969（民國58年）</option><option value=1970>1970（民國59年）</option><option value=1971>1971（民國60年）</option><option value=1972>1972（民國61年）</option><option value=1973>1973（民國62年）</option><option value=1974>1974（民國63年）</option><option value=1975>1975（民國64年）</option><option value=1976>1976（民國65年）</option><option value=1977>1977（民國66年）</option><option value=1978>1978（民國67年）</option><option value=1979>1979（民國68年）</option><option value=1980>1980（民國69年）</option><option value=1981>1981（民國70年）</option><option value=1982>1982（民國71年）</option><option value=1983>1983（民國72年）</option><option value=1984>1984（民國73年）</option><option value=1985>1985（民國74年）</option><option value=1986>1986（民國75年）</option><option value=1987>1987（民國76年）</option><option value=1988>1988（民國77年）</option><option value=1989>1989（民國78年）</option><option value=1990>1990（民國79年）</option><option value=1991>1991（民國80年）</option><option value=1992>1992（民國81年）</option><option value=1993>1993（民國82年）</option><option value=1994>1994（民國83年）</option><option value=1995>1995（民國84年）</option><option value=1996>1996（民國85年）</option><option value=1997>1997（民國86年）</option><option value=1998>1998（民國87年）</option><option value=1999>1999（民國88年）</option><option value=2000>2000（民國89年）</option><option value=2001>2001（民國90年）</option><option value=2002>2002（民國91年）</option><option value=2003>2003（民國92年）</option><option value=2004>2004（民國93年）</option><option value=2005>2005（民國94年）</option><option value=2006>2006（民國95年）</option><option value=2007>2007（民國96年）</option><option value=2008>2008（民國97年）</option><option value=2009>2009（民國98年）</option><option value=2010>2010（民國99年）</option><option value=2011>2011（民國100年）</option><option value=2012>2012（民國101年）</option><option value=2013>2013（民國102年）</option><option value=2014>2014（民國103年）</option><option value=2015>2015（民國104年）</option><option value=2016>2016（民國105年）</option><option value=2017>2017（民國106年）</option><option value=2018>2018（民國107年）</option></select></div>
+<div class="col-md-3 col-6  p-0"><select name="MM" id="MM" data="birthday-drop-down"  class="form-control">
+                        <option value="" selected>月</option>
+                        <option value=1>1</option><option value=2>2</option><option value=3>3</option><option value=4>4</option><option value=5>5</option><option value=6>6</option><option value=7>7</option><option value=8>8</option><option value=9>9</option><option value=10>10</option><option value=11>11</option><option value=12>12</option>
+	                  </select></div>
+
+<div class="col-md-3 col-6 p-0"><select name="DD" id="DD" data="birthday-drop-down" class="form-control">
+	                      <option value="" selected>日</option>
+	                      <option value=1>1</option><option value=2>2</option><option value=3>3</option><option value=4>4</option><option value=5>5</option><option value=6>6</option><option value=7>7</option><option value=8>8</option><option value=9>9</option><option value=10>10</option><option value=11>11</option><option value=12>12</option><option value=13>13</option><option value=14>14</option><option value=15>15</option><option value=16>16</option><option value=17>17</option><option value=18>18</option><option value=19>19</option><option value=20>20</option><option value=21>21</option><option value=22>22</option><option value=23>23</option><option value=24>24</option><option value=25>25</option><option value=26>26</option><option value=27>27</option><option value=28>28</option><option value=29>29</option><option value=30>30</option><option value=31>31</option>
+	                  </select></div></div></div>
+<div class="clearfix"></div>
+
+若要繼續註冊，請先閱讀並同意特思得大飯店的<a href="#"  title="服務條款">服務條款</a>與<a href="#" title="隱私權政策">隱私權政策</a>
+<input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="註冊">
+</form>
+</div>
+</div>
+    </div>
+  </div>
+</div>
+<!-- 註冊/登入box  END -->
+<!-- 燈箱4 房型詳細頁 -->
+<div class="modal fade" id="detail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="head">時尚房（一大床）</div>
+        <div class="modal-body hotel-intro">
+       <!-- 詳細頁 -->
+  <div class="row">
+       
+       <!-- PHOTO -->
+       <div class="col-md-6">
+      <div class="bpic"><img src="images/9925_201707031758462162_327.jpg" ></div>
+      <ul class="spic">
+        <li><img src="images/9925_201707031758486382_327.jpg"></li>
+        <li><img src="images/9925_201709271005391480_327.jpg"></li>
+        <li><img src="images/9925_201709271005383511_327.jpg"></li>
+        <li><img src="images/9925_201709271005395542_327.jpg"></li>
+      </ul>
+      <ul class="spic_slick">
+        <li><img src="images/9925_201707031758486382_327.jpg"></li>
+        <li><img src="images/9925_201709271005391480_327.jpg"></li>
+        <li><img src="images/9925_201709271005383511_327.jpg"></li>
+        <li><img src="images/9925_201709271005395542_327.jpg"></li>
+      </ul>
+     
+    </div>
+       <!-- PHOTO END-->
+       <div class="col-md-6">
+       <div class="clearfix">
+       <div class="right mt2"><button type="button" class="btn btn-style02 btn-block">立即訂房</button></div>
+       <div class="pricebox">原價<del>6600</del>元<br>最低價 <span>$1955</span>元起</div></div>
+      
+       <div class="rule">
+       ．進房時間（Check-in）：15：00後；最晚保留時間（keep the room on the latest time）：23：00<br>．退房時間（Check-out）：12：00前<br>．平日定義：週日～週五；假日定義：週六、特別假日、連續假日<br>
+．住房附贈自助式中／西式早餐服務／有提供蛋奶素食餐（用餐時間：7：00AM～10：00AM）<br>
+．本飯店尚未提供加床服務<br>
+．加人服務：每人NT$600元（費用若有調整，依現場公告為主），費用內含：早餐、備品<br>
+．孩童同行：110公分以上，費用與成人相同<br>
+．客房內提供有線全頻道電視觀看<br>
+．現場提供刷卡服務<br>
+  <div  class="card-text" style="display: none;">．孩童同行：110公分以上，費用與成人相同<br>
+．客房內提供有線全頻道電視觀看<br>
+．現場提供刷卡服務<br></div></div>
+<div class="text-center">
+    <div class="card-footer cardopen" >
+    <span class="open">看全部住房規則<i class="fa fa-caret-down"></i></span>
+    <span class="closed hide" >收起部份住房規則 <i class="fa fa-caret-up"></i></span>
+  </div></div>
+</div> 
+<div class="col-sm-12 mt1"> 
+<div class="data-table"><span class="name_ti">已客滿日期</span><span class="red1">8/24‧9/22‧9/23‧9/24‧12/29‧12/30‧12/31‧8/24‧9/22‧9/23‧9/24‧12/29‧12/30‧12/31‧8/24‧9/22‧9/23‧9/24‧12/29‧12/30‧12/31‧</span></div> 
+<ul class="data-table line_b clearfix">
+<li><span class="name_ti">總 間 數</span>58間</li>
+<li><span class="name_ti">加床服務</span>可加1人</li>
+<li><span class="name_ti">基本人數</span>2人</li>
+<li><span class="name_ti">房間窗外景色 </span>面市景</li>
+<li><span class="name_ti">平均坪數</span>約7坪</li>
+<li><span class="name_ti">單車進房 </span>不可進房</li>
+<li><span class="name_ti">房間地板 </span>地磚</li>
+<li><span class="name_ti">寵物進房  </span>不可進房</li>
+<li><span class="name_ti">房間地板   </span>木質地板	 </li>
+<li><span class="name_ti">網路服務 </span>無線上網</li>
+<li><span class="name_ti">有無窗戶  </span>無</li>
+<li><span class="name_ti">床型 </span>一大床 </li>
+</ul>
+<ul >
+<li><div class="name_ti">衛浴設備</div>
+備品、淋浴
+<li><div class="name_ti">房間基本設備 </div>
+熱水瓶、吹風機、冷氣、書桌、保險箱、電話、冰箱、衣架、衣櫃
+</li>
+<li><p class="name_ti">嬰幼兒用品</p>嬰兒澡盆、嬰兒床</li>
+<li><p class="name_ti">影音設備 </p>有線全頻道、液晶電視 </li>
+<li><p class="name_ti">房型介紹  </p>
+<ul>
+<li>．床　　型：一大床</li>
+<li>．加床服務：無</li>
+<li>．加人服務：有，可加一人</li>
+<li>．地　　板：地磚、木質地板</li>
+<li>．窗　　戶：有</li>
+<li>．窗外景色：面市景</li>
+<li>．浴　　室：淋浴間
+<p>房間內備有舒適的床位、齊全的衛浴設備、衛浴日用品，並提供液晶電視、冷氣、衣櫃、冰箱、書桌、吹風機、熱水瓶、電話、
+保險箱、衣架等設施，清潔、高雅的住宿環境使您感覺賓至如歸，不論旅行或出差都是您最好的選擇。</p></li>
+</ul>
+</li>
+</ul>
+
+</div></div>
+      
+     
+         <!-- 詳細頁 end-->
+        </div>
+    </div>
+  </div>
+</div>
+<!-- 燈箱5 月曆 -->
+<div class="modal fade scroll" id="calendar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+
+    <div class="modal-content" >
+    <button type="button" class="angle-right btn" ><i class="fa fa-angle-right"></i></button>
+    <button type="button" class="angle-left btn" ><i class="fa fa-angle-left"></i></button>
+    <p class="text-center ">選擇您的住宿日期 <button type="button" class="close" data-dismiss="modal">X</button></p>
+    <div class="clearfix ">
+    <div class="bt-two"><p class="tyu">入住日期</p><span class="fc-green fc-nb" >2019/07/15</span></div> 
+     <div class="bt-two"><p class="tyu">退房日期</p><span class="fc-green fc-nb" >2019/07/16</span></div>
+    </div>   
+      
+        <div class="modal-body  clearfix">           
+        <div class="month-wrap" >
+         <div class="head1"> 
+         <div class="month-title">2019年7月</div>
+    	<div class="week-wrap">一</div>
+    	<div class="week-wrap">二</div>
+    	<div class="week-wrap">三</div>
+    	<div class="week-wrap">四</div>
+    	<div class="week-wrap">五</div>
+    	<div class="week-wrap holiday">六</div>
+    	<div class="week-wrap holiday">日</div>
+         </div>
+          <div class="week-wrap"><span class="none">25</span></div>
+          <div class="week-wrap"><span class="none">26</span></div>
+          <div class="week-wrap"><span class="none">27</span></div>
+          <div class="week-wrap"><span class="none">28</span></div>
+          <div class="week-wrap"><span class="none">29</span></div>
+          <div class="week-wrap holiday"><span class="none">30</span></div>
+          <div class="week-wrap holiday"><span>1</span></div>          
+          <div class="week-wrap"><span>2</span></div>
+          <div class="week-wrap"><span>3</span></div>
+          <div class="week-wrap"><span>4</span></div>
+          <div class="week-wrap"><span>5</span></div>
+          <div class="week-wrap"><span>6</span></div>
+          <div class="week-wrap holiday"><span>7</span></div>
+          <div class="week-wrap holiday"><span>8</span></div>
+          <div class="week-wrap"><span>9</span></div>
+          <div class="week-wrap"><span>10</span></div>
+          <div class="week-wrap"><span>11</span></div>
+          <div class="week-wrap"><span>12</span></div>
+          <div class="week-wrap"><span>13</span></div>
+          <div class="week-wrap holiday"><span>14</span></div>
+          <div class="week-wrap holiday"><span>15</span></div>
+          <div class="week-wrap"><span>16</span></div>
+          <div class="week-wrap"><span>17</span></div>
+          <div class="week-wrap"><span>18</span></div>
+          <div class="week-wrap"><span>19</span></div>
+          <div class="week-wrap"><span>20</span></div>
+          <div class="week-wrap holiday"><span>21</span></div>
+          <div class="week-wrap holiday"><span>22</span></div>
+          <div class="week-wrap"><span>23</span></div>
+          <div class="week-wrap"><span>24</span></div>
+          <div class="week-wrap"><span>25</span></div>
+          <div class="week-wrap"><span>26</span></div>
+          <div class="week-wrap"><span>27</span></div>
+          <div class="week-wrap holiday"><span>28</span></div>
+          <div class="week-wrap holiday"><span>29</span></div>
+          <div class="week-wrap"><span>30</span></div>
+          <div class="week-wrap"><span>31</span></div>
+          
+        </div>
+        <div class="month-wrap">
+         <div class="head1"> 
+         <div class="month-title">2019年8月</div>          
+    	<div class="week-wrap">一</div>
+    	<div class="week-wrap">二</div>
+    	<div class="week-wrap">三</div>
+    	<div class="week-wrap">四</div>
+    	<div class="week-wrap">五</div>
+    	<div class="week-wrap holiday">六</div>
+    	<div class="week-wrap holiday">日</div>
+         </div>
+          <div class="week-wrap"><span class="none">30</span></div>
+          <div class="week-wrap"><span class="none">31</span></div>
+          <div class="week-wrap"><span>1</span></div>
+          <div class="week-wrap"><span>2</span></div>
+          <div class="week-wrap"><span>3</span></div>
+          <div class="week-wrap holiday"><span>4</span></div>
+          <div class="week-wrap holiday"><span class="select">5</span></div>
+          <div class="week-wrap hover"><span>6</span></div>
+          <div class="week-wrap hover"><span>7</span></div>
+          <div class="week-wrap hover"><span>8</span></div>
+          <div class="week-wrap hover"><span>9</span></div>
+          <div class="week-wrap hover"><span class="select">10</span></div>
+          <div class="week-wrap holiday"><span>11</span></div>
+          <div class="week-wrap holiday"><span>12</span></div>
+          <div class="week-wrap"><span>13</span></div>
+          <div class="week-wrap"><span>14</span></div>
+          <div class="week-wrap"><span>15</span></div>
+          <div class="week-wrap"><span>16</span></div>
+          <div class="week-wrap"><span>17</span></div>
+          <div class="week-wrap holiday"><span>18</span></div>
+          <div class="week-wrap holiday"><span>19</span></div>
+          <div class="week-wrap"><span>20</span></div>
+          <div class="week-wrap"><span>21</span></div>
+          <div class="week-wrap"><span>22</span></div>
+          <div class="week-wrap"><span>23</span></div>
+          <div class="week-wrap"><span>24</span></div>
+          <div class="week-wrap holiday"><span>25</span></div>
+          <div class="week-wrap holiday"><span>26</span></div>
+          <div class="week-wrap"><span>27</span></div>
+          <div class="week-wrap"><span>28</span></div>
+          <div class="week-wrap"><span>29</span></div>
+          <div class="week-wrap"><span>30</span></div>
+          <div class="week-wrap"><span>31</span></div>
+        </div>
+        </div>
+       
+            <div class="footer">
+        4晚
+        <button type="button" class="btn btn-style02" data-dismiss="modal">完成</button>
+      </div>
+        </div>
+    </div>
+  </div>
+</div>
+<!-- 燈箱6 房況月曆 -->
+<div class="modal fade scroll" id="calendarroom" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+ 
+    <div class="modal-content" >
+    <button type="button" class="angle-right btn" ><i class="fa fa-angle-right"></i></button>
+    <button type="button" class="angle-left btn" ><i class="fa fa-angle-left"></i></button>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    <div class="title03 md3">房價查詢 </div>
+    <div class="selectdiv">
+    <select name="livecount" id="livecount" class="form-control01">
+                                      <option value="0">【大手小手＊親子同遊】期間限定 兩人同行$1599起【時尚房（一大床）】</option>
+                                      
+                                  </select></div>
+        <div class="modal-body  clearfix">           
+        <div class="month-wrap" >
+         <div class="head1"> 
+         <div class="month-title">2019年7月</div>
+    	<div class="week-wrap">一</div>
+    	<div class="week-wrap">二</div>
+    	<div class="week-wrap">三</div>
+    	<div class="week-wrap">四</div>
+    	<div class="week-wrap">五</div>
+    	<div class="week-wrap holiday">六</div>
+    	<div class="week-wrap holiday">日</div>
+         </div>
+          <div class="week-wrap"><span class="none">25</span></div>
+          <div class="week-wrap"><span class="none">26</span></div>
+          <div class="week-wrap"><span class="none">27</span></div>
+          <div class="week-wrap"><span class="none">28</span></div>
+          <div class="week-wrap"><span class="none">29</span></div>
+          <div class="week-wrap holiday"><span class="none">30</span></div>
+          <div class="week-wrap holiday"><span>1</span><div class="price">$1699</div><div class="room_a"><a href="#"  title="立即訂房">立即訂房</a></div></div>          
+          <div class="week-wrap"><span>2</span><div class="price">$16999</div><div class="room_b">客服訂房</div></div>
+          <div class="week-wrap"><span>3</span><div class="room_c">客滿</div></div>
+          <div class="week-wrap"><span>4</span><div class="price">$1699</div><div class="room_a"><a href="#"  title="立即訂房">立即訂房</a></div></div>
+          <div class="week-wrap"><span>5</span><div class="price">$1699</div><div class="room_a"><a href="#"  title="立即訂房">立即訂房</a></div></div>
+          <div class="week-wrap"><span>6</span><div class="price">$1699</div><div class="room_a"><a href="#"  title="立即訂房">立即訂房</a></div></div>
+          <div class="week-wrap holiday"><span>7</span><div class="room_c">客滿</div></div>
+          <div class="week-wrap holiday"><span>8</span><div class="room_c">客滿</div></div>
+          <div class="week-wrap"><span>9</span></div>
+          <div class="week-wrap"><span>10</span></div>
+          <div class="week-wrap"><span>11</span></div>
+          <div class="week-wrap"><span>12</span></div>
+          <div class="week-wrap"><span>13</span></div>
+          <div class="week-wrap holiday"><span>14</span><div class="price">$16999</div><div class="room_b">客服訂房</div></div>
+          <div class="week-wrap holiday"><span>15</span><div class="price">$16999</div><div class="room_b">客服訂房</div></div>
+          <div class="week-wrap"><span>16</span><div class="price">$16999</div><div class="room_b">客服訂房</div></div>
+          <div class="week-wrap"><span>17</span><div class="price">$16999</div><div class="room_b">客服訂房</div></div>
+          <div class="week-wrap"><span>18</span><div class="price">$16999</div><div class="room_b">客服訂房</div></div>
+          <div class="week-wrap"><span>19</span></div>
+          <div class="week-wrap"><span>20</span></div>
+          <div class="week-wrap holiday"><span>21</span></div>
+          <div class="week-wrap holiday"><span>22</span></div>
+          <div class="week-wrap"><span>23</span></div>
+          <div class="week-wrap"><span>24</span></div>
+          <div class="week-wrap"><span>25</span></div>
+          <div class="week-wrap"><span>26</span></div>
+          <div class="week-wrap"><span>27</span></div>
+          <div class="week-wrap holiday"><span>28</span></div>
+          <div class="week-wrap holiday"><span>29</span></div>
+          <div class="week-wrap"><span>30</span></div>
+          <div class="week-wrap"><span>31</span></div>
+          
+        </div>
+        <div class="month-wrap">
+         <div class="head1"> 
+         <div class="month-title">2019年8月</div>          
+    	<div class="week-wrap">一</div>
+    	<div class="week-wrap">二</div>
+    	<div class="week-wrap">三</div>
+    	<div class="week-wrap">四</div>
+    	<div class="week-wrap">五</div>
+    	<div class="week-wrap holiday">六</div>
+    	<div class="week-wrap holiday">日</div>
+         </div>
+          <div class="week-wrap"><span class="none">30</span></div>
+          <div class="week-wrap"><span class="none">31</span></div>
+          <div class="week-wrap"><span>1</span></div>
+          <div class="week-wrap"><span>2</span></div>
+          <div class="week-wrap"><span>3</span></div>
+          <div class="week-wrap holiday"><span>4</span></div>
+          <div class="week-wrap holiday"><span>5</span></div>
+          <div class="week-wrap "><span>6</span></div>
+          <div class="week-wrap "><span>7</span></div>
+          <div class="week-wrap "><span>8</span></div>
+          <div class="week-wrap "><span>9</span></div>
+          <div class="week-wrap "><span>10</span></div>
+          <div class="week-wrap holiday"><span>11</span></div>
+          <div class="week-wrap holiday"><span>12</span></div>
+          <div class="week-wrap"><span>13</span></div>
+          <div class="week-wrap"><span>14</span></div>
+          <div class="week-wrap"><span>15</span></div>
+          <div class="week-wrap"><span>16</span></div>
+          <div class="week-wrap"><span>17</span></div>
+          <div class="week-wrap holiday"><span>18</span></div>
+          <div class="week-wrap holiday"><span>19</span></div>
+          <div class="week-wrap"><span>20</span></div>
+          <div class="week-wrap"><span>21</span></div>
+          <div class="week-wrap"><span>22</span></div>
+          <div class="week-wrap"><span>23</span></div>
+          <div class="week-wrap"><span>24</span></div>
+          <div class="week-wrap holiday"><span>25</span></div>
+          <div class="week-wrap holiday"><span>26</span></div>
+          <div class="week-wrap"><span>27</span></div>
+          <div class="week-wrap"><span>28</span></div>
+          <div class="week-wrap"><span>29</span></div>
+          <div class="week-wrap"><span>30</span></div>
+          <div class="week-wrap"><span>31</span></div>
+        </div>
+        </div>
+       
+            <div class="footer">
+        <span class="red1">四方通行給您最真實的價格！不會有額外費用！</span>
+      </div>
+        </div>
+    </div>
+  </div>
+</div>
+<body id="step">
+<header class="shadow">
+<div class="container" >
+<!--  Hotel  --> 
+<div class="intro-title clearfix">
+<nav class="right right_nav">
+  <a href="./index.html" title="回官網首頁"><i class="fa fa-home"></i> 回官網首頁</a> │<a href="javascript: void(0)" class="onclick" data-toggle="modal" data-target="#join_member" title="會員中心"><i class="fa fa-user "></i> 會員中心</a>
+  </nav>
+  <div class="info">
+  <h1 class="name">特思得大飯店<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></h1>
+  <ul><li>住址：高雄市苓雅區新光路38號24F-6</li><li>臺南市旅館311號｜ 四方通行訂房專線：07-9682715</li></ul>  
+  </div>
+  
+  </div>
+  <!--  Hotel END -->
+  
+</div>
+</header>
+
+<div class="container clearfix" >
+<!-- 步驟 -->
+<div id="processor">
+<ol class="processorBox oh">
+<li class="current">
+<div class="step_inner fl">
+<span class="icon_step">1</span>
+<h4>選擇住房專案</h4>
+</div>
+</li>
+<li>
+<div class="step_inner">
+<span class="icon_step">2</span>
+<h4>填寫訂房資料與付款方式</h4>
+</div>
+</li>
+<li>
+<div class="step_inner fr">
+<span class="icon_step">3</span>
+<h4>訂單已完成</h4>
+</div>
+</li>
+</ol>
+<div class="step_line"></div>
+</div>
+<!-- 步驟 end -->
+<!-- 選擇日期 -->
+<div class="search clearfix" >
+<a href="javascript: void(0)" class="onclick" data-toggle="modal" data-target="#calendar" title="選擇您的住宿日期">
+<div class="days">
+<div class="wclm"><i class="fa fa-calendar-o"></i></div>
+<div class="check_in">入住日期<p>2019/06/22(五)</p></div><div class="check_out">退房日期<p>2019/06/24(五)</p></div><div class="wclm">3晚</div>
+</div></a>
+
+<div class="people"><div class="wclm_a">
+<i class="fa fa-user"></i>
+</div>                                 
+<select name="livecount" Id=livecount class="number_p">
+<option value=0>不分人數</option>
+<option value=1>1人(房)</option>
+<option value=2>2人(房)</option>
+<option value=3>3人(房)</option>
+<option value=4>4人(房)</option>
+<option value=5>5人(房)</option>
+<option value=6>6人(房)</option>
+<option value=7>7人(房)</option>
+<option value=8>8人(房)</option>
+<option value=9>9人(房)</option>
+<option value=10>10人以上</option>
+</select>
+
+</div>
+
+<div class="btn_b">
+<a href="javascript: void(0)"  data-toggle="modal" data-target="#calendarroom" title="用月曆看房況">
+<i class="fa fa-calendar"></i> 用月曆看房況</a>
+</div>
+</div>
+<!-- 選擇日期 end -->
+
+<!--  選擇住房專案  -->
+<div id="room_type">
+<div class="sale" >
+<!--  住房專案  -->
+
+<ul class="roomlist container">
+<li class="row">
+<div class="col-md-3 p-0"  >
+<div class="pic">
+<img src="images/room/room05.jpg" />
+</div></div>
+<div class="col-md-7 r_main"><div class="ti">標準雙人房</div>
+這間客房設有空調、1 張雙人床、平面電視、電熱水壺和冰箱。私人衛浴設有淋浴設施，提供免費盥洗用品和吹風機。
+<br>請注意，此客房恕無法提供加床。
+<a href="javascript: void(0)" class="onclick" data-toggle="modal" data-target="#calendarroom" title="空房查詢">
+<p>空房查詢</p></a>
+</div>
+<div class="col-md-2 pricebox p-l"><del>$112,980 元</del><br><span>$3099</span>元</div>
+<!-- 促銷-->
+<table class="rwd-table"  >
+  <tr>
+    <td data-th="專案名稱"><a href="#" title="">
+      <sapn class="sti">優惠專案</sapn>
+      </a>
+      <p><a href="#" title="">【高鐵假期】台南夏都城旅．安平館2日自由行(1月-6月)【歡迎使用國旅卡消費】</a></p>
+      <div class="activity_text activity_content01"  style="display: none;"> 距離赤崁樓、延平郡王祠只需步行5-10分鐘。飯店採用舒適、及典雅大方設計風格，<br>
+        秉持“時尚、科技、健康 ”的理念，並融入當地懷舊景點，讓旅客仿佛徜徉於時空的長流。<br>
+      </div>
+      <div class="activity01 cardopen" > <span class="open">活動內容 <i class="fa fa-caret-down"></i></span> <span class="closed hide" >活動內容收起 <i class="fa fa-caret-up"></i></span> </div></td>
+    <td data-th="餐食"><i class="fa fa-cutlery"></i>
+      <sapn>一食二泊</sapn></td>
+    <td data-th="住宿日期"><span class="radio-select">
+      <input class="radio-none" type="checkbox" id="option4" name="option">
+      <label class="circle" for="option4">2019/06/22</label>
+      </span> <span class="radio-select">
+        <input class="radio-none" type="checkbox" id="option5" name="option">
+        <label class="circle" for="option5">2019/06/23</label>
+        </span> <span class="radio-select">
+          <input class="radio-none" type="checkbox" id="option6" name="option">
+          <label class="circle" for="option6">2019/06/24</label>
+        </span></td>
+    <td data-th="平均每晚房價"><div class="purple"><i class="fa fa-tags"></i>本日最低價</div>
+      <div class="pricebox"><del>$12,980 元</del><br>
+        <span>$3099</span>元</div></td>
+    <td data-th="數量" ><div class="number_pc">
+      <select name="select" class="form-control">
+        <option value="1" >1</option>
+        <option value="2" >2</option>
+        <option value="3" >3</option>
+        <option value="4" >4</option>
+        <option value="5" >5</option>
+        <option value="6" >6</option>
+        <option value="7" >7</option>
+        <option value="8" >8</option>
+        <option value="9" >9</option>
+        <option value="10" >10</option>
+        <option value="11" >11</option>
+        <option value="111" >111</option>
+      </select>
+    </div>
+      <div class="number_m"><a href="javascript: void(0)"><i class="fa ">-</i></a>1 <a href="javascript: void(0)"><i class="fa ">+</i></a></div></td>
+    <td rowspan="3" class="count"><div class="chamber">2間房間×3晚</div>
+      <div class="pric">$41,632</div>
+      <button type="button" class="btn btn-style btn-block" onclick="location.href='step2.html'">立即訂房</button>
+      <p class="chamber">訂房只需2分鐘</p></td>
+  </tr>
+  <tr>
+    <td data-th="專案名稱"><a href="#" title="">
+      <sapn class="sti">優惠專案</sapn>
+      </a>
+      <p><a href="#" title="">【高鐵假期】台南夏都城旅．安平館2日自由行(1月-6月)【歡迎使用國旅卡消費】</a></p>
+      <div class="activity_text activity_content02"  style="display: none;"> 距離赤崁樓、延平郡王祠只需步行5-10分鐘。飯店採用舒適、及典雅大方設計風格，<br>
+        秉持“時尚、科技、健康 ”的理念，並融入當地懷舊景點，讓旅客仿佛徜徉於時空的長流。<br>
+      </div>
+      <div class="activity02 cardopen" > <span class="open">活動內容 <i class="fa fa-caret-down"></i></span> <span class="closed hide" >活動內容收起 <i class="fa fa-caret-up"></i></span> </div></td>
+    <td data-th="餐食"><i class="fa fa-cutlery"></i>
+      <sapn>一食二泊</sapn></td>
+    <td data-th="住宿日期"><span class="radio-select">
+      <input class="radio-none" type="checkbox" id="option1_" name="option1_">
+      <label class="circle" for="option1_">2019/06/22</label>
+      </span> <span class="radio-select">
+        <input class="radio-none" type="checkbox" id="option2_" name="option2_">
+        <label class="circle" for="option2_">2019/06/23</label>
+        </span> <span class="radio-select">
+          <input class="radio-none" type="checkbox" id="option3_" name="option3_">
+          <label class="circle" for="option3_">2019/06/24</label>
+        </span></td>
+    <td data-th="平均每晚房價"><div class="purple"><i class="fa fa-tags"></i>本日最低價</div>
+      <div class="pricebox"><del>$12,980 元</del><br>
+        <span>$3099</span>元</div></td>
+    <td data-th="數量" ><div class="number_pc">
+      <select name="select" class="form-control">
+        <option value="1" >1</option>
+        <option value="2" >2</option>
+        <option value="3" >3</option>
+        <option value="4" >4</option>
+        <option value="5" >5</option>
+        <option value="6" >6</option>
+        <option value="7" >7</option>
+        <option value="8" >8</option>
+        <option value="9" >9</option>
+        <option value="10" >10</option>
+        <option value="11" >11</option>
+        <option value="111" >111</option>
+      </select>
+    </div>
+      <div class="number_m"><a href="javascript: void(0)"><i class="fa ">-</i></a>1 <a href="javascript: void(0)"><i class="fa ">+</i></a></div></td>
+  </tr>
+  <tr>
+    <td data-th="專案名稱"><a href="#" title="">一般訂房</a></td>
+    <td data-th="餐食"><i class="fa fa-cutlery"></i>
+      <sapn>一食二泊</sapn></td>
+    <td data-th="住宿日期"><span class="radio-select">
+      <input class="radio-none" type="checkbox" id="option1_2" name="option1_">
+      <label class="circle" for="option1_2">2019/06/22</label>
+      </span> <span class="radio-select">
+        <input class="radio-none" type="checkbox" id="option2_2" name="option2_">
+        <label class="circle" for="option2_2">2019/06/23</label>
+        </span> <span class="radio-select">
+          <input class="radio-none" type="checkbox" id="option3_2" name="option3_">
+          <label class="circle" for="option3_2">2019/06/24</label>
+        </span></td>
+    <td data-th="平均每晚房價"><div class="purple"><i class="fa fa-tags"></i>本日最低價</div>
+      <div class="pricebox"><del>$12,980 元</del><br>
+        <span>$3099</span>元</div></td>
+    <td data-th="數量" ><div class="number_pc">
+      <select name="select" class="form-control">
+        <option value="1" >1</option>
+        <option value="2" >2</option>
+        <option value="3" >3</option>
+        <option value="4" >4</option>
+        <option value="5" >5</option>
+        <option value="6" >6</option>
+        <option value="7" >7</option>
+        <option value="8" >8</option>
+        <option value="9" >9</option>
+        <option value="10" >10</option>
+        <option value="11" >11</option>
+        <option value="111" >111</option>
+      </select>
+    </div>
+      <div class="number_m"><a href="javascript: void(0)"><i class="fa ">-</i></a>1 <a href="javascript: void(0)"><i class="fa ">+</i></a></div></td>
+  </tr>
+</table>
+<!-- count_m--> 
+<div class="count_m">
+<div class="chamber">2間房間×3晚</div><div class="pric">$41,632</div>
+    <button type="button" class="btn btn-style btn-block" onclick="location.href='step2.html'">立即訂房</button>
+    <p>訂房只需2分鐘</p> 
+</div>
+<!-- count_m END --> 
+<!-- 促銷END-->
+</li>
+<li class="row">
+<div class="col-md-3 p-0" >
+<div class="pic">
+<img src="images/room/room04.jpg" />
+</div></div>
+<div class="col-md-7 r_main"><div class="ti">標準雙床房</div>
+這間客房設有空調、2 張單人床、平面電視、電熱水壺和冰箱。私人衛浴設有淋浴設施，備有免費盥洗用品和吹風機。
+
+請注意，此客房恕無法提供加床。
+
+
+<a href="javascript: void(0)" class="onclick" data-toggle="modal" data-target="#calendarroom" title="空房查詢">
+<p>空房查詢</p></a>
+</div>
+<div class="col-md-2 pricebox p-l"><del>$112,980 元</del><br><span>$3099</span>元</div>
+<!-- 促銷-->
+<table class="rwd-table"  >
+  <tr>
+    <td data-th="專案名稱"><a href="#" title="">
+      <sapn class="sti">優惠專案</sapn>
+      </a>
+      <p><a href="#" title="">【高鐵假期】台南夏都城旅．安平館2日自由行(1月-6月)【歡迎使用國旅卡消費】</a></p>
+      <div class="activity_text activity_content01"  style="display: none;"> 距離赤崁樓、延平郡王祠只需步行5-10分鐘。飯店採用舒適、及典雅大方設計風格，<br>
+        秉持“時尚、科技、健康 ”的理念，並融入當地懷舊景點，讓旅客仿佛徜徉於時空的長流。<br>
+      </div>
+      <div class="activity01 cardopen" > <span class="open">活動內容 <i class="fa fa-caret-down"></i></span> <span class="closed hide" >活動內容收起 <i class="fa fa-caret-up"></i></span> </div></td>
+    <td data-th="餐食"><i class="fa fa-cutlery"></i>
+      <sapn>一食二泊</sapn></td>
+    <td data-th="住宿日期"><span class="radio-select">
+      <input class="radio-none" type="checkbox" id="option1" name="selector1">
+      <label class="circle" for="option1">2019/06/22</label>
+      </span> <span class="radio-select">
+        <input class="radio-none" type="checkbox" id="option2" name="selector1">
+        <label class="circle" for="option2">2019/06/23</label>
+        </span> <span class="radio-select">
+          <input class="radio-none" type="checkbox" id="option3" name="selector1">
+          <label class="circle" for="option3">2019/06/24</label>
+        </span></td>
+    <td data-th="平均每晚房價"><div class="purple"><i class="fa fa-tags"></i>本日最低價</div>
+      <div class="pricebox"><del>$12,980 元</del><br>
+        <span>$3099</span>元</div></td>
+    <td data-th="數量" ><div class="number_pc">
+      <select name="select2" class="form-control">
+        <option value="1" >1</option>
+        <option value="2" >2</option>
+        <option value="3" >3</option>
+        <option value="4" >4</option>
+        <option value="5" >5</option>
+        <option value="6" >6</option>
+        <option value="7" >7</option>
+        <option value="8" >8</option>
+        <option value="9" >9</option>
+        <option value="10" >10</option>
+        <option value="11" >11</option>
+        <option value="111" >111</option>
+      </select>
+    </div>
+      <div class="number_m"><a href="javascript: void(0)"><i class="fa ">-</i></a>1 <a href="javascript: void(0)"><i class="fa ">+</i></a></div></td>
+    <td rowspan="3" class="count"><div class="chamber">2間房間×3晚</div>
+      <div class="pric">$41,632</div>
+      <button type="button" class="btn btn-style btn-block" onclick="location.href='step2.html'">立即訂房</button>
+      <p class="chamber">訂房只需2分鐘</p></td>
+  </tr>
+  <tr>
+    <td data-th="專案名稱"><a href="#" title="">
+      <sapn class="sti">優惠專案</sapn>
+      </a>
+      <p><a href="#" title="">【高鐵假期】台南夏都城旅．安平館2日自由行(1月-6月)【歡迎使用國旅卡消費】</a></p>
+      <div class="activity_text activity_content02"  style="display: none;"> 距離赤崁樓、延平郡王祠只需步行5-10分鐘。飯店採用舒適、及典雅大方設計風格，<br>
+        秉持“時尚、科技、健康 ”的理念，並融入當地懷舊景點，讓旅客仿佛徜徉於時空的長流。<br>
+      </div>
+      <div class="activity02 cardopen" > <span class="open">活動內容 <i class="fa fa-caret-down"></i></span> <span class="closed hide" >活動內容收起 <i class="fa fa-caret-up"></i></span> </div></td>
+    <td data-th="餐食"><i class="fa fa-cutlery"></i>
+      <sapn>一食二泊</sapn></td>
+    <td data-th="住宿日期"><span class="radio-select">
+      <input class="radio-none" type="checkbox" id="option1_02" name="selector3">
+      <label class="circle" for="option1_02">2019/06/22</label>
+      </span> <span class="radio-select">
+        <input class="radio-none" type="checkbox" id="option2_02" name="selector3">
+        <label class="circle" for="option2_02">2019/06/23</label>
+        </span> <span class="radio-select">
+          <input class="radio-none" type="checkbox" id="option3_02" name="selector3">
+          <label class="circle" for="option3_02">2019/06/24</label>
+        </span></td>
+    <td data-th="平均每晚房價"><div class="purple"><i class="fa fa-tags"></i>本日最低價</div>
+      <div class="pricebox"><del>$12,980 元</del><br>
+        <span>$3099</span>元</div></td>
+    <td data-th="數量" ><div class="number_pc">
+      <select name="select2" class="form-control">
+        <option value="1" >1</option>
+        <option value="2" >2</option>
+        <option value="3" >3</option>
+        <option value="4" >4</option>
+        <option value="5" >5</option>
+        <option value="6" >6</option>
+        <option value="7" >7</option>
+        <option value="8" >8</option>
+        <option value="9" >9</option>
+        <option value="10" >10</option>
+        <option value="11" >11</option>
+        <option value="111" >111</option>
+      </select>
+    </div>
+      <div class="number_m"><a href="javascript: void(0)"><i class="fa ">-</i></a>1 <a href="javascript: void(0)"><i class="fa ">+</i></a></div></td>
+  </tr>
+  <tr>
+    <td data-th="專案名稱"><a href="#" title="">一般訂房</a></td>
+    <td data-th="餐食"><i class="fa fa-cutlery"></i>
+      <sapn>一食二泊</sapn></td>
+    <td data-th="住宿日期"><span class="radio-select">
+      <input class="radio-none" type="checkbox" id="option1_01" name="selector2">
+      <label class="circle" for="option1_01">2019/06/22</label>
+      </span> <span class="radio-select">
+        <input class="radio-none" type="checkbox" id="option2_01" name="selector2">
+        <label class="circle" for="option2_01">2019/06/23</label>
+        </span> <span class="radio-select">
+          <input class="radio-none" type="checkbox" id="option3_01" name="selector2">
+          <label class="circle" for="option3_01">2019/06/24</label>
+        </span></td>
+    <td data-th="平均每晚房價"><div class="purple"><i class="fa fa-tags"></i>本日最低價</div>
+      <div class="pricebox"><del>$12,980 元</del><br>
+        <span>$3099</span>元</div></td>
+    <td data-th="數量" ><div class="number_pc">
+      <select name="select2" class="form-control">
+        <option value="1" >1</option>
+        <option value="2" >2</option>
+        <option value="3" >3</option>
+        <option value="4" >4</option>
+        <option value="5" >5</option>
+        <option value="6" >6</option>
+        <option value="7" >7</option>
+        <option value="8" >8</option>
+        <option value="9" >9</option>
+        <option value="10" >10</option>
+        <option value="11" >11</option>
+        <option value="111" >111</option>
+      </select>
+    </div>
+      <div class="number_m"><a href="javascript: void(0)"><i class="fa ">-</i></a>1 <a href="javascript: void(0)"><i class="fa ">+</i></a></div></td>
+  </tr>
+</table>
+<!-- count_m--> 
+<div class="count_m">
+<div class="chamber">2間房間×3晚</div><div class="pric">$41,632</div>
+    <button type="button" class="btn btn-style btn-block" onclick="location.href='step2.html'">立即訂房</button>
+    <p>訂房只需2分鐘</p> 
+</div>
+<!-- count_m END --> 
+<!-- 促銷END-->
+</li>
+</ul>
+
+<!--  住房專案 end-->
+
+
+</div></div>
+</div>
+
+
+
+<!-- 版宣 -->
+<div id="footer" >
+<div class="container clearfix">
+<div class="logo left">特思得大飯店</div>
+<ul class="left"><li>住址：高雄市苓雅區新光路38號24F-6</li><li>訂房專線：07-9682715</li></ul>
+</div>
+</div>
+<!-- 版宣END -->
+
+
+<a href="#" class="scrollup" title="gotop"><i class="fa fa-angle-double-up"></i></a>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/slick.js"></script>  
+
+
+<script type="text/javascript"> 
+//登入註冊
+	$(function() {
+    $('#login-form-link').click(function(e) {
+		$("#login-form").delay(100).fadeIn(100);
+ 		$("#register-form").fadeOut(100);
+		$('#register-form-link').removeClass('active');
+		$(this).addClass('active');
+		e.preventDefault();
+	});
+	$('#register-form-link').click(function(e) {
+		$("#register-form").delay(100).fadeIn(100);
+ 		$("#login-form").fadeOut(100);
+		$('#login-form-link').removeClass('active');
+		$(this).addClass('active');
+		e.preventDefault();
+	});
+
+});
+$(".spicslick").slick({ 
+	   dots: true,
+	   autoplay: true,arrows: false,
+       autoplaySpeed: 2000,
+      });
+	  
+$('.spic_slick').slick({
+  dots: false,
+  infinite: true,
+  autoplay: true,
+  speed: 300,
+  slidesToShow: 1,
+  adaptiveHeight: true
+});
+$(document).ready(function(){
+	var $miaobian=$('.spic>li');
+	var $huantu=$('.bpic>img');
+	var $miaobian1=$('.Xcontent26>div');
+	$miaobian.mousemove(function(){miaobian(this);});
+	$miaobian1.click(function(){miaobian1(this);});
+	function miaobian(thisMb){
+		for(var i=0; i<$miaobian.length; i++){
+			$miaobian[i].style.borderColor = '#dedede';
+		}
+		thisMb.style.borderColor = '#cd2426';
+
+		$huantu[0].src = thisMb.children[0].src;
+	}
+	
+		})
+// 伸展
+$(function(){
+		
+  $(".cardopen").click(function(){
+    if($(this).children(".open").attr('class') == 'open'){
+   $(this).children(".open").attr('class','open hide');
+  }else{
+   $(this).children(".open").attr('class','open');
+  };
+  if($(this).children(".closed").attr('class') == 'closed hide'){
+   $(this).children(".closed").attr('class','closed');
+  }else{
+   $(this).children(".closed").attr('class','closed hide');
+  };
+  });
+  		
+});	
+$(".card-footer").click(function(){
+    $(".card-text").slideToggle("slow");
+  });
+$(".activity01").click(function(){
+    $(".activity_content01").slideToggle("slow");
+  });
+  $(".activity02").click(function(){
+    $(".activity_content02").slideToggle("slow");
+  });
+  $(".activity03").click(function(){
+    $(".activity_content03").slideToggle("slow");
+  });	
+$(".activity04").click(function(){
+    $(".activity_content03").slideToggle("slow");
+  });
+
+$("#h_invoicesend2").click(function(){
+                   $("#invoicedata").slideToggle("slow");
+                });
+                
+$("#h_invoicesend1").click(function(){
+                   $("#invoicedata").slideToggle("hide");
+                });
+$(".receipt").click(function(){
+    $(".receipt_open").slideToggle("slow");
+  });
+$(".rule").click(function(){
+    $(".rule_open").slideToggle("slow");
+  });
+$(".order_ti").click(function(){
+    $(".order_list").slideToggle("slow");
+  });
+
+$(window).scroll(function () {
+        if ($(this).scrollTop() > 100) {
+            $('.scrollup').fadeIn();
+        } else {
+            $('.scrollup').fadeOut();
+        }
+    });
+
+    $('.scrollup').click(function () {
+        $("html, body").animate({
+            scrollTop: 0
+        }, 600);
+        return false;
+    });
+$('.multiple-items').slick({
+  infinite: true,
+  slidesToShow: 3,
+  slidesToScroll: 3
+});
+
+ function reloadCaptcha() {
+    const ts = new Date().getTime();
+    document.getElementById('captchaFrame').src = 'https://bestweb.easytravel.com.tw/sys/ck.aspx?n=' + ts;
+  }
+  document.addEventListener('DOMContentLoaded', reloadCaptcha);
+	
+  </script>
+
+ 
+
+
+
+
+</body>
+</html>

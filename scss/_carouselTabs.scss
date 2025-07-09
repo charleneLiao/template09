@@ -1,0 +1,152 @@
+@use "./variables" as *;
+@use "./animations";
+@use "./mixins" as *;
+
+$theme-colors: (
+  #ffcfda, // red
+  #d3b0e0, // green
+  #cae7fb, // blue
+  #f9e79f  // orange
+);
+
+@for $i from 1 through length($theme-colors) {
+  $color: nth($theme-colors, $i);
+
+  .carousel-nav a:nth-child(#{$i}) {
+    &::before {
+      background: rgba($color, 0.2);
+    }
+
+    &:hover::before {
+      background: rgba($color, 0.5);
+    }
+
+    &.active::before {
+      background: rgba($color, 1);
+    }
+  }
+}
+
+
+.carousel-nav {
+  width: 100%;
+  margin-bottom: 40px;
+  display: inline-flex;
+  flex-wrap: nowrap;
+
+  a {
+    color: $text-gray01;
+    padding: 0.6em 2.5em;
+    text-align: center;
+    display: flex;
+    white-space: nowrap;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+
+    &::before {
+      content: "";
+      background: map-get($carousel-colors, default);
+      width: 5em;
+      height: 5em;
+      border-radius: 3em;
+      z-index: -1;
+      position: absolute;
+      bottom: -15px;
+      transition: background 0.3s ease;
+    }
+
+    &:hover {
+      color: $text-gray01;
+
+      &::before {
+        background: map-get($carousel-colors, hover);
+      }
+    }
+
+    &.active {
+      color: $text-gray01;
+
+      &::before {
+        background: map-get($carousel-colors, active);
+      }
+    }
+  }
+
+  // ✅ 手機 RWD：直式排列、不同顏色層級
+  @include respond-max(sm) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+
+    a {
+      width: calc(50% - 6rem);
+      text-align: center;
+      display: block;
+      background: rgba($secondary, 0.1);
+      border-radius: 1.5em;
+      padding: 0.5em 1em;
+
+      &::before {
+        display: none; // 手機不顯示圓圈背景
+      }
+
+      &:hover {
+        background: rgba($secondary, 0.4);
+        color: $secondary;
+      }
+
+      &.active {
+        background: $secondary;
+        color: $primary;
+      }
+    }
+  }
+}
+
+.owl-1 {
+  .owl-nav {
+    display: none;
+  }
+}
+
+.media-29101 {
+  .img {
+    flex: 0 0 50%;
+    // @include media-breakpoint-down(md) {
+    // 	flex: 0 0 100%;
+    // 	display: block;
+    // }
+  }
+
+  .text {
+    padding: 50px;
+
+    @include respond-max(md) {
+      padding: 20px;
+      width: 100%;
+    }
+
+    .category {
+      color: $gray-secondary;
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 0.2rem;
+    }
+
+    h2 {
+      font-family: "Playfair Display", times, serif;
+      font-size: 2rem;
+      line-height: 1.3;
+      margin-bottom: 30px;
+
+      a {
+        color: $black;
+      }
+    }
+  }
+}
