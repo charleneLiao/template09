@@ -1,6 +1,53 @@
-#about{
-        padding-bottom: 3em;
-    .col-md-6{
-        padding: 1em;
+@use "./variables" as *;
+@use "./breakpoints" as *;
+@use "./animations";
+@use "./mixins" as *;
+
+#aboutUs {
+  background: $secondary;
+  width: 100%;
+  min-height: 300px;
+  position: relative;
+  #container {
+    position: initial;
+    border-radius: initial;
+    background: initial;
+  }
+  .col-12{
+    position: relative;
+    z-index: 2;
+  }
+  .aboutImgBox {
+    width: 82%;
+    margin: 0 auto;
+    visibility: visible !important;
+    opacity: 1;
+    position: relative;
+    z-index: 1;
+    @include respond-max(sm) {
+      width: 94%;
     }
+    img {
+      border-radius: 4em;
+    }
+  }
+  .description {
+    margin: 8em 0 1em 0;
+     position: relative;
+    z-index: 1;
+    @include respond-max(md) {
+      margin-top: 2em;
+    }
+  }
+
+  .iconBg {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: 40%;
+    i {
+      font-size: 25em;
+      color: rgba($secondary04, 1);
+    }
+  }
 }

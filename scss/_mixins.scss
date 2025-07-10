@@ -274,6 +274,7 @@ flex: 0 0 calc(50% - 30px);
   line-height: $line-height;
   max-height: calc(#{$line-height} * #{$lines});
 }
+//   @include clamp-lines(2, 1.6em);
 
 @mixin bg-zoom($duration: 10s, $scale: 1.12) {
   animation: bgZoom $duration ease forwards;
@@ -281,11 +282,17 @@ flex: 0 0 calc(50% - 30px);
   will-change: transform;
 }
 
-// @keyframes bgZoom {
-//   0% {
-//     transform: scale(1);
-//   }
-//   100% {
-//     transform: scale(1.12);
-//   }
-// }
+@mixin fadeInUp($duration: 0.6s, $distance: 30px) {
+  animation: fadeInUp $duration ease both;
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY($distance);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+

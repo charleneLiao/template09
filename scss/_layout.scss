@@ -5,13 +5,13 @@
 @use "./button" as *;
 @use "./animations" as *;
 
-#container{
-    border-top-left-radius: 3em;
-    border-top-right-radius: 3em;
-    background-color: $white;
-    width: calc(100% - 50px);
-    z-index: 2;
-    position: relative;
-    height: 300px;
-    bottom: 3em;
+#container {
+  border-top-left-radius: 3em;
+  border-top-right-radius: 3em;
+  background-color: $white;
+  width: calc(100% - 50px);
+  z-index: 2;
+  position: relative;
+  bottom: 3em;
+  padding: 3em;
 }

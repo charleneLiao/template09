@@ -108,3 +108,12 @@ section {
   opacity: 1;
   visibility: visible;
 }
+
+[data-aos] {
+  transition: all 0.8s ease-in-out;
+}
+[data-aos].aos-animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+

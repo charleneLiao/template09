@@ -3,381 +3,160 @@
 @use "./mixins" as *;
 @use "./animations" as *;
 
-#popularRoomsComponent {
-  // overflow-x: hidden;
-
-  // color: $secondary;
-  section {
-    padding: 4em 0 2.5em 0;
+:root {
+      --dark-green: #9cc675;
+      --dark-yellow: #e89a3d;
+      --extra-light-brown:#fdf0d7;
+      --light-brown: #ecd5ab;
+      --dark-brown:#915b40;
+      --light-yellow:#f8e3a8;
+      --light-red:#f3ac99;
+      --light-teal:#a6c8cc;
+      --light-gray:#ddd5d6;
+    }
+#popularRoomsComponent{
+  padding: 1em;
+  width: 100%;
+  .hd{
   }
+  
 
-  .container {
-    // padding: 9em 0em 2em 0em;
-    overflow: hidden;
-  }
-
-  .hd-title {
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    p,
-    h3 {
-      margin-bottom: 0;
-    }
-
-    &::before {
-      display: none;
-    }
-
-    h3 {
-      font-size: 2rem;
-      font-weight: normal;
-      margin-right: 1em;
-      white-space: nowrap;
-    }
-    p {
-      color: $gray-secondary;
-    }
-  }
-
-  .swiper {
-    height: 640px;
-  }
-
-  .swiper-slide {
-    width: auto; // 讓它不要撐滿整個 swiper-wrapper
-
-    .card {
-      width: 100%; // 或改成 100% 配合 RWD，視需要
-      flex: 1 0 auto;
-      @include respond-max(sm) {
-        width: 93vw; // 或改成 100% 配合 RWD，視需要
-      }
-
-      .card-body {
-        .btn-group {
-          display: flex;
-          gap: 1em;
-          justify-content: flex-end;
-          width: 300px;
-          margin: 0 auto;
-        }
-        .btn-outline-secondary {
-          color: $secondary02;
-          border: 1px solid $secondary02;
-          &:hover{
-            background-color: $secondary;
-          }
-        }
-        .card-title {
-          margin: 0.6em 0 1em 0;
-        }
-
-        .card-text {
-          height: 6.5em;
-          border-bottom: 1px solid $gray-secondary01;
-        }
-      }
-      .swiper-slide img {
-        width: 100%;
-        height: auto;
-        display: block;
-      }
-    }
-    .nested-swiper {
-      width: 100%;
-      height: 360px; // 或依圖片比例調整
-      border-radius: 0.5rem;
-      overflow: hidden;
-    }
-    .nested-swiper .swiper-slide img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
-
-  .imgBox {
-    width: 100%;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center center;
-      display: block;
-    }
-  }
-
-  // 左右輪播建
-  .swiper2 {
-    .swiper-wrapper {
-      display: flex;
-    }
-
-    .swiper-slide {
-      flex-shrink: 0;
-      width: 49% !important; // 由 Swiper 控制寬度
-      padding-right: 24px; // ✅ 加這個就有間距
-      box-sizing: border-box;
-      .swiper-slide {
-        padding-right: 0px;
-        width: 100% !important;
-        margin: 0;
-      }
-    }
-
-    .card {
-      width: 100%;
-      border: 1px solid #eee;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    }
-  }
-
-  // 確保 swiper 導航按鈕不擋住卡片
-  .swiper-button-group {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    pointer-events: none;
-
-    .swiper-button-prev,
-    .swiper-button-next {
-      pointer-events: auto;
-    }
-  }
-  .swiper-button-group {
-    position: absolute;
-    top: 45%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    z-index: 10;
-    padding: 0 10px;
-
-    .swiper-button-prev,
-    .swiper-button-next {
-      color: #0066cc;
-      font-size: 24px;
-    }
-  }
-
-  .room-tabs-wrapper {
-    background-color: $gray-secondary01;
-    border-radius: 2rem;
-    position: relative;
-    display: flex;
-    margin: 0 auto;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 50%;
-    margin-bottom: 2em;
-    @include respond-max(md) {
-      width: 100%;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      padding: 0.5rem 0;
-      scrollbar-width: none;
-
-      &::-webkit-scrollbar {
-        display: none;
-      }
-
-      .room-tabs {
-        flex-wrap: nowrap;
-        width: max-content;
-        min-width: 100%;
-      }
-
-      .nav-link {
-        flex: 0 0 auto;
-        min-width: 5rem;
-        white-space: nowrap;
-        scroll-snap-align: center;
-      }
-
-      .tab-indicator {
-        pointer-events: none;
-      }
-    }
-
-    .room-tabs {
-      display: flex;
-      gap: 0.5rem;
-      position: relative;
-      z-index: 2;
-      width: 100%;
-
-      .nav-link {
-        color: $text-gray01;
-        border: none;
-        border-radius: 2rem;
-        padding: 0.5rem 1.5rem;
-        z-index: 2;
-        position: relative;
-        transition: color 0.3s ease;
-        flex: 1;
-        text-align: center;
-        white-space: nowrap;
-
-        &.active {
-          color: $text-gray01;
-          background: transparent;
-        }
-      }
-    }
-    .tab-indicator,
-    .nav__link_active {
+   .credit {
       position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 0;
-      background-color: $secondary;
-      border-radius: 2rem;
-      transition: all 0.3s ease;
-      z-index: 1;
-    }
-  }
-
-  // slider
-  .swiper2 {
-    overflow: visible; // ✅ 防止裁切溢出
-    .swiper-wrapper {
-      display: flex;
-      gap: 24px;
-    }
-    .swiper-slide {
-      width: auto;
-      flex-shrink: 0;
-    }
-  }
-
-  .card {
-    border: none;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    border-radius: 12px;
-    overflow: hidden;
-    transition: transform 0.3s;
-    &:hover {
-      transform: translateY(-4px);
-    }
-  }
-
-  .imgBox {
-    position: relative;
-    .swiper {
-      border-radius: 12px 12px 0 0;
-    }
-    img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-    }
-  }
-
-  .card-body {
-    padding: 1rem;
-    .card-title {
-      font-size: 1.25rem;
-      margin-bottom: 0.5rem;
-    }
-    .card-text {
-      font-size: 0.95rem;
-      color: #555;
-    }
-    .btnBox {
-      display: flex;
-      gap: 0.5rem;
-      margin-top: 1rem;
-      flex-wrap: wrap;
-    }
-  }
-
-  .swiper-button-group {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 1.5rem;
-    .swiper-button-prev,
-    .swiper-button-next {
-      position: static;
-      width: 36px;
-      height: 36px;
-      background-color: rgba(0, 0, 0, 0.1);
-      border-radius: 50%;
-      &:after {
-        font-size: 1rem;
-        color: #333;
+      bottom:20px;
+      left:20px;
+      
+      color:inherit;
+   }
+   .options {
+      display:flex;
+      flex-direction:row;
+      align-items:stretch;
+      overflow:hidden;
+      min-width: 600px;
+      max-width: 100%;
+      width:calc(100% - 50px);
+      height: 600px;
+      
+      @for $i from 1 through 4 {
+         @media screen and (max-width:798px - $i*80) {
+            min-width: 100%　- $i*80;
+            .option:nth-child(#{6-$i}) {
+               display:none;
+            }
+         }
       }
-    }
-  }
+      
+      .option {
+         position: relative;
+         overflow:hidden;
+         min-width:60px;
+         margin:10px;
+         //border:0px solid --defaultColor;
 
-  // 手機版調整
-  @media (max-width: 767.98px) {
-    .swiper2 {
-      .swiper-slide {
-        width: 100% !important; // ✅ 一張滑滿畫面寬度
-        padding: 0;
-        margin: 0;
+         background:var(--optionBackground, var(--defaultBackground, #E6E9ED));
+         background-size:auto 120%;
+         background-position:center;
+
+         cursor: pointer;
+
+         transition:.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+         &.active {
+            flex-grow: 5;
+            transform:scale(1);
+            
+            max-width: 900px;
+            margin:0px;
+            border-radius:40px;
+            
+            background-size:auto 100%;
+            .shadow {
+               box-shadow:inset 0 -120px 120px -120px black, inset 0 -120px 120px -100px black;
+            }
+            .label {
+               bottom:20px;
+               left:20px;
+               .info >div {
+                  left:0px;
+                  opacity:1;
+               }
+            }
+            /*&:active {
+               transform:scale(0.9);
+            }*/
+         }
+         &:not(.active) {
+            flex-grow:1;
+            
+            border-radius:30px;
+            .shadow {
+               bottom:-40px;
+               box-shadow:inset 0 -120px 0px -120px black, inset 0 -120px 0px -100px black;
+            }
+            .label {
+               bottom:10px;
+               left:10px;
+               .info >div {
+                  left:20px;
+                  opacity:0;
+               }
+            }
+         }
+         .shadow {
+            position: absolute;
+            bottom:0px;
+            left:0px;
+            right:0px;
+            
+            height:120px;
+            
+            transition:.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+         }
+         .label {
+            display:flex;
+            position: absolute;
+            right:0px;
+
+            height:40px;
+            transition:.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+            .icon {
+               display:flex;
+               flex-direction:row;
+               justify-content:center;
+               align-items:center;
+               
+               min-width:40px;
+               max-width:40px;
+               height:40px;
+               border-radius:100%;
+
+               background-color:white;
+               color:var(--defaultBackground);
+            }
+            .info {
+               display:flex;
+               flex-direction:column;
+               justify-content:center;
+               
+               margin-left:10px;
+               
+               color:white;
+               
+               white-space: pre;
+               >div {
+                  position: relative;
+                  
+                  transition:.5s cubic-bezier(0.05, 0.61, 0.41, 0.95), opacity .5s ease-out;
+               }
+               .main {
+                  font-weight:bold;
+                  font-size:1.2rem;
+               }
+               .sub {
+                  transition-delay:.1s;
+               }
+            }
+         }
       }
-    }
-    .imgBox img {
-      height: 180px;
-    }
-  }
-  // 相片內輪播頁碼
-  .swiper-horizontal > .swiper-pagination-bullets,
-  .swiper-pagination-bullets.swiper-pagination-horizontal {
-    text-align: right;
-    padding: 0 4em 0.5em 0;
-  }
-  .swiper-pagination {
-    .swiper-pagination-bullet {
-      border-radius: initial;
-      width: 1.5em;
-      height: 0.3em;
-      opacity: 0.4;
-      background: $white;
-    }
-    .swiper-pagination-bullet-active {
-      opacity: 0.8;
-      background: $secondary;
-    }
-  }
-  .swiper {
-    position: relative;
-
-    .swiper-nav {
-      position: absolute;
-      bottom: 1em;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      z-index: 20;
-    }
-
-    .swiper-button-prev,
-    .swiper-button-next {
-      position: static; // 取消原本的 absolute
-      border: 1px solid $secondary02;
-      padding: 1em 1.5em;
-      background: rgba($secondary, 0.2);
-      cursor: pointer;
-
-      &::after {
-        font-size: 1em;
-        color: $secondary02;
-      }
-
-      &:hover {
-        background: rgba($secondary, 0.5);
-      }
-    }
-  }
+   }
 }
