@@ -72,8 +72,8 @@ body {
     z-index: 3;
     background: $white;
     padding: 0.3em 0.3em 0em 0.2em;
-    @include respond-max(1024){
-     left: 2em; 
+    @include respond-max(1024) {
+      left: 2em;
     }
   }
   .sideBlock__bar--inner {
@@ -93,14 +93,54 @@ body {
       font-family: sans-serif;
       color: $white;
     }
-    .addMember{
+    .google_translate {
+      position: absolute;
+      bottom: 14em;
+      left: 0.5em;
+      .goog-te-gadget {
+        writing-mode: vertical-rl; /* 垂直書寫，從右到左 */
+        text-orientation: upright; /* 每個字保持正立 */
+        font-size: 14px;
+        line-height: 1.1;
+      }
+
+      .goog-te-gadget .goog-te-combo {
+        margin: 4px auto;
+        padding: 0.5em;
+        background: transparent;
+        color: #333 !important;
+        border: none;
+        &::focus {
+          outline: none;
+          border-color: #666;
+          background-color: #f8f8f8;
+        }
+      }
+    }
+    // 更精準地清掉「由 Google 翻譯技術提供」
+    .google_translate {
+      .goog-te-gadget > span {
+        display: none !important;
+      }
+
+      .goog-logo-link {
+        display: none !important;
+      }
+
+      .goog-te-gadget {
+        font-size: 0 !important;
+        line-height: 1 !important;
+      }
+    }
+
+    .addMember {
       position: absolute;
       bottom: 4.5em;
       left: 0.25em;
       z-index: 4;
       color: $white;
       font-size: 2em;
-      &:hover{
+      &:hover {
         color: #ffe000;
       }
     }
@@ -125,6 +165,7 @@ body {
       position: relative;
     }
     .menuBtn {
+      top: 33px;
       display: flex;
       flex-direction: column;
       align-content: center;
@@ -144,7 +185,7 @@ body {
         cursor: pointer;
         .menuBtn__text--menu,
         .menuBtn__text--close {
-          writing-mode: vertical-rl;
+          writing-mode: sideways-rl;
           color: $white;
           margin-top: 30px;
         }
@@ -220,10 +261,10 @@ body {
       opacity: 1;
     }
     .logo {
-          position: initial;
-    width: 100%;
-    text-align: center;
-    margin-bottom: 2.5em;
+      position: initial;
+      width: 100%;
+      text-align: center;
+      margin-bottom: 2.5em;
       a {
         display: block;
         margin: 1em auto;

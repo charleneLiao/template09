@@ -849,6 +849,39 @@ body {
   font-family: sans-serif;
   color: #ffffff;
 }
+#head .sideBlock__bar--inner .google_translate {
+  position: absolute;
+  bottom: 14em;
+  left: 0.5em;
+}
+#head .sideBlock__bar--inner .google_translate .goog-te-gadget {
+  writing-mode: vertical-rl; /* 垂直書寫，從右到左 */
+  text-orientation: upright; /* 每個字保持正立 */
+  font-size: 14px;
+  line-height: 1.1;
+}
+#head .sideBlock__bar--inner .google_translate .goog-te-gadget .goog-te-combo {
+  margin: 4px auto;
+  padding: 0.5em;
+  background: transparent;
+  color: #333 !important;
+  border: none;
+}
+#head .sideBlock__bar--inner .google_translate .goog-te-gadget .goog-te-combo::focus {
+  outline: none;
+  border-color: #666;
+  background-color: #f8f8f8;
+}
+#head .sideBlock__bar--inner .google_translate .goog-te-gadget > span {
+  display: none !important;
+}
+#head .sideBlock__bar--inner .google_translate .goog-logo-link {
+  display: none !important;
+}
+#head .sideBlock__bar--inner .google_translate .goog-te-gadget {
+  font-size: 0 !important;
+  line-height: 1 !important;
+}
 #head .sideBlock__bar--inner .addMember {
   position: absolute;
   bottom: 4.5em;
@@ -881,6 +914,7 @@ body {
   position: relative;
 }
 #head .sideBlock__bar--inner .menuBtn {
+  top: 33px;
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -902,7 +936,7 @@ body {
 }
 #head .sideBlock__bar--inner .menuBtn .menu-wrapper .menuBtn__text--menu,
 #head .sideBlock__bar--inner .menuBtn .menu-wrapper .menuBtn__text--close {
-  writing-mode: vertical-rl;
+  writing-mode: sideways-rl;
   color: #ffffff;
   margin-top: 30px;
 }
