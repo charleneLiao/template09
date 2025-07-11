@@ -295,4 +295,10 @@ flex: 0 0 calc(50% - 30px);
     }
   }
 }
+// blur 效果
+@mixin blur-backdrop($amount: 10px) {
+  backdrop-filter: blur($amount);
+  -webkit-backdrop-filter: blur($amount);
+}
+
 

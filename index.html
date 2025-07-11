@@ -44,6 +44,14 @@
             </div>
           </div>
         </div>
+        <a
+          id="openMemberModalBtn"
+          href="#"
+          class="addMember"
+          title="加入會員"
+        >
+          <i class="fa-regular fa-circle-user"></i>
+        </a>
         <div
           class="btnLink__hover arrowIcon__hover pageTop"
           data-aos="fade-up"
@@ -88,7 +96,7 @@
             <a href="#">設施介紹 </a>
           </li>
           <li class="">
-            <a href="#">線上訂房 </a>
+            <a href="step1.html" target="_blank">線上訂房 </a>
           </li>
           <li class="">
             <a href="#">聯絡我們 </a>
@@ -106,8 +114,57 @@
         <!-- 第二層 -->
         <div id="container">
           <div id="specialOffersComponent">
-            <section class="specialOffersComponent">
+            <div class="hd">
               <h2 class="text-center hd-title">最新消息</h2>
+              <a
+                href="news.html"
+                data-wpel-link="internal"
+                class="is-anchor-contain"
+              >
+                <svg
+                  class="circle-arrow"
+                  width="60"
+                  height="60"
+                  viewBox="0 0 60 60"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <!-- 橢圓形（旋轉 20 度） -->
+                  <ellipse
+                    cx="30"
+                    cy="30"
+                    rx="25"
+                    ry="18"
+                    fill="none"
+                    stroke="black"
+                    stroke-width="1.5"
+                    transform="rotate(150 30 30)"
+                  />
+
+                  <!-- 箭頭主幹 -->
+                  <line
+                    x1="25"
+                    y1="30"
+                    x2="35"
+                    y2="30"
+                    stroke="black"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+
+                  <!-- 箭頭尖端 -->
+                  <polyline
+                    points="32,27 35,30 32,33"
+                    fill="none"
+                    stroke="black"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <span class="p-button3__txt">View More</span>
+              </a>
+            </div>
+            <section class="specialOffersComponent">
               <div class="container">
                 <div
                   class="promo-slider"
@@ -123,7 +180,12 @@
                       />
                     </div>
                     <div class="card-body">
-                      <p class="text-muted small mb-1">2025.06.09</p>
+                      <p class="text-muted">
+                        <span class="time">2025.06.09</span>
+                        <a href="news.html?category=住宿優惠" class="tag"
+                          >住宿優惠</a
+                        >
+                      </p>
                       <h5 class="card-title">英式午茶時光體驗</h5>
                       <p class="card-text">
                         這是特斯德酒店精心準備的英式下午茶饗宴，邀請三五好友一同享受輕鬆愜意的午後時光，品味優雅甜點與香濃紅茶。
@@ -144,7 +206,14 @@
                       />
                     </div>
                     <div class="card-body">
-                      <p class="text-muted small mb-1">2025.06.09</p>
+                      <p class="text-muted">
+                        <span class="time">2025.06.09</span>
+                        <a
+                          href="news.html?category=餐飲優惠"
+                          class="tag tagFood"
+                          >餐飲優惠</a
+                        >
+                      </p>
                       <h5 class="card-title">夏日花果調酒派對</h5>
                       <p class="card-text">
                         調酒師特製的夏季限定飲品，結合薰衣草與檸檬的清新香氣，讓味蕾在繽紛的花果中盡情舞動。
@@ -165,7 +234,12 @@
                       />
                     </div>
                     <div class="card-body">
-                      <p class="text-muted small mb-1">2025.06.11</p>
+                      <p class="text-muted">
+                        <span class="time">2025.06.09</span>
+                        <a href="news.html?category=住宿優惠" class="tag"
+                          >住宿優惠</a
+                        >
+                      </p>
                       <h5 class="card-title">城市漫遊・單車日記</h5>
                       <p class="card-text">
                         探索城市角落最舒適的方式！飯店提供免費單車租借服務，讓旅客輕鬆穿梭街景，留下專屬於你的城市印象。
@@ -186,7 +260,14 @@
                       />
                     </div>
                     <div class="card-body">
-                      <p class="text-muted small mb-1">2025.06.11</p>
+                      <p class="text-muted">
+                        <span class="time">2025.06.09</span>
+                        <a
+                          href="news.html?category=活動訊息"
+                          class="tag tagActivity"
+                          >活動訊息</a
+                        >
+                      </p>
                       <h5 class="card-title">童趣氣球手作日</h5>
                       <p class="card-text">
                         在繽紛歡樂的氣球世界裡，一起體驗氣球達人現場教學，親手捏出屬於你的動物造型，適合親子同樂、歡笑滿滿！
@@ -208,7 +289,14 @@
                       />
                     </div>
                     <div class="card-body">
-                      <p class="text-muted small mb-1">2025.06.09</p>
+                      <p class="text-muted">
+                        <span class="time">2025.06.09</span>
+                        <a
+                          href="news.html?category=活動訊息"
+                          class="tag tagActivity"
+                          >活動訊息</a
+                        >
+                      </p>
                       <h5 class="card-title">英式午茶時光體驗</h5>
                       <p class="card-text">
                         這是特斯德酒店精心準備的英式下午茶饗宴，邀請三五好友一同享受輕鬆愜意的午後時光，品味優雅甜點與香濃紅茶。
@@ -229,7 +317,14 @@
                       />
                     </div>
                     <div class="card-body">
-                      <p class="text-muted small mb-1">2025.06.10</p>
+                      <p class="text-muted">
+                        <span class="time">2025.06.09</span>
+                        <a
+                          href="news.html?category=餐飲優惠"
+                          class="tag tagFood"
+                          >餐飲優惠</a
+                        >
+                      </p>
                       <h5 class="card-title">夏日花果調酒派對</h5>
                       <p class="card-text">
                         調酒師特製的夏季限定飲品，結合薰衣草與檸檬的清新香氣，讓味蕾在繽紛的花果中盡情舞動。
@@ -250,7 +345,12 @@
                       />
                     </div>
                     <div class="card-body">
-                      <p class="text-muted small mb-1">2025.06.11</p>
+                      <p class="text-muted">
+                        <span class="time">2025.06.09</span>
+                        <a href="news.html?category=住宿優惠" class="tag"
+                          >住宿優惠</a
+                        >
+                      </p>
                       <h5 class="card-title">城市漫遊・單車日記</h5>
                       <p class="card-text">
                         探索城市角落最舒適的方式！飯店提供免費單車租借服務，讓旅客輕鬆穿梭街景，留下專屬於你的城市印象。
@@ -271,7 +371,14 @@
                       />
                     </div>
                     <div class="card-body">
-                      <p class="text-muted small mb-1">2025.06.11</p>
+                      <p class="text-muted">
+                        <span class="time">2025.06.09</span>
+                        <a
+                          href="news.html?category=餐飲優惠"
+                          class="tag tagFood"
+                          >餐飲優惠</a
+                        >
+                      </p>
                       <h5 class="card-title">童趣氣球手作日</h5>
                       <p class="card-text">
                         在繽紛歡樂的氣球世界裡，一起體驗氣球達人現場教學，親手捏出屬於你的動物造型，適合親子同樂、歡笑滿滿！
@@ -360,69 +467,126 @@
         </div>
         <!-- 第五:熱門房型 -->
         <div id="popularRoomsComponent">
-          <div class="hd"><h2 class="text-center hd-title"></h2>精選房型</div>
+          <div class="hd">
+            <h2 class="text-center hd-title">精選房型</h2>
+            <a
+              href="news.html"
+              data-wpel-link="internal"
+              class="is-anchor-contain"
+            >
+              <svg
+                class="circle-arrow"
+                width="60"
+                height="60"
+                viewBox="0 0 60 60"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <!-- 橢圓形（旋轉 20 度） -->
+                <ellipse
+                  cx="30"
+                  cy="30"
+                  rx="25"
+                  ry="18"
+                  fill="none"
+                  stroke="black"
+                  stroke-width="1.5"
+                  transform="rotate(150 30 30)"
+                />
+
+                <!-- 箭頭主幹 -->
+                <line
+                  x1="25"
+                  y1="30"
+                  x2="35"
+                  y2="30"
+                  stroke="black"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+
+                <!-- 箭頭尖端 -->
+                <polyline
+                  points="32,27 35,30 32,33"
+                  fill="none"
+                  stroke="black"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <span class="p-button3__txt">View More</span>
+            </a>
+          </div>
           <div class="options">
             <div
               class="option active"
-              style="background-image: url(images/rooms/room01.jpg);">
+              style="background-image: url(images/rooms/room01.jpg)"
+            >
               <div class="shadow"></div>
               <div class="label">
                 <div class="icon">
-                  <i class="fas fa-walking"></i>
+                  <i class="fa-solid fa-disease"></i>
                 </div>
                 <div class="info">
-                  <div class="main">豪華雙人房</div>
+                  <div class="main">海景豪華雙人房</div>
                   <div class="sub">舒適典雅設計，附贈早餐與浴缸。</div>
                 </div>
               </div>
             </div>
             <div
               class="option"
-              style="background-image: url(images/rooms/room06.jpg);">
-              <div class="shadow"></div>
-              <div class="label">
-                <div class="icon">
-                  <i class="fas fa-snowflake"></i>
-                </div>
-                <div class="info">
-                  <div class="main">城市景觀房</div>
-                  <div class="sub">大片窗景可俯瞰市中心，附陽台。</div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="option"
-              style="background-image: url(images/rooms/room01_2.jpg);"
+              style="background-image: url(images/rooms/room06.jpg)"
             >
               <div class="shadow"></div>
               <div class="label">
                 <div class="icon">
-                  <i class="fas fa-tree"></i>
+                  <i class="fa-solid fa-tree-city"></i>
                 </div>
                 <div class="info">
-                  <div class="main">行政套房</div>
-                  <div class="sub">專屬會客空間與景觀浴室，尊爵享受。</div>
+                  <a href="rooms_detail.html">
+                    <div class="main">城市景觀房</div>
+                    <div class="sub">大片窗景可俯瞰市中心，附陽台。</div>
+                  </a>
                 </div>
               </div>
             </div>
             <div
               class="option"
-              style="background-image: url(images/rooms/room01_3.jpg);"
+              style="background-image: url(images/rooms/room01_2.jpg)"
             >
               <div class="shadow"></div>
               <div class="label">
                 <div class="icon">
-                  <i class="fas fa-tint"></i>
+                  <i class="fa-solid fa-mug-saucer"></i>
                 </div>
                 <div class="info">
-                  <div class="main">家庭四人房</div>
-                  <div class="sub">空間寬敞，適合親子入住，附沙發區。</div>
+                  <a href="rooms_detail.html">
+                    <div class="main">行政套房　附含經典早餐</div>
+                    <div class="sub">專屬會客空間與景觀浴室，尊爵享受。</div>
+                  </a>
                 </div>
               </div>
             </div>
             <div
               class="option"
-              style="background-image: url(images/rooms/room02.jpg);"
+              style="background-image: url(images/rooms/room01_3.jpg)"
+            >
+              <div class="shadow"></div>
+              <div class="label">
+                <div class="icon">
+                  <i class="fa-solid fa-gift"></i>
+                </div>
+                <div class="info">
+                  <a href="rooms_detail.html">
+                    <div class="main">住宿好禮 家庭四人房</div>
+                    <div class="sub">空間寬敞，適合親子入住，附沙發區。</div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div
+              class="option"
+              style="background-image: url(images/rooms/room02.jpg)"
             >
               <div class="shadow"></div>
               <div class="label">
@@ -430,8 +594,29 @@
                   <i class="fas fa-sun"></i>
                 </div>
                 <div class="info">
-                  <div class="main">主題特色房A</div>
-                  <div class="sub">設計感十足，適合拍照打卡。</div>
+                  <a href="rooms_detail.html">
+                    <div class="main">主題特色房A</div>
+                    <div class="sub">設計感十足，適合拍照打卡。</div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div
+              class="option active"
+              style="background-image: url(images/rooms/room09.jpg)"
+            >
+              <div class="shadow"></div>
+              <div class="label">
+                <div class="icon">
+                  <i class="fa-solid fa-tags"></i>
+                </div>
+                <div class="info">
+                  <a href="rooms_detail.html">
+                    <div class="main">優惠九折 豪華溫馨雙人房</div>
+                    <div class="sub">
+                      有戶外景觀，舒適典雅設計，附贈早餐與浴缸。
+                    </div>
+                  </a>
                 </div>
               </div>
             </div>

@@ -213,6 +213,7 @@
       border: none;
     }
     .card-body {
+      padding-top: 2rem;
       .card-title {
         &::first-letter {
           color: $primary;
@@ -225,6 +226,37 @@
         display: flex;
         justify-content: center;
         .btn {
+        }
+      }
+      .time {
+      }
+      .tag {
+        background: rgba($tag, 0.4);
+        padding: 2px 7px;
+        border-radius: 1em;
+      }
+      .tagActivity {
+        background: rgba($tagActivity, 0.4);
+      }
+      .tagArt {
+        background: rgba($tagArt, 0.4);
+      }
+      .tagFood {
+        background: rgba($tagFood, 0.4);
+      }
+      .text-muted {
+        margin-bottom: 0.8em;
+        .tag {
+          position: relative;
+          left: 2em;
+          &::before {
+            content: "．";
+            position: absolute;
+            left: -1em;
+            font-size: 2.5em;
+            top: -16px;
+            color: $gray-secondary;
+          }
         }
       }
     }
@@ -240,7 +272,7 @@
       border-radius: 1em;
       &:hover {
         transform: translateY(-8px) scale(1.02);
-        .imgBox{
+        .imgBox {
           box-shadow: none;
           transition: transform 0.4s ease, box-shadow 0.4s ease;
         }

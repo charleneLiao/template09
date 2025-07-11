@@ -4,7 +4,7 @@
 
 a {
   color: $text-color;
-  &:hover{
+  &:hover {
     text-decoration: none;
   }
 }
@@ -27,18 +27,18 @@ a {
 }
 
 .hd-title {
-  // padding: 0.5em 0 0.8em 0;
   display: inline-flex;
   align-items: center;
-  justify-content: left;
-  color: $text-color;
+  justify-content: center;
+  color: #111111;
   letter-spacing: 0.1em;
   position: relative;
-  width: 100%;
   font-family: "system-ui", serif;
   font-size: 2rem;
   font-weight: normal;
-  margin-bottom: 1em;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  margin: 0.9em 1em 1.1em 2em;
 }
 
 #specialOffersComponent {
@@ -71,8 +71,6 @@ section {
   }
 }
 
-
-
 #scrollToTopBtn {
   border: 1px solid $secondary02;
   position: fixed;
@@ -99,7 +97,7 @@ section {
   &:hover {
     background: rgba($secondary02, 0.2);
   }
-  @include respond-max(sm){
+  @include respond-max(sm) {
     bottom: 8rem;
   }
 }
@@ -117,3 +115,47 @@ section {
   transform: translateY(0) !important;
 }
 
+#specialOffersComponent, #popularRoomsComponent{
+    .hd {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-wrap: nowrap;
+      flex-direction: row;
+      transition: transform 0.3s ease;
+      &:hover {
+        transform: scale(1.1);
+        cursor: pointer;
+        color: $primary;
+        ellipse {
+          fill: $primary;
+          stroke: $white;
+        }
+        line,
+    polyline {
+      stroke: #fff; // 箭頭變白
+    }
+      }
+    }
+    .circle-arrow {
+      display: block;
+      ellipse {
+        stroke: #333;
+      }
+
+      line,
+      polyline {
+        stroke: #333;
+      }
+    }
+    .p-button3__txt {
+      margin-left: 0.5em;
+    }
+  }
+}
