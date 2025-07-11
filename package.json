@@ -1,0 +1,23 @@
+{
+  "name": "hotel09",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000t\u0000e\u0000m\u0000p\u0000l\u0000a\u0000t\u0000e\u00000\u00009\u0000\r\u0000 \u0000#\u0000 \u0000t\u0000e\u0000m\u0000p\u0000l\u0000a\u0000t\u0000e\u00000\u00009\u0000\r\u0000 \u0000",
+  "main": "update-html-head-footer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/charleneLiao/template09.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/charleneLiao/template09/issues"
+  },
+  "homepage": "https://github.com/charleneLiao/template09#readme",
+  "dependencies": {
+    "cheerio": "^1.1.0"
+  }
+}

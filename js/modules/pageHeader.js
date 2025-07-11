@@ -83,5 +83,5 @@ window.loadpageHeader = function () {
     console.warn("⚠️ 找不到 .goBack，沒綁成功");
   }
 
-  AOS.init();
+  // AOS.init();
 };

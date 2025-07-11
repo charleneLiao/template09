@@ -1,59 +1,94 @@
-<!DOCTYPE html>
-<html lang="zh-Hant">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!DOCTYPE html><html lang="zh-Hant"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TESTO HOTEL</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/flatpickr.min.css" />
-    <link rel="stylesheet" href="css/material_blue.css" />
-    <link rel="stylesheet" href="css/slick.css" />
-    <link rel="stylesheet" href="fonts/fontawesome/css/all.css" />
-    <link rel="stylesheet" href="css/material-symbols-outlined.css" />
-    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="css/aos.css" />
-    <link rel="stylesheet" href="css/owl.carousel.min.css" />
-    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
-    <script src="js/jquery-3.6.0.min.js"></script>
-    <script src="js/slick.min.js"></script>
-    <script src="js/flatpickr.js"></script>
-    <script src="js/zh.js"></script>
-     <script src="js/aos.js"></script>
-     <script src="js/modules/headerComponent.js" defer=""></script>
-     <script src="js/modules/pageHeader.js" defer=""></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        if (typeof loadHeader === "function") loadHeader();
-        if (typeof loadpageHeader === "function") loadpageHeader();
-      });
-    </script>
-  </head>
-
-<body data-page="news">
-    <div id="headerComponent"><header class="gn-header"><div class="navWrap">
-  <div class="logo">
-    <a href="index.html">
-      <img src="images/ft_logo.svg" alt="LOGO" height="30">
-    </a>
-  </div>
-  <button class="menu-toggle d-lg-none">
-    <div id="nav-icon3">
-      <span></span><span></span><span></span><span></span>
-    </div></button><nav><ul class="menu"><li class="has-submenu"><a href="news.html">最新消息 <i class="fa-solid fa-chevron-down"></i></a><ul class="sub-menu"><li><a href="news.html?category=住宿優惠">住宿優惠</a></li><li><a href="news.html?category=餐飲優惠">餐飲優惠</a></li><li><a href="news.html?category=活動訊息">活動訊息</a></li><li><a href="news.html?category=藝文活動">藝文活動</a></li></ul></li><li class="has-submenu"><a href="rooms.html">房型介紹 <i class="fa-solid fa-chevron-down"></i></a><ul class="sub-menu"><li><a href="rooms.html?category=尊爵VIP">尊爵VIP</a></li><li><a href="rooms.html?category=豪華房">豪華房</a></li><li><a href="rooms.html?category=經典房">經典房</a></li><li><a href="rooms.html?category=商務房">商務房</a></li></ul></li><li><a href="about.html">飯店介紹</a></li><li><a href="facility.html">設施介紹</a></li><li><a href="step1.html">線上訂房</a></li><li><a href="location.html">聯絡我們</a></li></ul></nav><div class="nav-right">
-    <div class="lang-selector">
-      <div id="google_translate_element"></div>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/flatpickr.min.css">
+    <link rel="stylesheet" href="css/material_blue.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="fonts/fontawesome/css/all.css">
+    <link rel="stylesheet" href="css/material-symbols-outlined.css">
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <!-- 第三方 JS（不建議用 defer）-->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  <script src="js/jquery-3.6.0.min.js"></script><script src="js/slick.min.js"></script><script src="js/flatpickr.js"></script><script src="js/zh.js"></script><script src="js/tools/carouselTabs.js"></script><script src="js/rellax.min.js"></script><script src="js/tools/toggle.js"></script><script src="js/tools/goTop.js"></script><script src="js/tools/googleTranslateLoader.js"></script><script src="js/tools/toggle.js"></script><script src="js/tools/slick.js"></script><script src="js/tools/slickCarousel.js"></script><script src="js/aos.js"></script><script src="js/swiper-bundle.min.js"></script><script src="js/tools/RoomsSlider.js"></script></head>
+<body data-page="news"><div id="head">
+      <div class="logo">
+        <img src="images/TESTOLOGO _logo.svg" alt="圖示說明文字">
+      </div>
+      <div class="sideBlock__bar--inner">
+        <div class="menuBtn">
+          <div class="menu-wrapper">
+            <div class="hamburger-menu">
+              <span class="menuBtn__text--menu">MENU</span><span class="menuBtn__text--close" style="display: none">CLOSE</span>
+            </div>
+          </div>
+        </div>
+        <div id="google_translate_element" class="google_translate"></div>
+        <a id="openMemberModalBtn" href="#" class="addMember" title="加入會員">
+          <i class="fa-regular fa-circle-user"></i>
+        </a>
+        <div class="btnLink__hover arrowIcon__hover pageTop" data-aos="fade-up" data-aos-duration="500">
+          <div class="pageTop__inner">
+            <p class="pageTop__text">
+              <i class="fa-regular fa-circle-up"></i><span>PAGE TOP</span>
+            </p>
+          </div>
+        </div>
+      </div>
+      <nav class="main-nav">
+        <div class="logo">
+          <a href="index.html"><img src="images/TESTOLOGO _logo.svg" alt="圖示說明文字"></a>
+        </div>
+        <ul>
+          <li class="">
+            <a href="news.html">最新消息 <span>+</span></a>
+            <ul>
+              <li><a href="news.html?category=住宿優惠">住宿優惠</a></li>
+              <li><a href="news.html?category=餐飲優惠">餐飲優惠</a></li>
+              <li><a href="news.html?category=活動訊息">活動訊息</a></li>
+              <li><a href="news.html?category=藝文活動">藝文活動</a></li>
+            </ul>
+          </li>
+          <li class="">
+            <a href="#">房型介紹 <span>+</span></a>
+            <ul>
+              <li><a href="rooms.html?category=尊爵VIP">尊爵VIP</a></li>
+              <li><a href="rooms.html?category=豪華房">豪華房</a></li>
+              <li><a href="rooms.html?category=經典房">經典房</a></li>
+              <li><a href="rooms.html?category=商務房">商務房</a></li>
+            </ul>
+          </li>
+          <li class="">
+            <a href="about.html">飯店介紹 </a>
+          </li>
+          <li class="">
+            <a href="facility.html">設施介紹 </a>
+          </li>
+          <li class="">
+            <a href="step1.html" target="_blank">線上訂房 </a>
+          </li>
+          <li class="">
+            <a href="location.html">聯絡我們 </a>
+          </li>
+        </ul>
+      </nav>
+  
     </div>
-    <!-- ✅ 桌機版登入按鈕 -->
-   <a id="openMemberModalBtn" href="#" class="d-none d-lg-inline-block" title="加入會員">
-  <i class="fa-regular fa-circle-user"></i>
-</a>
-<a id="openMemberModalBtnMobile" href="#" class="d-lg-none" title="加入會員">
-  <i class="fa-regular fa-circle-user"></i>
-</a>
-
-  </div>
-</div></header></div>
+    
     <div id="pageHeader">
     <section>
       <div class="hd title text-center" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
@@ -72,7 +107,6 @@
       </div>
     </section>
   </div>
-
     <main>
       <div id="news">
         <div class="container mt-3"></div>
@@ -99,7 +133,6 @@
                     <p class="text-muted">
                       現場另設花藝調飲小講座，邀芳療師教您運用花草入飲，並可親手製作專屬花材飲品，創造專屬香氛記憶。
                     </p>
-
                     <ul class="list-unstyled text-muted mb-3">
                       <li>
                         <strong>活動時間：</strong>每日
@@ -107,7 +140,6 @@
                       </li>
                       <li><strong>活動地點：</strong>本館 1F 花園陽台 Café</li>
                     </ul>
-
                     <a href="#" class="btn btn-primary px-4">立即預約體驗</a>
                   </div>
                 </div>
@@ -117,126 +149,163 @@
         </div>
       </div>
     </main>
-
     <div id="footerComponent">
-<footer class="footerComponent py-2">
-  <div class="container">
-    <div class="row">
-      <div class="col-12 mb-5">
-        <a href="index.html"><img src="images/ft_logo.svg" alt="logo" class="logo img-fluid mb-3"></a>
-      </div>
-      <div class="col-md-4 mb-4 mb-md-0">
-       <ul class="ftLink">
-        <li><a href="news.html">最新消息</a></li>
-        <li><a href="rooms.html">房型介紹</a></li>
-        <li><a href="about.html">飯店介紹</a></li>
-        <li><a href="facility.html">設施介紹</a></li>
-        <li><a href="location.html">聯絡我們</a></li>
-       </ul>
-      </div>
-
-      <div class="col-md-4 mb-4 mb-md-0">
-        <div class="row">
-        <div class="section-label">相關飯店</div>
-          
-          <div class="col-6 mb-2">
-            <strong>特斯德酒店</strong>
-            <ul class="list-unstyled small">
-              
-              <li><a href="#">新竹特斯德酒店</a></li>
-              
-              <li><a href="#">知本特斯德酒店</a></li>
-              
-              <li><a href="#">礁溪特斯德酒店</a></li>
-              
-              <li><a href="#">台北特斯德酒店</a></li>
-              
-              <li><a href="#">北投特斯德酒店</a></li>
-              
+<footer>
+      <div class="row">
+        <div class="col-md-12 col-lg-4 ft_link">
+          <div class="hd">OUR HOTEL</div>
+          <div class="ct">
+            <ul>
+              <li>
+                <span class="title">最新消息</span>
+                <ul style="max-height: 225px">
+                  <li><a href="news.html?category=住宿優惠">住宿優惠</a></li>
+                  <li><a href="news.html?category=餐飲優惠">餐飲優惠</a></li>
+                  <li><a href="news.html?category=活動訊息">活動訊息</a></li>
+                  <li><a href="news.html?category=藝文活動">藝文活動</a></li>
+                </ul>
+              </li>
+              <li>
+                <span class="title">房型介紹</span>
+                <ul style="max-height: 225px">
+                  <li><a href="rooms.html?category=尊爵VIP">尊爵VIP</a></li>
+                  <li><a href="rooms.html?category=豪華房">豪華房</a></li>
+                  <li><a href="rooms.html?category=經典房">經典房</a></li>
+                  <li><a href="rooms.html?category=商務房">商務房</a></li>
+                </ul>
+              </li>
+              <li><span class="title">飯店介紹</span></li>
+              <li><span class="title">聯絡我們</span></li>
+              <li><span class="title">設施介紹</span></li>
             </ul>
           </div>
-          
-          <div class="col-6 mb-2">
-            <strong>特斯德酒店</strong>
-            <ul class="list-unstyled small">
-              
-              <li><a href="#">宜蘭傳藝特斯德酒店</a></li>
-              
-              <li><a href="#">特斯德大飯店</a></li>
-              
-            </ul>
+          <div class="ft">
+            <div class="socialBox">
+              <a target="_blank" href="https://www.facebook.com/85SkyTowerHotel" class="" aria-label="Facebook">
+                <i class="fa-brands fa-facebook"></i>
+              </a>
+              <a target="_blank" href="http://www.weibo.com/1854503391/profile?topnav=1&amp;wvr=3.6" class="" aria-label="YouTube">
+                <i class="fa-brands fa-youtube"></i>
+              </a>
+              <a target="_blank" href="https://plus.google.com/u/0/b/110324599943771007016" class="" aria-label="Google+">
+                <i class="fa-brands fa-google"></i>
+              </a>
+            </div>
+            <div class="btnWrap">
+              <button class="btn">攝影諮詢</button><a href="step1.html" target="_blank" class="btn">預定房間</a>
+            </div>
           </div>
-          
-          <div class="col-6 mb-2">
-            <strong>特斯德會館</strong>
-            <ul class="list-unstyled small">
-              
-              <li><a href="#">特斯德會館台北南西</a></li>
-              
-              <li><a href="#">特斯德會館台北林森</a></li>
-              
-            </ul>
+        </div>
+        <div class="col-md-12 col-lg-8">
+          <div class="hd">我們的酒店</div>
+          <div class="ct">
+            <div class="row">
+              <div class="col-1">特斯德酒店</div>
+              <div class="col-11">
+                <ul>
+                  <li>
+                    <a href="javascript:void(0)">
+                      <div class="otherIcon">
+                        <i class="fa-solid fa-building"></i>
+                      </div>
+                      <p>北投</p></a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0)">
+                      <div class="otherIcon">
+                        <i class="fa-solid fa-building"></i>
+                      </div>
+                      <p>台北</p></a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0)">
+                      <div class="otherIcon">
+                        <i class="fa-solid fa-building"></i>
+                      </div>
+                      <p>礁溪</p></a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0)">
+                      <div class="otherIcon">
+                        <i class="fa-solid fa-building"></i>
+                      </div>
+                      <p>知本</p></a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0)">
+                      <div class="otherIcon">
+                        <i class="fa-solid fa-building"></i>
+                      </div>
+                      <p>新竹</p></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- 第二層 -->
+            <div class="row">
+              <div class="col-1">特斯德會館</div>
+              <div class="col-11">
+                <ul>
+                  <li>
+                    <a href="javascript:void(0)">
+                      <div class="otherIcon">
+                        <i class="fa-solid fa-building"></i>
+                      </div>
+                      <p>臺北信義</p></a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0)">
+                      <div class="otherIcon">
+                        <i class="fa-solid fa-building"></i>
+                      </div>
+                      <p>臺北松山</p></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- 第三層 -->
+            <div class="row">
+              <div class="col-1">海外特斯德</div>
+              <div class="col-11">
+                <ul>
+                  <li>
+                    <a href="javascript:void(0)">
+                      <div class="otherIcon">
+                        <i class="fa-solid fa-building"></i>
+                      </div>
+                      <p>上海</p></a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0)">
+                      <div class="otherIcon">
+                        <i class="fa-solid fa-building"></i>
+                      </div>
+                      <p>巴厘島</p></a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0)">
+                      <div class="otherIcon">
+                        <i class="fa-solid fa-building"></i>
+                      </div>
+                      <p>三亞</p></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
-          
-          <div class="col-6 mb-2">
-            <strong>海外酒店</strong>
-            <ul class="list-unstyled small">
-              
-              <li><a href="#">模里西斯帝王酒店</a></li>
-              
-              <li><a href="#">尼加拉瓜馬拿瓜皇冠廣場飯店</a></li>
-              
-              <li><a href="#">帛琉特斯德酒店</a></li>
-              
-              <li><a href="#">西貢特斯德酒店</a></li>
-              
-            </ul>
-          </div>
-          
+        </div>
+        <hr>
+        <div class="ft-des">
+          <p class="mb-1">
+            <a href="#" class="me-3">關於特斯德酒店</a><a href="#" class="me-3">隱私權政策</a><a href="#" class="me-3">連絡我們</a>
+            <span>Copyright Easytravel</span>
+          </p>
+          <p class="mb-0">
+            網頁中使用之飯店照片皆由四方通行拍攝，如有任何的拍攝服務需求，請與我們聯絡
+          </p>
         </div>
       </div>
-
-      <div class="col-md-4 text-md-end text-center">
-      <div class="section-label d-flex justify-content-end">我們的位置</div>
-        <ul class="list-unstyled small">
-          <li class="fw-bold fs-6 mb-1">高雄特斯德酒店</li>
-          <li class="mb-1">高雄市新光路38號24F-6</li>
-          <li class="mb-1">訂房專線：+886-7-968-2715</li>
-          <li>傳真號碼：+886-7-952-2221</li>
-        </ul>
-        <h6 class="fw-bold mb-3">Follow Us</h6>
-        <div class="socialBox mb-3">
-          
-          <a target="_blank" href="https://www.facebook.com/85SkyTowerHotel" class="text-dark fs-5 me-3" aria-label="Facebook">
-            <i class="fa-brands fa-facebook"></i>
-          </a>
-          
-          <a target="_blank" href="http://www.weibo.com/1854503391/profile?topnav=1&amp;wvr=3.6" class="text-dark fs-5 me-3" aria-label="YouTube">
-            <i class="fa-brands fa-youtube"></i>
-          </a>
-          
-          <a target="_blank" href="https://plus.google.com/u/0/b/110324599943771007016" class="text-dark fs-5 me-3" aria-label="Google+">
-            <i class="fa-brands fa-google"></i>
-          </a>
-          
-        </div>
-        <div class="btnWrap">
-        <button class="btn">攝影諮詢</button><button class="btn">預定房間</button>
-        </div>
-       
-
-      </div>
-    </div>
-    <div class="ft-des text-center small mt-5">
-      <p class="mb-1">
-        <a href="#" class="me-3">關於特斯德酒店</a><a href="#" class="me-3">隱私權政策</a><a href="#" class="me-3">連絡我們</a>
-        <span>Copyright Easytravel</span>
-      </p>
-      <p class="mb-0">網頁中使用之飯店照片皆由四方通行拍攝，如有任何的拍攝服務需求，請與我們聯絡</p>
-    </div>
-  </div>
-</footer>
-
+    </footer>
 </div>
   <!-- Code injected by live-server -->
 <script>
@@ -276,7 +345,5 @@
 	}
 	// ]]>
 </script>
-
-
-<button id="scrollToTopBtn" title="回到頂部"><i class="fa-solid fa-arrow-up-long"></i></button></body>
-</html>
+<button id="scrollToTopBtn" title="回到頂部"><i class="fa-solid fa-arrow-up-long"></i></button>
+</body></html>

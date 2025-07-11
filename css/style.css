@@ -839,7 +839,7 @@ body {
   top: 0;
   right: 0;
   background: #FF764A;
-  z-index: 5;
+  z-index: 13;
 }
 #head .sideBlock__bar--inner .textTate,
 #head .sideBlock__bar--inner .menuBtn__text--close,
@@ -898,6 +898,7 @@ body {
   bottom: 0em;
   z-index: 4;
   opacity: 1 !important;
+  transform: translate3d(0, 0px, 0);
 }
 #head .sideBlock__bar--inner .pageTop__inner {
   cursor: pointer;
@@ -989,7 +990,7 @@ body {
   height: 100svh;
   background: #ffffff;
   transition: transform 1s cubic-bezier(0.26, 0.8, 0.46, 0.99), opacity 0.45s ease;
-  z-index: 4;
+  z-index: 12;
   transform: translateX(434px);
 }
 #head .main-nav.is-open {
@@ -1177,7 +1178,7 @@ body {
 #bookingBarComponent .btn-dark {
   padding: 1em 2em;
   font-weight: normal;
-  color: #3f3f3f;
+  color: #303030;
   border-radius: 2em;
 }
 #bookingBarComponent .row {
@@ -4151,7 +4152,7 @@ nav ul.menu > li.has-submenu.open .sub-menu, nav ul.menu > li.has-submenu:hover 
 }
 
 footer {
-  background-color: #3f3f3f;
+  background-color: #303030;
   color: #ffffff;
   padding: 4em;
   bottom: 0;
