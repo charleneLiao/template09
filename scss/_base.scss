@@ -39,6 +39,9 @@ a {
   flex-wrap: nowrap;
   flex-direction: row;
   margin: 0.9em 1em 1.1em 2em;
+  @include respond-max(sm){
+    margin-left: 0.8em;
+  }
 }
 
 #specialOffersComponent {

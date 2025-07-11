@@ -14,4 +14,8 @@
   position: relative;
   bottom: 3em;
   padding: 3em;
+  @include respond-max(1024){
+    width: 100%;
+    padding: 3em 3em 3em 0;
+  }
 }

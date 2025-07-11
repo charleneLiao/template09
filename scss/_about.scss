@@ -12,8 +12,11 @@
     position: initial;
     border-radius: initial;
     background: initial;
+    > .row {
+      position: relative;
+    }
   }
-  .col-12{
+  .col-12 {
     position: relative;
     z-index: 2;
   }
@@ -33,10 +36,13 @@
   }
   .description {
     margin: 8em 0 1em 0;
-     position: relative;
+    position: relative;
     z-index: 1;
     @include respond-max(md) {
       margin-top: 2em;
+    }
+    @include respond-max(sm) {
+      padding: 0 1em;
     }
   }
 
@@ -45,6 +51,10 @@
     z-index: 1;
     bottom: 0;
     left: 40%;
+    @include respond-max(1024) {
+      left: 0;
+      bottom: 0%;
+    }
     i {
       font-size: 25em;
       color: rgba($secondary04, 1);

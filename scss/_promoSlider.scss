@@ -86,6 +86,11 @@
 
 // 最新消息
 #specialOffersComponent {
+  section{
+    @include respond-max(1024){
+      // padding: 0 3em 0 0;
+    }
+  }
     .promo-slider {
       .slick-arrow {
         width: 36px;
@@ -99,6 +104,10 @@
         position: absolute;
         bottom: -3.9em;
         right: 3em;
+        @include respond-max(sm){
+          // bottom: -3em;
+          display: none;
+        }
         i{
             color: rgba($primary,0.5);
         }
@@ -119,10 +128,17 @@
         }
 
         &.slick-prev {
+          right: 5em;
+          @include respond-max(1024){
+            right: 10em !important;
+          }
         }
 
         &.slick-next {
           right: 0px;
+           @include respond-max(1024){
+            right: 6em !important;
+          }
         }
       }
     }
