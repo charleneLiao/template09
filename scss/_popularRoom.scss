@@ -161,6 +161,11 @@
             transition-delay: 0.1s;
           }
         }
+        @include respond-max(sm){
+          .icon, .sub{
+            display: none;
+          }
+        }
       }
     }
   }

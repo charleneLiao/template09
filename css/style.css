@@ -2035,6 +2035,11 @@ body {
 #popularRoomsComponent .options .option .label .info .sub {
   transition-delay: 0.1s;
 }
+@media (max-width: 576px) {
+  #popularRoomsComponent .options .option .label .icon, #popularRoomsComponent .options .option .label .sub {
+    display: none;
+  }
+}
 
 .diningFacilitiesComponent {
   background-color: #dbdbdb;
@@ -3446,7 +3451,7 @@ span.flatpickr-weekday,
 }
 @media (max-width: 576px) {
   #specialOffersComponent .promo-slider .slick-arrow {
-    display: none;
+    display: none !important;
   }
 }
 #specialOffersComponent .promo-slider .slick-arrow i {

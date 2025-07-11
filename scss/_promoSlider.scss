@@ -105,8 +105,7 @@
         bottom: -3.9em;
         right: 3em;
         @include respond-max(sm){
-          // bottom: -3em;
-          display: none;
+          display: none !important;
         }
         i{
             color: rgba($primary,0.5);
