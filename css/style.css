@@ -473,14 +473,16 @@ section {
   transform: translateY(0) !important;
 }
 
-#specialOffersComponent .hd, #popularRoomsComponent .hd {
+#specialOffersComponent .hd,
+#popularRoomsComponent .hd {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   flex-wrap: nowrap;
   flex-direction: row;
 }
-#specialOffersComponent .hd a, #popularRoomsComponent .hd a {
+#specialOffersComponent .hd a,
+#popularRoomsComponent .hd a {
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -488,35 +490,85 @@ section {
   flex-direction: row;
   transition: transform 0.3s ease;
 }
-#specialOffersComponent .hd a:hover, #popularRoomsComponent .hd a:hover {
+#specialOffersComponent .hd a:hover,
+#popularRoomsComponent .hd a:hover {
   transform: scale(1.1);
   cursor: pointer;
   color: #FF764A;
 }
-#specialOffersComponent .hd a:hover ellipse, #popularRoomsComponent .hd a:hover ellipse {
+#specialOffersComponent .hd a:hover ellipse,
+#popularRoomsComponent .hd a:hover ellipse {
   fill: #FF764A;
   stroke: #ffffff;
 }
 #specialOffersComponent .hd a:hover line,
-#specialOffersComponent .hd a:hover polyline, #popularRoomsComponent .hd a:hover line,
+#specialOffersComponent .hd a:hover polyline,
+#popularRoomsComponent .hd a:hover line,
 #popularRoomsComponent .hd a:hover polyline {
   stroke: #fff;
 }
-#specialOffersComponent .hd .circle-arrow, #popularRoomsComponent .hd .circle-arrow {
+#specialOffersComponent .hd .circle-arrow,
+#popularRoomsComponent .hd .circle-arrow {
   display: block;
 }
-#specialOffersComponent .hd .circle-arrow ellipse, #popularRoomsComponent .hd .circle-arrow ellipse {
+#specialOffersComponent .hd .circle-arrow ellipse,
+#popularRoomsComponent .hd .circle-arrow ellipse {
   stroke: #333;
 }
 #specialOffersComponent .hd .circle-arrow line,
-#specialOffersComponent .hd .circle-arrow polyline, #popularRoomsComponent .hd .circle-arrow line,
+#specialOffersComponent .hd .circle-arrow polyline,
+#popularRoomsComponent .hd .circle-arrow line,
 #popularRoomsComponent .hd .circle-arrow polyline {
   stroke: #333;
 }
-#specialOffersComponent .hd .p-button3__txt, #popularRoomsComponent .hd .p-button3__txt {
+#specialOffersComponent .hd .p-button3__txt,
+#popularRoomsComponent .hd .p-button3__txt {
   margin-left: 0.5em;
 }
 
+.loader-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(255, 255, 255, 0.95); /* 白色遮罩 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.4s ease;
+}
+
+.loader-backdrop.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loader {
+  width: 80px;
+  height: 80px;
+  position: relative;
+  border: 24px solid #fff;
+  border-radius: 50%;
+  transform: rotate(45deg);
+  animation: pieFill 1.5s linear infinite;
+}
+
+@keyframes pieFill {
+  0%, 19% {
+    border-color: #e7e0d4 #e7e0d4 #e7e0d4 #e7e0d4;
+  }
+  20%, 39% {
+    border-color: #FF764A #e7e0d4 #e7e0d4 #e7e0d4;
+  }
+  40%, 59% {
+    border-color: #FF764A #FF764A #e7e0d4 #e7e0d4;
+  }
+  60%, 79% {
+    border-color: #FF764A #FF764A #FF764A #e7e0d4;
+  }
+  80%, 100% {
+    border-color: #FF764A #FF764A #FF764A #FF764A;
+  }
+}
 .btn {
   background-color: #e7e0d4;
   color: #ffffff;

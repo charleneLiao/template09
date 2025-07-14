@@ -35,6 +35,9 @@
     <script src="js/tools/RoomsSlider.js"></script>
   </head>
   <body data-page="news" id="page">
+    <div id="pageLoader" class="loader-backdrop">
+      <div class="loader"></div>
+    </div>
     <div id="head">
       <div class="logo">
         <a href="index.html"
@@ -796,10 +799,7 @@
         }
       });
     </script>
-    <button id="scrollToTopBtn" title="回到頂部" class="">
-      <i class="fa-solid fa-arrow-up-long"></i>
-    </button>
-
+<script src="js/tools/spinnerloader.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const params = new URLSearchParams(window.location.search);
