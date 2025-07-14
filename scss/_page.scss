@@ -4,7 +4,21 @@
 @use "./mixins" as *;
 
 // 內頁
+#page {
+  main {
+    @include respond-max(md) {
+      padding: 0 38px 0 10px;
+    }
+    @include respond-max(sm) {
+      padding: 0 48px 0 0px;
+    }
+  }
+}
 #pageHeader {
+  padding-right: 40px;
+  @include respond-max(sm) {
+    padding-right: 0px;
+  }
   section {
     padding: 0;
     .text {
@@ -31,6 +45,10 @@
       }
       @include respond-max(sm) {
         height: 19vh;
+        margin-top: -142px;
+        margin-right: 50px;
+        width: 89%;
+        gap: 1em;
       }
       .goBack {
         width: 182px;
@@ -50,47 +68,61 @@
       }
     }
   }
+
   .hd {
     width: 100%;
-    height: 60vh;
+    height: 40vh;
     overflow: hidden;
     position: relative;
     @include respond-max(md) {
-      height: 46vh;
     }
     .titleBox {
-      border-radius: 14em;
-      background: rgba($secondary, 0.5);
       position: absolute;
-      left: 21px;
       z-index: 10;
-      bottom: 20px;
-      width: 330px;
-      height: 330px;
       text-align: center;
+      top: 74%;
+      left: 51%;
+      transform: translate(-50%, -50%);
       display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
       align-content: center;
-      justify-content: center;
       align-items: center;
-      top: 67px;
+      justify-content: center;
+
       @include respond-max(sm) {
+        top: 65%;
         h1 {
-          bottom: 1.5em;
+          // bottom: 1.5em;
         }
         p {
-          bottom: 10.7em;
+          // bottom: 10.7em;
         }
       }
     }
+    .imgBox {
+      position: relative;
+      overflow: hidden;
+      height: 40vh;
 
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover; // ⭐ 保持比例填滿，不變形
-      object-position: center; // ⭐ 水平垂直置中
-      display: block;
-      z-index: 0;
-      border-radius: 17em;
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.3); // 黑色遮罩
+        backdrop-filter: blur(1px); // 模糊背景
+        -webkit-backdrop-filter: blur(1px); // Safari 支援
+        z-index: 1;
+        pointer-events: none;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; // ⭐ 保持比例填滿，不變形
+        object-position: center; // ⭐ 水平垂直置中
+        display: block;
+        z-index: 0;
+      }
     }
     h1,
     p {
@@ -99,30 +131,18 @@
       bottom: 1em;
       color: $white;
       font-weight: normal;
+      white-space: nowrap;
     }
     h1 {
-      font-size: 4em;
-      bottom: 0.5em;
+      font-size: 1.2em;
+      bottom: 3em;
+      width: 180px;
+      letter-spacing: 20px;
     }
     p {
       font-size: 1em;
       bottom: 5.7em;
       letter-spacing: 20px;
-    }
-  }
-  @include respond-max(sm) {
-    .hd {
-      h1,
-      p {
-        display: inline-block;
-        text-align: left;
-      }
-      p {
-        left: 2em;
-      }
-      h1 {
-        left: 0.4em;
-      }
     }
   }
 }

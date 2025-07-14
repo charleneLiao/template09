@@ -9,6 +9,9 @@
     .wrap_01 {
       width: calc(100% - 3em);
       padding-bottom: 6em;
+      @include respond-max(sm) {
+        width: auto;
+      }
       .row {
         --bs-gutter-x: 2em;
       }
@@ -41,7 +44,9 @@
     }
   }
 }
+#rooms{
 
+}
 #rooms,
 #facility {
   #detail {
@@ -66,7 +71,7 @@
       justify-content: flex-start;
       align-items: center;
       gap: 2em;
-      h1{
+      h1 {
         text-align: center;
         width: 64vw;
       }
@@ -305,7 +310,26 @@
     }
   }
 }
-
+#rooms{
+  padding-right: 44px;
+}
+#facility main,
+#facility {
+  @include respond-max(sm) {
+    padding: 0;
+  }
+}
+#facility {
+  @include respond-max(sm) {
+    // width: calc(100% - 50px);
+    padding-right: 44px;
+  }
+}
+.roomsPage{
+    @include respond-max(sm) {
+    padding-right: 44px;
+  }
+}
 #rooms {
   h1 {
     font-weight: normal;

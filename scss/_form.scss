@@ -80,6 +80,16 @@ span.flatpickr-weekday,
         width: 50%;
         margin: 0 auto;
         border-radius: 2em;
+        color: $primary;
+        border: 1px solid $primary;
+        background: $white;
+        &:hover{
+          background: rgba($primary, 0.25);
+        }
+    }
+    .btn-primary{
+      background: $primary;
+      color: $white;
     }
   input,
   select {
@@ -98,24 +108,28 @@ span.flatpickr-weekday,
     font-size: 0.7em;
     font-weight: normal;
     padding: 0.5em 2em;
+    &:hover{
+      background-color: rgba($primary, 0.3);
+    }
   }
   .text-primary,
   .text-warning {
-    color: $secondary01 !important;
+    color: $dark !important;
   }
   // 選定tab
   .text-danger {
     color: $white !important;
-    background-color: rgba($secondary02, 1);
+    background-color: rgba($primary, 1);
   }
 
   .btn-outline-secondary {
     background-color: $white;
-    color: $secondary02;
-    border: 1px solid $secondary02;
+    color: $secondary05;
+    border: 1px solid $secondary05;
   }
 
   .btn-change {
-    background-color: rgba($primary, 0.3);
+    border: 1px solid $text-subtle-color;
+    color: $text-subtle-color;
   }
 }

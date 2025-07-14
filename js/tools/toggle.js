@@ -1,24 +1,23 @@
 window.onload = function () {
-  const toggleBtn = document.querySelector(".toggle-btn");
-  const policyBox = document.querySelector(".policy-box");
+document.querySelectorAll(".panel-title").forEach((btn) => {
+  btn.addEventListener("click", function () {
+    const panel = this.nextElementSibling;
+    const isOpen = panel.classList.contains("expanded");
 
-  if (toggleBtn && policyBox) {
-    toggleBtn.addEventListener("click", () => {
-      const isExpanded = policyBox.classList.contains("expanded");
-      if (isExpanded) {
-        policyBox.style.maxHeight = policyBox.scrollHeight + "px";
-        requestAnimationFrame(() => {
-          policyBox.style.maxHeight = "7.5em";
-        });
-        policyBox.classList.remove("expanded");
-        toggleBtn.textContent = "＋ 展開";
-      } else {
-        policyBox.style.maxHeight = policyBox.scrollHeight + "px";
-        policyBox.classList.add("expanded");
-        toggleBtn.textContent = "－ 收起";
-      }
-    });
-  }
+    if (isOpen) {
+      panel.style.maxHeight = null;
+      panel.style.opacity = 0;
+      panel.classList.remove("expanded");
+      this.querySelector(".plus").textContent = "＋";
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+      panel.style.opacity = 1;
+      panel.classList.add("expanded");
+      this.querySelector(".plus").textContent = "－";
+    }
+  });
+});
+
 
   const mainNav = document.querySelector(".main-nav");
   const menuBtn = document.querySelector(".menuBtn");

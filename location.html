@@ -28,12 +28,6 @@
     <script src="js/modules/headerComponent.js" defer></script>
     <script src="js/tools/goBack.js"></script>
     <script src="js/modules/pageHeader.js" defer></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // if (typeof loadHeader === "function") loadHeader();
-        if (typeof loadpageHeader === "function") loadpageHeader();
-      });
-    </script>
   </head>
 
   <body
@@ -41,10 +35,12 @@
     data-aos-easing="ease"
     data-aos-duration="800"
     data-aos-delay="0"
-  >
-    <div id="head">
+  id="page">
+ <div id="head">
       <div class="logo">
-        <img src="images/TESTOLOGO _logo.svg" alt="圖示說明文字" />
+        <a href="index.html"
+          ><img src="images/TESTOLOGO _logo.svg" alt="圖示說明文字"
+        /></a>
       </div>
       <div class="sideBlock__bar--inner">
         <div class="menuBtn">
@@ -113,30 +109,31 @@
         </ul>
       </nav>
     </div>
-    <div id="pageHeader">
+<div id="pageHeader">
       <section>
         <div
-          class="hd title text-center aos-init aos-animate"
-          data-aos="fade-right"
+          class="hd title text-center"
+          data-aos="fade-down"
           data-aos-offset="300"
           data-aos-easing="ease-in-sine"
         >
           <div class="titleBox">
-            <p>KAOHSIUNG</p>
-            <h1>CONTACT US</h1>
+            <p>Contact</p>
+            <h1>聯絡我們</h1>
           </div>
-          <img src="images/banner/contact.jpg" alt="" height="23" />
+          <div class="imgBox">
+            <img src="images/banner/contact.jpg" alt="" height="23" />
+          </div>
         </div>
         <div class="text">
           <a href="javascript:void(0);" class="goBack" aria-label="回上一頁">
             <i class="fa-solid fa-arrow-left-long"></i>
             回上一頁
           </a>
-          如有任何疑問或需求，歡迎隨時與我們聯繫。
+          掌握最新活動與優惠，讓您的住宿體驗更加豐富。
         </div>
       </section>
     </div>
-
     <main id="location">
       <div class="container-fluid mt-3">
         <div class="content">

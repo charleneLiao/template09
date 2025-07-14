@@ -115,3 +115,11 @@
   100% { transform: scale(1.12); }
 }
 
+@keyframes iconPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3); // 輕微放大
+  }
+}

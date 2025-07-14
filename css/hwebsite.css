@@ -1,12 +1,12 @@
 @import url(https://fonts.googleapis.com/earlyaccess/cwtexhei.css);
 
 :root {
-  --primary-color: #142247;
+  --primary-color: #4a7aff;
   --primary-color01: #144747;
-  --primary-color02: #64bcad;
-  --star: #dcdc06;
-  --low: #c8449a;
-  --bgTag: #4fbed2;
+  --primary-color02: #FF764A;
+  --star: #ff923a;
+  --low: #78be3f;
+  --bgTag: #4a7aff;
 }
 /* color: var( --primary-color02);  background-color:  var(--primary-color02)*/
 /* http://meyerweb.com/eric/tools/css/reset/ 
